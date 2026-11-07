@@ -1,0 +1,44 @@
+<h3>Territorio - Ambito Civile</h3>
+
+<h4>Demografia Territorio</h4>
+<ul>
+    <li><strong>Numero di residenti:</strong> 4809</li>
+    <li><strong>Età Media:</strong> 44.7 anni</li>
+    <li><strong>Percentuale di stranieri:</strong> 0.0835</li>
+    <li><strong>Presenza di studenti fuori sede:</strong> media</li>
+</ul>
+
+<h4>Urbanistica</h4>
+<ul>
+    <li><strong>Edilizia Prevalente:</strong> quartieri residenziali</li>
+    <li><strong>Presenza di stabilimenti industriali:</strong> nulla</li>
+    <li><strong>Presenza di esercizi commerciali:</strong> bassa</li>
+</ul>
+
+<h4>Servizi</h4>
+<p><strong>Formazione e cura:</strong></p>
+<ul>
+    <li><strong>Nidi + scuole infanzia:</strong> 2</li>
+    <li><strong>Scuole dell'obbligo:</strong> 1</li>
+    <li><strong>RSA:</strong> nan</li>
+</ul>
+
+<p><strong>Opere sociali significative:</strong></p>
+<ul>
+    <li>Qui Padova, Sala pubblica di via Pinelli, Ali solidali</li>
+</ul>
+
+<p><strong>Poli sportivi rilevanti:</strong></p>
+<ul>
+    <li>4</li>
+</ul>
+
+<p><strong>Situazioni Problematiche:</strong></p>
+<ul>
+    <li>disoccupazione, nuove povertà, solitudine anziani </li>
+</ul>
+
+<p><strong>Bisogni Emergenti:</strong></p>
+<ul>
+    <li>emergenza casa, luoghi di lavoro</li>
+</ul>

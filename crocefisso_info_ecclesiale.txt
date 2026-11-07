@@ -1,0 +1,21 @@
+<h3>Territorio - Ambito Ecclesiale</h3>
+
+<h4>Strutture e Spazi</h4>
+<ul>
+    <li><strong>Patronati / Centri giovanili:</strong> 2</li>
+    <li><strong>Chiese / Cappelle:</strong> 3</li>
+</ul>
+
+<h4>Gruppi e Attività Pastorali</h4>
+<ul>
+    <li><strong>Annuncio (Gruppi stabili):</strong> 3</li>
+    <li><strong>Carità (Gruppi stabili):</strong> 5</li>
+    <li><strong>Liturgia (Gruppi stabili):</strong> 2</li>
+</ul>
+
+<h4>Presenze e Vita Comunitaria</h4>
+<ul>
+    <li><strong>Comunità Religiose:</strong> 2</li>
+    <li><strong>Battesimi:</strong> 8</li>
+    <li><strong>Presenza di altre Chiese / Religioni:</strong> Ortodossi - Islam</li>
+</ul>

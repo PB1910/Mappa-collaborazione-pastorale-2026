@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa Interattiva - Bassanello e Guizza</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Barra laterale sinistra (Filtri) */
+        .control-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100%;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        /* Pannello laterale destro (Informazioni dettagliate) */
+        .info-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 340px;
+            height: 100%;
+            background: #f8fafc;
+            padding: 20px;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 1px solid #e0e0e0;
+            overflow-y: auto;
+        }
+
+        .panel-header h3 { margin: 0 0 5px 0; font-size: 18px; color: #1e293b; }
+        .panel-header p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
+        
+        .control-panel h4, .info-panel h4 {
+            margin: 10px 0 5px 0;
+            font-size: 14px;
+            color: #334155;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .control-panel label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .control-panel label:hover { background: #f1f5f9; }
+        .control-panel input { cursor: pointer; width: 16px; height: 16px; }
+
+        /* Contenitore Mappa posizionato tra le due barre */
+        #map {
+            position: absolute;
+            top: 0;
+            left: 260px;
+            right: 340px;
+            bottom: 0;
+        }
+
+        /* Pulsanti di scelta ambito (Civile / Ecclesiale) */
+        .tab-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 8px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #475569;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background: #0284c7;
+            color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) {
+            background: #cbd5e1;
+        }
+
+        /* Stile dinamico per il contenuto informativo */
+        #infoContent {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.5;
+        }
+        #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
+        #infoContent h4 { color: #0f172a; font-size: 13px; margin-top: 12px; border-bottom: 1px solid #cbd5e1; }
+        #infoContent ul { margin: 4px 0 10px 0; padding-left: 18px; }
+        #infoContent li { margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SINISTRA: Filtri Aree -->
+    <div class="control-panel">
+        <div class="panel-header">
+            <h3>Collaborazione Pastorale</h3>
+            <p>Seleziona le aree da mostrare sulla mappa.</p>
+        </div>
+
+        <h4>Filtri Aree</h4>
+        <label>
+            <input type="checkbox" id="toggleBassanello" checked> 
+            <span style="color: #e66200; font-weight: bold;">■</span> Bassanello
+        </label>
+        <label>
+            <input type="checkbox" id="toggleGuizza" checked> 
+            <span style="color: #0284c7; font-weight: bold;">■</span> Guizza
+        </label>
+        <label>
+            <input type="checkbox" id="toggleCrocefisso" checked> 
+            <span style="color: #ca8a04; font-weight: bold;">■</span> Crocefisso
+        </label>
+    </div>
+
+    <!-- MAPPA INTERATTIVA -->
+    <div id="map"></div>
+
+    <!-- BARRA DESTRA: Dettagli e Informazioni -->
+    <div class="info-panel">
+        <div class="panel-header">
+            <h3>Dettagli Area</h3>
+            <p id="selectedAreaTitle">Clicca su un'area nella mappa.</p>
+        </div>
+
+        <!-- Pulsanti di scelta ambito -->
+        <div class="tab-container" id="tabContainer" style="display: none;">
+            <button class="tab-btn active" id="btnCivile" onclick="cambiaAmbito('civile')">Ambito Civile</button>
+            <button class="tab-btn" id="btnEcclesiale" onclick="cambiaAmbito('ecclesiale')">Ambito Ecclesiale</button>
+        </div>
+
+        <h4>Informazioni</h4>
+        <div id="infoContent">
+            <p style="color: #94a3b8; font-style: italic;">Nessuna area selezionata.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 1. Inizializzazione della mappa
+        const confiniZona = [
+            [45.3300, 11.7900], 
+            [45.4200, 11.9300]  
+        ];
+
+        const map = L.map('map', {
+            center: [45.3750, 11.8600],
+            zoom: 13,                
+            minZoom: 12,             
+            maxZoom: 18,             
+            maxBounds: confiniZona,  
+            maxBoundsViscosity: 1.0  
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let layerBassanello, layerGuizza, layerCrocefisso;
+
+        // Variabili per memorizzare l'area attualmente cliccata e l'ambito attivo
+        let zonaCorrente = null;
+        let ambitoCorrente = 'civile'; // 'civile' o 'ecclesiale'
+
+        // Funzione per caricare i file di testo in base alla zona e all'ambito
+        function caricaDatiZona(nomeZona, nomeVisualizzato) {
+            zonaCorrente = nomeZona;
+            document.getElementById('selectedAreaTitle').innerText = "Area selezionata: " + nomeVisualizzato;
+            document.getElementById('tabContainer').style.display = 'flex'; // Mostra i bottoni
+            
+            // Determina quale file caricare in base al tab attivo
+            let prefissoFile = nomeZona; // es. 'bassanello', 'guizza', 'crocefisso'
+            let suffissoFile = (ambitoCorrente === 'ecclesiale') ? '_info_ecclesiale.txt' : '_info.txt';
+            let fileDaCaricare = prefissoFile + suffissoFile;
+
+            fetch(fileDaCaricare)
+                .then(res => {
+                    if (!res.ok) throw new Error("File non trovato");
+                    return res.text();
+                })
+                .then(htmlContent => {
+                    document.getElementById('infoContent').innerHTML = htmlContent;
+                })
+                .catch(err => {
+                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento (${ambitoCorrente}) non ancora disponibile per questa zona.</p>`;
+                });
+        }
+
+        // Funzione richiamata dai pulsanti Civile / Ecclesiale
+        function cambiaAmbito(ambito) {
+            ambitoCorrente = ambito;
+            
+            // Aggiorna lo stile visivo dei bottoni
+            if (ambito === 'civile') {
+                document.getElementById('btnCivile').classList.add('active');
+                document.getElementById('btnEcclesiale').classList.remove('active');
+            } else {
+                document.getElementById('btnEcclesiale').classList.add('active');
+                document.getElementById('btnCivile').classList.remove('active');
+            }
+
+            // Se c'è già una zona selezionata, ricarica i dati per il nuovo ambito
+            if (zonaCorrente) {
+                let nomeVis = (zonaCorrente === 'bassanello') ? 'Bassanello' : (zonaCorrente === 'guizza' ? 'Guizza' : 'Crocefisso');
+                caricaDatiZona(zonaCorrente, nomeVis);
+            }
+        }
+
+        // 2. Caricamento dei layer GeoJSON e associazione del click
+        
+        // Bassanello
+        fetch('bassanello.geojson')
+            .then(res => res.json())
+            .then(data => {
+                layerBassanello = L.geoJSON(data, {
+                    style: { color: '#ff0000', fillColor: '#e66200', fillOpacity: 0.2, weight: 2 },
+                    onEachFeature: (feature, layer) => {
+                        layer.on('click', () => {
+                            caricaDatiZona('bassanello', 'Bassanello');
+                        });
+                    }
+                }).addTo(map);
+            });
+
+        // Guizza
+        fetch('guizza.geojson')
+            .then(res => res.json())
+            .then(data => {
+                layerGuizza = L.geoJSON(data, {
+                    style: { color: '#0284c7', fillColor: '#38bdf8', fillOpacity: 0.4, weight: 2 },
+                    onEachFeature: (feature, layer) => {
+                        layer.on('click', () => {
+                            caricaDatiZona('guizza', 'Guizza');
+                        });
+                    }
+                }).addTo(map);
+            });
+
+        // Crocefisso
+        fetch('crocefisso.geojson')
+            .then(res => res.json())
+            .then(data => {
+                layerCrocefisso = L.geoJSON(data, {
+                    style: { color: '#ca8a04', fillColor: '#facc15', fillOpacity: 0.4, weight: 2 },
+                    onEachFeature: (feature, layer) => {
+                        layer.on('click', () => {
+                            caricaDatiZona('crocefisso', 'Crocefisso');
+                        });
+                    }
+                }).addTo(map);
+            });
+
+        // 3. Gestione interattiva dei checkbox (Filtri)
+        document.getElementById('toggleBassanello').addEventListener('change', (e) => {
+            if (layerBassanello) {
+                if (e.target.checked) map.addLayer(layerBassanello);
+                else map.removeLayer(layerBassanello);
+            }
+        });
+
+        document.getElementById('toggleGuizza').addEventListener('change', (e) => {
+            if (layerGuizza) {
+                if (e.target.checked) map.addLayer(layerGuizza);
+                else map.removeLayer(layerGuizza);
+            }
+        });
+
+        document.getElementById('toggleCrocefisso').addEventListener('change', (e) => {
+            if (layerCrocefisso) {
+                if (e.target.checked) map.addLayer(layerCrocefisso);
+                else map.removeLayer(layerCrocefisso);
+            }
+        });
+    </script>
+</body>
+</html>

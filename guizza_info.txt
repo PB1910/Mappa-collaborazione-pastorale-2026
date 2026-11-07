@@ -1,0 +1,44 @@
+<h3>Territorio - Ambito Civile</h3>
+
+<h4>Demografia Territorio</h4>
+<ul>
+    <li><strong>Numero di residenti:</strong> 3393</li>
+    <li><strong>Età Media:</strong> 49 anni</li>
+    <li><strong>Percentuale di stranieri:</strong> 0.1237842617</li>
+    <li><strong>Presenza di studenti fuori sede:</strong> alta</li>
+</ul>
+
+<h4>Urbanistica</h4>
+<ul>
+    <li><strong>Edilizia Prevalente:</strong> quartieri residenziali</li>
+    <li><strong>Presenza di stabilimenti industriali:</strong> nulla</li>
+    <li><strong>Presenza di esercizi commerciali:</strong> bassa</li>
+</ul>
+
+<h4>Servizi</h4>
+<p><strong>Formazione e cura:</strong></p>
+<ul>
+    <li><strong>Nidi + scuole infanzia:</strong> 2</li>
+    <li><strong>Scuole dell'obbligo:</strong> 1</li>
+    <li><strong>RSA:</strong> nan</li>
+</ul>
+
+<p><strong>Opere sociali significative:</strong></p>
+<ul>
+    <li>nan</li>
+</ul>
+
+<p><strong>Poli sportivi rilevanti:</strong></p>
+<ul>
+    <li>3</li>
+</ul>
+
+<p><strong>Situazioni Problematiche:</strong></p>
+<ul>
+    <li>nan</li>
+</ul>
+
+<p><strong>Bisogni Emergenti:</strong></p>
+<ul>
+    <li>nan</li>
+</ul>
