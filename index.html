@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mappa Interattiva - Bassanello e Guizza</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Barra laterale sinistra (Filtri) */
@@ -19,7 +19,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 260px;
+            width: 280px;
             height: 100%;
             background: #ffffff;
             padding: 20px;
@@ -28,8 +28,9 @@
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             border-right: 1px solid #e0e0e0;
+            overflow-y: auto;
         }
 
         /* Pannello laterale destro (Informazioni dettagliate) */
@@ -56,36 +57,39 @@
         
         .control-panel h4, .info-panel h4 {
             margin: 10px 0 5px 0;
-            font-size: 14px;
+            font-size: 13px;
             color: #334155;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 5px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .control-panel label {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             padding: 6px 8px;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: background 0.2s;
+            color: #334155;
+            font-weight: 500;
         }
         .control-panel label:hover { background: #f1f5f9; }
-        .control-panel input { cursor: pointer; width: 16px; height: 16px; }
+        .control-panel input { cursor: pointer; width: 16px; height: 16px; accent-color: #0284c7; }
 
-        /* Contenitore Mappa posizionato tra le due barre */
+        /* Contenitore Mappa */
         #map {
             position: absolute;
             top: 0;
-            left: 260px;
+            left: 280px;
             right: 340px;
             bottom: 0;
         }
 
-        /* Pulsanti di scelta ambito (Civile / Ecclesiale) */
+        /* Pulsanti di scelta ambito */
         .tab-container {
             display: flex;
             gap: 8px;
@@ -112,53 +116,103 @@
             background: #cbd5e1;
         }
 
-        /* Stile dinamico per il contenuto informativo */
+        /* Stile pannello informazioni */
         #infoContent {
             font-size: 13px;
             color: #334155;
             line-height: 1.5;
         }
         #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
-        #infoContent h4 { color: #0f172a; font-size: 13px; margin-top: 12px; border-bottom: 1px solid #cbd5e1; }
-        #infoContent ul { margin: 4px 0 10px 0; padding-left: 18px; }
-        #infoContent li { margin-bottom: 3px; }
+
+        /* Personalizzazione Popup Mappa */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 5px;
+        }
+        .leaflet-popup-content {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #334155;
+        }
+
+        /* Stili per le icone personalizzate in SVG */
+        .custom-pin-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+        }
     </style>
 </head>
 <body>
 
-    <!-- BARRA SINISTRA: Filtri Aree -->
+    <!-- BARRA SINISTRA: Filtri -->
     <div class="control-panel">
         <div class="panel-header">
             <h3>Collaborazione Pastorale</h3>
-            <p>Seleziona le aree da mostrare sulla mappa.</p>
+            <p>Gestisci la visualizzazione di aree e punti di interesse.</p>
         </div>
 
         <h4>Filtri Aree</h4>
+        <label>
+            <input type="checkbox" id="toggleCollaborazionePastorale" checked> 
+            <span style="color: #6366f1; font-weight: bold;">■</span> Collaborazione Pastorale
+        </label>
         <label>
             <input type="checkbox" id="toggleBassanello" checked> 
             <span style="color: #e66200; font-weight: bold;">■</span> Bassanello
         </label>
         <label>
-            <input type="checkbox" id="toggleGuizza" checked> 
-            <span style="color: #0284c7; font-weight: bold;">■</span> Guizza
+            <input type="checkbox" id="toggleSantaTeresa" checked> 
+            <span style="color: #ea580c; font-weight: bold;">■</span> Santa Teresa
+        </label> 
+        <label>   
+            <input type="checkbox" id="toggleSSAngeliCustodi" checked> 
+            <span style="color: #d97706; font-weight: bold;">■</span> SS. Angeli Custodi
+        </label>
+        <label>
+            <input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> 
+            <span style="color: #0284c7; font-weight: bold;">■</span> Unità Pastorale Guizza
+        </label>
+        <label>
+            <input type="checkbox" id="togglePaltana" checked> 
+            <span style="color: #0d9488; font-weight: bold;">■</span> Paltana
+        </label>
+        <label>
+            <input type="checkbox" id="toggleVoltabrusegana" checked> 
+            <span style="color: #16a34a; font-weight: bold;">■</span> Voltabrusegana
+        </label>
+        <label>
+            <input type="checkbox" id="toggleMandria" checked> 
+            <span style="color: #65a30d; font-weight: bold;">■</span> Mandria
         </label>
         <label>
             <input type="checkbox" id="toggleCrocefisso" checked> 
             <span style="color: #ca8a04; font-weight: bold;">■</span> Crocefisso
+        </label>
+        <label>
+            <input type="checkbox" id="toggleSalboro" checked> 
+            <span style="color: #7c3aed; font-weight: bold;">■</span> Salboro
+        </label>
+
+        <h4>Filtri Contenuti</h4>
+        <label>
+            <input type="checkbox" id="toggleSegnaposti" checked> 
+            <span>📍 Mostra Segnaposti / Luoghi</span>
         </label>
     </div>
 
     <!-- MAPPA INTERATTIVA -->
     <div id="map"></div>
 
-    <!-- BARRA DESTRA: Dettagli e Informazioni -->
+    <!-- BARRA DESTRA: Dettagli -->
     <div class="info-panel">
         <div class="panel-header">
             <h3>Dettagli Area</h3>
             <p id="selectedAreaTitle">Clicca su un'area nella mappa.</p>
         </div>
 
-        <!-- Pulsanti di scelta ambito -->
         <div class="tab-container" id="tabContainer" style="display: none;">
             <button class="tab-btn active" id="btnCivile" onclick="cambiaAmbito('civile')">Ambito Civile</button>
             <button class="tab-btn" id="btnEcclesiale" onclick="cambiaAmbito('ecclesiale')">Ambito Ecclesiale</button>
@@ -172,7 +226,6 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 1. Inizializzazione della mappa
         const confiniZona = [
             [45.3300, 11.7900], 
             [45.4200, 11.9300]  
@@ -180,9 +233,9 @@
 
         const map = L.map('map', {
             center: [45.3750, 11.8600],
-            zoom: 13,                
-            minZoom: 12,             
-            maxZoom: 18,             
+            zoom: 13,                    
+            minZoom: 12,            
+            maxZoom: 18,            
             maxBounds: confiniZona,  
             maxBoundsViscosity: 1.0  
         });
@@ -192,22 +245,35 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        let layerBassanello, layerGuizza, layerCrocefisso;
-
-        // Variabili per memorizzare l'area attualmente cliccata e l'ambito attivo
+        const layersAree = {};
         let zonaCorrente = null;
-        let ambitoCorrente = 'civile'; // 'civile' o 'ecclesiale'
+        let ambitoCorrente = 'civile';
 
-        // Funzione per caricare i file di testo in base alla zona e all'ambito
-        function caricaDatiZona(nomeZona, nomeVisualizzato) {
-            zonaCorrente = nomeZona;
-            document.getElementById('selectedAreaTitle').innerText = "Area selezionata: " + nomeVisualizzato;
-            document.getElementById('tabContainer').style.display = 'flex'; // Mostra i bottoni
+        const groupSegnaposti = L.layerGroup().addTo(map);
+
+        const configurazioneZone = {
+            'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#4f46e5', fill: '#6366f1', opacity: 0.15 },
+            'bassanello': { nome: 'Bassanello', colore: '#ff0000', fill: '#e66200', opacity: 0.25 },
+            'santateresa': { nome: 'Santa Teresa', colore: '#ea580c', fill: '#f97316', opacity: 0.3 },
+            'ssangelicustodi': { nome: 'SS. Angeli Custodi', colore: '#d97706', fill: '#f59e0b', opacity: 0.3 },
+            'unitapastoraleguizza': { nome: 'Unità Pastorale alla Guizza', colore: '#0284c7', fill: '#38bdf8', opacity: 0.35 },
+            'paltana': { nome: 'Paltana', colore: '#0d9488', fill: '#14b8a6', opacity: 0.3 },
+            'voltabrusegana': { nome: 'Voltabrusegana', colore: '#16a34a', fill: '#22c55e', opacity: 0.3 },
+            'mandria': { nome: 'Mandria', colore: '#65a30d', fill: '#84cc16', opacity: 0.3 },
+            'crocefisso': { nome: 'Crocefisso', colore: '#ca8a04', fill: '#facc15', opacity: 0.4 },
+            'salboro': { nome: 'Salboro', colore: '#7c3aed', fill: '#8b5cf6', opacity: 0.3 }
+        };
+
+        function caricaDatiZona(idZona) {
+            const infoZona = configurazioneZone[idZona];
+            if (!infoZona) return;
+
+            zonaCorrente = idZona;
+            document.getElementById('selectedAreaTitle').innerText = "Area selezionata: " + infoZona.nome;
+            document.getElementById('tabContainer').style.display = 'flex';
             
-            // Determina quale file caricare in base al tab attivo
-            let prefissoFile = nomeZona; // es. 'bassanello', 'guizza', 'crocefisso'
             let suffissoFile = (ambitoCorrente === 'ecclesiale') ? '_info_ecclesiale.txt' : '_info.txt';
-            let fileDaCaricare = prefissoFile + suffissoFile;
+            let fileDaCaricare = 'info/' + idZona + suffissoFile;
 
             fetch(fileDaCaricare)
                 .then(res => {
@@ -218,15 +284,12 @@
                     document.getElementById('infoContent').innerHTML = htmlContent;
                 })
                 .catch(err => {
-                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento (${ambitoCorrente}) non ancora disponibile per questa zona.</p>`;
+                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento (${ambitoCorrente}) non disponibile per questa zona.</p>`;
                 });
         }
 
-        // Funzione richiamata dai pulsanti Civile / Ecclesiale
         function cambiaAmbito(ambito) {
             ambitoCorrente = ambito;
-            
-            // Aggiorna lo stile visivo dei bottoni
             if (ambito === 'civile') {
                 document.getElementById('btnCivile').classList.add('active');
                 document.getElementById('btnEcclesiale').classList.remove('active');
@@ -234,78 +297,149 @@
                 document.getElementById('btnEcclesiale').classList.add('active');
                 document.getElementById('btnCivile').classList.remove('active');
             }
-
-            // Se c'è già una zona selezionata, ricarica i dati per il nuovo ambito
             if (zonaCorrente) {
-                let nomeVis = (zonaCorrente === 'bassanello') ? 'Bassanello' : (zonaCorrente === 'guizza' ? 'Guizza' : 'Crocefisso');
-                caricaDatiZona(zonaCorrente, nomeVis);
+                caricaDatiZona(zonaCorrente);
             }
         }
 
-        // 2. Caricamento dei layer GeoJSON e associazione del click
-        
-        // Bassanello
-        fetch('bassanello.geojson')
-            .then(res => res.json())
-            .then(data => {
-                layerBassanello = L.geoJSON(data, {
-                    style: { color: '#ff0000', fillColor: '#e66200', fillOpacity: 0.2, weight: 2 },
-                    onEachFeature: (feature, layer) => {
-                        layer.on('click', () => {
-                            caricaDatiZona('bassanello', 'Bassanello');
-                        });
-                    }
-                }).addTo(map);
-            });
+        // Caricamento automatico di tutte le zone GeoJSON
+        Object.keys(configurazioneZone).forEach(idZona => {
+            const conf = configurazioneZone[idZona];
+            fetch(`geojson/${idZona}.geojson`)
+                .then(res => {
+                    if (!res.ok) throw new Error(`File geojson/${idZona}.geojson non trovato`);
+                    return res.json();
+                })
+                .then(data => {
+                    layersAree[idZona] = L.geoJSON(data, {
+                        style: { color: conf.colore, fillColor: conf.fill, fillOpacity: conf.opacity, weight: 2 },
+                        onEachFeature: (feature, layer) => {
+                            layer.on('click', (e) => {
+                                L.DomEvent.stopPropagation(e);
+                                caricaDatiZona(idZona);
+                            });
+                        }
+                    }).addTo(map);
+                })
+                .catch(err => console.log("Info caricamento:", err.message));
+        });
 
-        // Guizza
-        fetch('guizza.geojson')
-            .then(res => res.json())
-            .then(data => {
-                layerGuizza = L.geoJSON(data, {
-                    style: { color: '#0284c7', fillColor: '#38bdf8', fillOpacity: 0.4, weight: 2 },
-                    onEachFeature: (feature, layer) => {
-                        layer.on('click', () => {
-                            caricaDatiZona('guizza', 'Guizza');
-                        });
-                    }
-                }).addTo(map);
-            });
+        // Event listener dinamici per i checkbox delle zone
+        const mapCheckboxIds = {
+            'toggleCollaborazionePastorale': 'collaborazionepastorale',
+            'toggleBassanello': 'bassanello',
+            'toggleSantaTeresa': 'santateresa',
+            'toggleSSAngeliCustodi': 'ssangelicustodi',
+            'toggleUnitaPastoraleGuizza': 'unitapastoraleguizza',
+            'togglePaltana': 'paltana',
+            'toggleVoltabrusegana': 'voltabrusegana',
+            'toggleMandria': 'mandria',
+            'toggleCrocefisso': 'crocefisso',
+            'toggleSalboro': 'salboro'
+        };
 
-        // Crocefisso
-        fetch('crocefisso.geojson')
-            .then(res => res.json())
-            .then(data => {
-                layerCrocefisso = L.geoJSON(data, {
-                    style: { color: '#ca8a04', fillColor: '#facc15', fillOpacity: 0.4, weight: 2 },
-                    onEachFeature: (feature, layer) => {
-                        layer.on('click', () => {
-                            caricaDatiZona('crocefisso', 'Crocefisso');
-                        });
+        Object.keys(mapCheckboxIds).forEach(checkId => {
+            const el = document.getElementById(checkId);
+            if (el) {
+                el.addEventListener('change', (e) => {
+                    const idZona = mapCheckboxIds[checkId];
+                    if (layersAree[idZona]) {
+                        e.target.checked ? map.addLayer(layersAree[idZona]) : map.removeLayer(layersAree[idZona]);
                     }
-                }).addTo(map);
-            });
-
-        // 3. Gestione interattiva dei checkbox (Filtri)
-        document.getElementById('toggleBassanello').addEventListener('change', (e) => {
-            if (layerBassanello) {
-                if (e.target.checked) map.addLayer(layerBassanello);
-                else map.removeLayer(layerBassanello);
+                });
             }
         });
 
-        document.getElementById('toggleGuizza').addEventListener('change', (e) => {
-            if (layerGuizza) {
-                if (e.target.checked) map.addLayer(layerGuizza);
-                else map.removeLayer(layerGuizza);
-            }
+        // Toggle globale Segnaposti
+        document.getElementById('toggleSegnaposti').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupSegnaposti) : map.removeLayer(groupSegnaposti);
         });
 
-        document.getElementById('toggleCrocefisso').addEventListener('change', (e) => {
-            if (layerCrocefisso) {
-                if (e.target.checked) map.addLayer(layerCrocefisso);
-                else map.removeLayer(layerCrocefisso);
-            }
+        // Icone personalizzate per Chiesa e Punti generici
+        const iconaChiesa = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/>
+                    <path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                   </svg>`,
+            iconSize: [34, 42],
+            iconAnchor: [17, 42],
+            popupAnchor: [0, -38]
+        });
+
+        const iconaStandard = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/>
+                    <circle cx="17" cy="16" r="6" fill="white"/>
+                   </svg>`,
+            iconSize: [30, 38],
+            iconAnchor: [15, 38],
+            popupAnchor: [0, -34]
+        });
+
+        const elencoFileTxt = [
+            'segnaposti/Corte Ca Lando.txt',
+            'segnaposti/CAV Padova.txt',
+            'segnaposti/Padova Ospitale.txt',
+            'segnaposti/CST 3 Est.txt',
+            'segnaposti/Consulta Quartiere 4B.txt',
+            'segnaposti/Spazio Prisma Guizza.txt',
+            'segnaposti/Coop Il Sestante.txt',
+            'segnaposti/Centro Mondo Amico.txt',
+            'segnaposti/Il Fienile.txt',
+            'segnaposti/Sportello Nuovi Passi Toblino.txt',
+            'segnaposti/Sportello Nuovi Passi Nazareth.txt',
+            'segnaposti/Casa Federica.txt',
+            'segnaposti/Casa San Massimo.txt',
+            'segnaposti/Casa Divina Volonta.txt',
+            'segnaposti/Salboro Incontra NOI.txt',
+            'segnaposti/APS Holding.txt',
+            'segnaposti/Qui Padova.txt',
+            'segnaposti/Sala Pinelli.txt',
+            'segnaposti/Alisolidali Piovese.txt',
+            'segnaposti/Alisolidali Telesio.txt',
+            'segnaposti/Comunita Malbes.txt',
+            'segnaposti/Progetto Now.txt',
+            'segnaposti/Almanara.txt'
+        ];
+
+        elencoFileTxt.forEach(file => {
+            fetch(file)
+                .then(res => {
+                    if (!res.ok) throw new Error("File " + file + " non trovato");
+                    return res.text();
+                })
+                .then(testo => {
+                    const righe = testo.split('\n');
+                    let dati = {};
+
+                    righe.forEach(riga => {
+                        if (riga.includes(':')) {
+                            const parti = riga.split(':');
+                            const chiave = parti[0].trim().toLowerCase();
+                            const valore = parti.slice(1).join(':').trim();
+                            dati[chiave] = valore;
+                        }
+                    });
+
+                    if (dati.latitudine && dati.longitudine) {
+                        const lat = parseFloat(dati.latitudine);
+                        const lon = parseFloat(dati.longitudine);
+                        const nome = dati.nome || 'Segnaposto';
+                        const desc = dati.descrizione || '';
+                        const tipo = (dati.tipo || '').toLowerCase();
+
+                        const iconaScelta = (tipo === 'chiesa') ? iconaChiesa : iconaStandard;
+                        const popupHtml = `<b>${nome}</b><br><br>${desc}`;
+
+                        L.marker([lat, lon], { icon: iconaScelta })
+                            .addTo(groupSegnaposti)
+                            .bindPopup(popupHtml)
+                            .bindTooltip(nome);
+                    }
+                })
+                .catch(err => console.log("Nota:", err.message));
         });
     </script>
 </body>

@@ -1,0 +1,4 @@
+Nome: Corte Ca' Lando (AIL)
+Latitudine: 45.4042
+Longitudine: 11.8845
+Descrizione: Via Aristilde Gabelli 108, Padova. Casa di accoglienza gestita da AIL Padova, destinata ai pazienti in cura presso il reparto di Oncoematologia Pediatrica.

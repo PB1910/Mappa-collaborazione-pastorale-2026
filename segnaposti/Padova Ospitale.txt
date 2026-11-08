@@ -1,0 +1,4 @@
+Nome: Padova Ospitale
+Latitudine: 45.40392
+Longitudine: 11.887309
+Descrizione: Via Nicolò Giustiniani 2, Padova. Servizio dell'Azienda Ospedale-Università di Padova. Tel: 049 8213256.

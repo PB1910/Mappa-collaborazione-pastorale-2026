@@ -1,0 +1,4 @@
+Nome: Sportello Nuovi Passi (Sede Nazareth)
+Latitudine: 45.4000
+Longitudine: 11.8944
+Descrizione: Via Nazareth 38, Padova. Sede distaccata OIC Onlus presso la struttura Civitas Vitae Nazareth.

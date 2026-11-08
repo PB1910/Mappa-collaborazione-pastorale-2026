@@ -1,0 +1,44 @@
+<h3>Territorio - Ambito Civile</h3>
+
+<h4>Demografia Territorio</h4>
+<ul>
+    <li><strong>Numero di residenti:</strong> 4745</li>
+    <li><strong>Età Media:</strong> 46.98 anni</li>
+    <li><strong>Percentuale di stranieri:</strong> 0.1952</li>
+    <li><strong>Presenza di studenti fuori sede:</strong> media</li>
+</ul>
+
+<h4>Urbanistica</h4>
+<ul>
+    <li><strong>Edilizia Prevalente:</strong> quartieri densamente popolati</li>
+    <li><strong>Presenza di stabilimenti industriali:</strong> nulla</li>
+    <li><strong>Presenza di esercizi commerciali:</strong> media</li>
+</ul>
+
+<h4>Servizi</h4>
+<p><strong>Formazione e cura:</strong></p>
+<ul>
+    <li><strong>Nidi + scuole infanzia:</strong> nan</li>
+    <li><strong>Scuole dell'obbligo:</strong> 1 (Engim)</li>
+    <li><strong>RSA:</strong> nan</li>
+</ul>
+
+<p><strong>Opere sociali significative:</strong></p>
+<ul>
+    <li>Comunità Malbes - Accoglienza donne rifugiate - Abracalam (Ass. Teatro)</li>
+</ul>
+
+<p><strong>Poli sportivi rilevanti:</strong></p>
+<ul>
+    <li>nan</li>
+</ul>
+
+<p><strong>Situazioni Problematiche:</strong></p>
+<ul>
+    <li>marginalità sociale giovanile </li>
+</ul>
+
+<p><strong>Bisogni Emergenti:</strong></p>
+<ul>
+    <li>emergenza casa - anziani soli - rete di supporto per stranieri</li>
+</ul>

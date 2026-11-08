@@ -1,0 +1,4 @@
+Nome: Sala Pinelli (Spazio Allegro)
+Latitudine: 45.379761
+Longitudine: 11.883778
+Descrizione: Via Vincenzo Pinelli 2, Padova. Spazio civico di proprietà comunale per assemblee, laboratori e progetti di quartiere.
