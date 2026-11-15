@@ -1,0 +1,49 @@
+[
+   {
+    "nome": "Scuola Primaria “Alfredo Oriani”",
+    "tipo": "scuola",
+    "latitudine": 45.3738448,
+    "longitudine": 11.8704339,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola Primaria (Statale - IX IC Ricci Curbastro)</li>",
+      "    <li><strong>Indirizzo:</strong> via delle Scuole 1, 35125 Padova (Guizza)</li>",
+      "    <li><strong>Orario:</strong> 08:00 – 16:00 (lunedì - venerdì)</li>",
+      "    <li><strong>Telefono segreteria:</strong> 049-8207290</li>",
+      "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Secondaria di I grado “Marsilio da Padova”",
+    "tipo": "scuola",
+    "latitudine": 45.3807047,
+    "longitudine": 11.8728121,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola Secondaria di I grado - Media (Statale - IX IC Ricci Curbastro)</li>",
+      "    <li><strong>Indirizzo:</strong> via dell’Orna 21, 35124 Padova (Guizza)</li>",
+      "    <li><strong>Telefono:</strong> 049-8207290</li>",
+      "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Primaria “G. Ricci Curbastro”",
+    "tipo": "scuola",
+    "latitudine": 45.3797861,
+    "longitudine": 11.8680192,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola Primaria (Statale - IX IC Ricci Curbastro)</li>",
+      "    <li><strong>Nota:</strong> Attualmente non utilizzata </li>",
+      "    <li><strong>Indirizzo:</strong> via A. Tassoni 17, 35125 Padova (Guizza)</li>",
+      "    <li><strong>Telefono:</strong> 049-684729</li>",
+      "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  }
+]

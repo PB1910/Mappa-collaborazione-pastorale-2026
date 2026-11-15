@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mappa Interattiva - Bassanello e Guizza</title>
+    <title>Mappa Interattiva - Collaborazione Pastorale Padova</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
+        /* ==========================================
+           1. STILI GENERALI E RESET
+           ========================================== */
         html, body {
             height: 100%;
             margin: 0;
@@ -14,7 +17,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Barra laterale sinistra (Filtri) */
+        /* ==========================================
+           2. PANNELLO SINISTRA (Filtri)
+           ========================================== */
         .control-panel {
             position: absolute;
             top: 0;
@@ -25,37 +30,16 @@
             padding: 20px;
             box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
-            z-index: 1000;
+            z-index: 1001;
             display: flex;
             flex-direction: column;
             gap: 10px;
             border-right: 1px solid #e0e0e0;
             overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Pannello laterale destro (Informazioni dettagliate) */
-        .info-panel {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 340px;
-            height: 100%;
-            background: #f8fafc;
-            padding: 20px;
-            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            border-left: 1px solid #e0e0e0;
-            overflow-y: auto;
-        }
-
-        .panel-header h3 { margin: 0 0 5px 0; font-size: 18px; color: #1e293b; }
-        .panel-header p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
-        
-        .control-panel h4, .info-panel h4 {
+        .control-panel h4 {
             margin: 10px 0 5px 0;
             font-size: 13px;
             color: #334155;
@@ -80,16 +64,107 @@
         .control-panel label:hover { background: #f1f5f9; }
         .control-panel input { cursor: pointer; width: 16px; height: 16px; accent-color: #0284c7; }
 
-        /* Contenitore Mappa */
+        /* Stile per le miniature dei pin nella legenda */
+        .legend-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .legend-icon svg {
+            width: 16px;
+            height: 20px;
+            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
+        }
+
+
+        /* ==========================================
+           3. PANNELLO DESTRA (Informazioni Dettagliate)
+           ========================================== */
+        .info-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 340px;
+            height: 100%;
+            background: #f8fafc;
+            padding: 20px;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 1px solid #e0e0e0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-panel.closed {
+            transform: translateX(100%);
+        }
+
+        .panel-header h3 { margin: 0 0 5px 0; font-size: 18px; color: #1e293b; }
+        .panel-header p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
+
+        .panel-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .close-btn:hover { background: #cbd5e1; color: #0284c7; }
+
+
+        /* ==========================================
+           4. CONTENITORE MAPPA E PULSANTI MOBILI
+           ========================================== */
         #map {
             position: absolute;
             top: 0;
             left: 280px;
             right: 340px;
             bottom: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        #map.expanded-right { right: 0; }
+
+        .mobile-menu-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1002;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e293b;
         }
 
-        /* Pulsanti di scelta ambito */
+
+        /* ==========================================
+           5. COMPONENTI INTERNI (Tabs e Popup)
+           ========================================== */
         .tab-container {
             display: flex;
             gap: 8px;
@@ -112,105 +187,78 @@
             background: #0284c7;
             color: #ffffff;
         }
-        .tab-btn:hover:not(.active) {
-            background: #cbd5e1;
-        }
+        .tab-btn:hover:not(.active) { background: #cbd5e1; }
 
-        /* Stile pannello informazioni */
-        #infoContent {
-            font-size: 13px;
-            color: #334155;
-            line-height: 1.5;
-        }
+        #infoContent { font-size: 13px; color: #334155; line-height: 1.5; }
         #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
 
-        /* Personalizzazione Popup Mappa */
-        .leaflet-popup-content-wrapper {
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            padding: 5px;
-        }
-        .leaflet-popup-content {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #334155;
-        }
+        .leaflet-popup-content-wrapper { border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); padding: 5px; }
+        .leaflet-popup-content { font-size: 13px; line-height: 1.5; color: #334155; }
 
-        /* Stili per le icone personalizzate in SVG */
         .custom-pin-icon {
             display: flex;
             justify-content: center;
             align-items: center;
             filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
         }
+
+
+        /* ==========================================
+           6. RESPONSIVE DESIGN (Smartphone / Tablet)
+           ========================================== */
+        @media (max-width: 900px) {
+            .control-panel { transform: translateX(-100%); }
+            .control-panel.mobile-open { transform: translateX(0); }
+            .info-panel { width: 100%; }
+            .mobile-menu-btn { display: block; }
+            #map { left: 0 !important; right: 0 !important; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Pulsante mobile per aprire i filtri a sinistra -->
+    <button class="mobile-menu-btn" onclick="toggleControlPanel()">☰ Filtri Aree</button>
+
     <!-- BARRA SINISTRA: Filtri -->
-    <div class="control-panel">
-        <div class="panel-header">
-            <h3>Collaborazione Pastorale</h3>
-            <p>Gestisci la visualizzazione di aree e punti di interesse.</p>
+    <div class="control-panel" id="controlPanel">
+        <div class="panel-top-row" style="margin-bottom: 5px;">
+            <div class="panel-header" style="padding:0;">
+                <h3>Collaborazione Pastorale</h3>
+                <p>Gestisci aree e punti di interesse.</p>
+            </div>
+            <button class="close-btn" onclick="toggleControlPanel()" style="display: none; @media(max-width:900px){display:flex;}">✕</button>
         </div>
 
         <h4>Filtri Aree</h4>
-        <label>
-            <input type="checkbox" id="toggleCollaborazionePastorale" checked> 
-            <span style="color: #6366f1; font-weight: bold;">■</span> Collaborazione Pastorale
-        </label>
-        <label>
-            <input type="checkbox" id="toggleBassanello" checked> 
-            <span style="color: #e66200; font-weight: bold;">■</span> Bassanello
-        </label>
-        <label>
-            <input type="checkbox" id="toggleSantaTeresa" checked> 
-            <span style="color: #ea580c; font-weight: bold;">■</span> Santa Teresa
-        </label> 
-        <label>   
-            <input type="checkbox" id="toggleSSAngeliCustodi" checked> 
-            <span style="color: #d97706; font-weight: bold;">■</span> SS. Angeli Custodi
-        </label>
-        <label>
-            <input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> 
-            <span style="color: #0284c7; font-weight: bold;">■</span> Unità Pastorale Guizza
-        </label>
-        <label>
-            <input type="checkbox" id="togglePaltana" checked> 
-            <span style="color: #0d9488; font-weight: bold;">■</span> Paltana
-        </label>
-        <label>
-            <input type="checkbox" id="toggleVoltabrusegana" checked> 
-            <span style="color: #16a34a; font-weight: bold;">■</span> Voltabrusegana
-        </label>
-        <label>
-            <input type="checkbox" id="toggleMandria" checked> 
-            <span style="color: #65a30d; font-weight: bold;">■</span> Mandria
-        </label>
-        <label>
-            <input type="checkbox" id="toggleCrocefisso" checked> 
-            <span style="color: #ca8a04; font-weight: bold;">■</span> Crocefisso
-        </label>
-        <label>
-            <input type="checkbox" id="toggleSalboro" checked> 
-            <span style="color: #7c3aed; font-weight: bold;">■</span> Salboro
-        </label>
+        <label><input type="checkbox" id="toggleCollaborazionePastorale" checked> <span style="color: #6366f1; font-weight: bold;">■</span> Collaborazione Pastorale</label>
+        <label><input type="checkbox" id="toggleBassanello" checked> <span style="color: #e66200; font-weight: bold;">■</span> Bassanello</label>
+        <label><input type="checkbox" id="toggleSantaTeresa" checked> <span style="color: #ea580c; font-weight: bold;">■</span> Santa Teresa</label> 
+        <label><input type="checkbox" id="toggleSSAngeliCustodi" checked> <span style="color: #d97706; font-weight: bold;">■</span> SS. Angeli Custodi</label>
+        <label><input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> <span style="color: #0284c7; font-weight: bold;">■</span> Unità Pastorale Guizza</label>
+        <label><input type="checkbox" id="togglePaltana" checked> <span style="color: #0d9488; font-weight: bold;">■</span> Paltana</label>
+        <label><input type="checkbox" id="toggleVoltabrusegana" checked> <span style="color: #16a34a; font-weight: bold;">■</span> Voltabrusegana</label>
+        <label><input type="checkbox" id="toggleMandria" checked> <span style="color: #65a30d; font-weight: bold;">■</span> Mandria</label>
+        <label><input type="checkbox" id="toggleCrocefisso" checked> <span style="color: #ca8a04; font-weight: bold;">■</span> Crocefisso</label>
+        <label><input type="checkbox" id="toggleSalboro" checked> <span style="color: #7c3aed; font-weight: bold;">■</span> Salboro</label>
 
         <h4>Filtri Contenuti</h4>
-        <label>
-            <input type="checkbox" id="toggleSegnaposti" checked> 
-            <span>📍 Mostra Segnaposti / Luoghi</span>
-        </label>
+        <label><input type="checkbox" id="toggleChiese" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Chiese</span></label>
+        <label><input type="checkbox" id="toggleScuoleInfanzia" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg></span> <span>Scuole dell'Infanzia</span></label>
+        <label><input type="checkbox" id="toggleScuoleObbligo" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Scuole dell'Obbligo</span></label>
+        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg></span> <span>Altri Segnaposti Sociali</span></label>
     </div>
 
     <!-- MAPPA INTERATTIVA -->
     <div id="map"></div>
 
     <!-- BARRA DESTRA: Dettagli -->
-    <div class="info-panel">
+    <div class="info-panel" id="infoPanel">
         <div class="panel-header">
-            <h3>Dettagli Area</h3>
-            <p id="selectedAreaTitle">Clicca su un'area nella mappa.</p>
+            <div class="panel-top-row">
+                <h3 id="panelTitle">Dettagli Area</h3>
+                <button class="close-btn" id="closeBtn" onclick="toggleInfoPanel()" title="Chiudi pannello">✕</button>
+            </div>
         </div>
 
         <div class="tab-container" id="tabContainer" style="display: none;">
@@ -226,6 +274,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // ==========================================
+        // MODULO 1: INIZIALIZZAZIONE MAPPA E LIMITI
+        // ==========================================
         const confiniZona = [
             [45.3300, 11.7900], 
             [45.4200, 11.9300]  
@@ -245,11 +296,33 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
+        let pannelloAperto = true;
+
+        function toggleInfoPanel() {
+            const panel = document.getElementById('infoPanel');
+            const mapDiv = document.getElementById('map');
+            
+            pannelloAperto = !pannelloAperto;
+            panel.classList.toggle('closed', !pannelloAperto);
+            
+            if (window.innerWidth > 900) {
+                mapDiv.classList.toggle('expanded-right', !pannelloAperto);
+            }
+            setTimeout(() => { map.invalidateSize(); }, 300);
+        }
+
+        function toggleControlPanel() {
+            document.getElementById('controlPanel').classList.toggle('mobile-open');
+        }
+
+
+        // ==========================================
+        // MODULO 2: GESTIONE AREE, GEOJSON E INFO JSON
+        // ==========================================
         const layersAree = {};
         let zonaCorrente = null;
         let ambitoCorrente = 'civile';
-
-        const groupSegnaposti = L.layerGroup().addTo(map);
+        let datiZonaCorrente = { civile: "", ecclesiale: "" };
 
         const configurazioneZone = {
             'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#4f46e5', fill: '#6366f1', opacity: 0.15 },
@@ -269,47 +342,53 @@
             if (!infoZona) return;
 
             zonaCorrente = idZona;
-            document.getElementById('selectedAreaTitle').innerText = "Area selezionata: " + infoZona.nome;
+            
+            document.getElementById('panelTitle').innerText = infoZona.nome;
             document.getElementById('tabContainer').style.display = 'flex';
             
-            let suffissoFile = (ambitoCorrente === 'ecclesiale') ? '_info_ecclesiale.txt' : '_info.txt';
-            let fileDaCaricare = 'info/' + idZona + suffissoFile;
+            if (!pannelloAperto) toggleInfoPanel();
 
-            fetch(fileDaCaricare)
+            let fileJson = 'info/' + idZona + '.json';
+
+            fetch(fileJson)
                 .then(res => {
-                    if (!res.ok) throw new Error("File non trovato");
-                    return res.text();
+                    if (!res.ok) throw new Error("File JSON non trovato");
+                    return res.json();
                 })
-                .then(htmlContent => {
-                    document.getElementById('infoContent').innerHTML = htmlContent;
+                .then(jsonData => {
+                    let htmlCivile = Array.isArray(jsonData.civile) ? jsonData.civile.join('\n') : (jsonData.civile || '<p>Informazioni civili non disponibili.</p>');
+                    let htmlEcclesiale = Array.isArray(jsonData.ecclesiale) ? jsonData.ecclesiale.join('\n') : (jsonData.ecclesiale || '<p>Informazioni ecclesiali non disponibili.</p>');
+
+                    datiZonaCorrente = {
+                        civile: htmlCivile,
+                        ecclesiale: htmlEcclesiale
+                    };
+
+                    mostraContenutoAmbito();
                 })
                 .catch(err => {
-                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento (${ambitoCorrente}) non disponibile per questa zona.</p>`;
+                    datiZonaCorrente = { civile: "", ecclesiale: "" };
+                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento JSON non disponibile per questa zona.</p>`;
                 });
+        }
+
+        function mostraContenutoAmbito() {
+            const contenutoHtml = datiZonaCorrente[ambitoCorrente] || '<p style="color: #64748b; font-style: italic;">Contenuto non disponibile.</p>';
+            document.getElementById('infoContent').innerHTML = contenutoHtml;
         }
 
         function cambiaAmbito(ambito) {
             ambitoCorrente = ambito;
-            if (ambito === 'civile') {
-                document.getElementById('btnCivile').classList.add('active');
-                document.getElementById('btnEcclesiale').classList.remove('active');
-            } else {
-                document.getElementById('btnEcclesiale').classList.add('active');
-                document.getElementById('btnCivile').classList.remove('active');
-            }
-            if (zonaCorrente) {
-                caricaDatiZona(zonaCorrente);
-            }
+            document.getElementById('btnCivile').classList.toggle('active', ambito === 'civile');
+            document.getElementById('btnEcclesiale').classList.toggle('active', ambito === 'ecclesiale');
+            mostraContenutoAmbito();
         }
 
-        // Caricamento automatico di tutte le zone GeoJSON
+        // Caricamento dei file GeoJSON delle aree
         Object.keys(configurazioneZone).forEach(idZona => {
             const conf = configurazioneZone[idZona];
             fetch(`geojson/${idZona}.geojson`)
-                .then(res => {
-                    if (!res.ok) throw new Error(`File geojson/${idZona}.geojson non trovato`);
-                    return res.json();
-                })
+                .then(res => res.json())
                 .then(data => {
                     layersAree[idZona] = L.geoJSON(data, {
                         style: { color: conf.colore, fillColor: conf.fill, fillOpacity: conf.opacity, weight: 2 },
@@ -317,6 +396,7 @@
                             layer.on('click', (e) => {
                                 L.DomEvent.stopPropagation(e);
                                 caricaDatiZona(idZona);
+                                document.getElementById('controlPanel').classList.remove('mobile-open');
                             });
                         }
                     }).addTo(map);
@@ -324,7 +404,7 @@
                 .catch(err => console.log("Info caricamento:", err.message));
         });
 
-        // Event listener dinamici per i checkbox delle zone
+        // Configurazione Checkbox Filtri Aree
         const mapCheckboxIds = {
             'toggleCollaborazionePastorale': 'collaborazionepastorale',
             'toggleBassanello': 'bassanello',
@@ -350,97 +430,101 @@
             }
         });
 
-        // Toggle globale Segnaposti
-        document.getElementById('toggleSegnaposti').addEventListener('change', (e) => {
-            e.target.checked ? map.addLayer(groupSegnaposti) : map.removeLayer(groupSegnaposti);
+
+        // ==========================================
+        // MODULO 3: GESTIONE SEGNAPOSTI E CATEGORIE
+        // ==========================================
+        const groupChiese = L.layerGroup().addTo(map);
+        const groupScuoleInfanzia = L.layerGroup().addTo(map);
+        const groupScuoleObbligo = L.layerGroup().addTo(map);
+        const groupStandard = L.layerGroup().addTo(map);
+
+        document.getElementById('toggleChiese').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupChiese) : map.removeLayer(groupChiese);
         });
 
-        // Icone personalizzate per Chiesa e Punti generici
+        document.getElementById('toggleScuoleInfanzia').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleInfanzia) : map.removeLayer(groupScuoleInfanzia);
+        });
+
+        document.getElementById('toggleScuoleObbligo').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleObbligo) : map.removeLayer(groupScuoleObbligo);
+        });
+
+        document.getElementById('toggleStandard').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupStandard) : map.removeLayer(groupStandard);
+        });
+
+        // Definizione Icone SVG per Categoria
         const iconaChiesa = L.divIcon({
             className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/>
-                    <path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                   </svg>`,
-            iconSize: [34, 42],
-            iconAnchor: [17, 42],
-            popupAnchor: [0, -38]
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        // Icona Ciuccio per Scuole dell'Infanzia
+        const iconaScuolaInfanzia = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        const iconaScuolaObbligo = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
         });
 
         const iconaStandard = L.divIcon({
             className: 'custom-pin-icon',
-            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/>
-                    <circle cx="17" cy="16" r="6" fill="white"/>
-                   </svg>`,
-            iconSize: [30, 38],
-            iconAnchor: [15, 38],
-            popupAnchor: [0, -34]
+            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg>`,
+            iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
         });
 
-        const elencoFileTxt = [
-            'segnaposti/Corte Ca Lando.txt',
-            'segnaposti/CAV Padova.txt',
-            'segnaposti/Padova Ospitale.txt',
-            'segnaposti/CST 3 Est.txt',
-            'segnaposti/Consulta Quartiere 4B.txt',
-            'segnaposti/Spazio Prisma Guizza.txt',
-            'segnaposti/Coop Il Sestante.txt',
-            'segnaposti/Centro Mondo Amico.txt',
-            'segnaposti/Il Fienile.txt',
-            'segnaposti/Sportello Nuovi Passi Toblino.txt',
-            'segnaposti/Sportello Nuovi Passi Nazareth.txt',
-            'segnaposti/Casa Federica.txt',
-            'segnaposti/Casa San Massimo.txt',
-            'segnaposti/Casa Divina Volonta.txt',
-            'segnaposti/Salboro Incontra NOI.txt',
-            'segnaposti/APS Holding.txt',
-            'segnaposti/Qui Padova.txt',
-            'segnaposti/Sala Pinelli.txt',
-            'segnaposti/Alisolidali Piovese.txt',
-            'segnaposti/Alisolidali Telesio.txt',
-            'segnaposti/Comunita Malbes.txt',
-            'segnaposti/Progetto Now.txt',
-            'segnaposti/Almanara.txt'
-        ];
+        // 1. Caricamento Chiese
+        fetch('segnaposti/chiese.json')
+            .then(res => { if (!res.ok) throw new Error("chiese.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Chiesa';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #7c3aed; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome);
+                });
+            })
+            .catch(err => console.log("Errore chiese:", err.message));
 
-        elencoFileTxt.forEach(file => {
-            fetch(file)
-                .then(res => {
-                    if (!res.ok) throw new Error("File " + file + " non trovato");
-                    return res.text();
-                })
-                .then(testo => {
-                    const righe = testo.split('\n');
-                    let dati = {};
+        // 2. Caricamento Scuole dell'Infanzia
+        fetch('segnaposti/scuole_infanzia.json')
+            .then(res => { if (!res.ok) throw new Error("scuole_infanzia.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Infanzia';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #0d9488; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome);
+                });
+            })
+            .catch(err => console.log("Errore scuole infanzia:", err.message));
 
-                    righe.forEach(riga => {
-                        if (riga.includes(':')) {
-                            const parti = riga.split(':');
-                            const chiave = parti[0].trim().toLowerCase();
-                            const valore = parti.slice(1).join(':').trim();
-                            dati[chiave] = valore;
-                        }
-                    });
-
-                    if (dati.latitudine && dati.longitudine) {
-                        const lat = parseFloat(dati.latitudine);
-                        const lon = parseFloat(dati.longitudine);
-                        const nome = dati.nome || 'Segnaposto';
-                        const desc = dati.descrizione || '';
-                        const tipo = (dati.tipo || '').toLowerCase();
-
-                        const iconaScelta = (tipo === 'chiesa') ? iconaChiesa : iconaStandard;
-                        const popupHtml = `<b>${nome}</b><br><br>${desc}`;
-
-                        L.marker([lat, lon], { icon: iconaScelta })
-                            .addTo(groupSegnaposti)
-                            .bindPopup(popupHtml)
-                            .bindTooltip(nome);
-                    }
-                })
-                .catch(err => console.log("Nota:", err.message));
-        });
+        // 3. Caricamento Scuole dell'Obbligo
+        fetch('segnaposti/scuole_obbligo.json')
+            .then(res => { if (!res.ok) throw new Error("scuole_obbligo.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Obbligo';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #ea580c; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome);
+                });
+            })
+            .catch(err => console.log("Errore scuole obbligo:", err.message));
     </script>
 </body>
 </html>

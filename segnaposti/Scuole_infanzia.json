@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Scuola dell’Infanzia “Ss. Angeli Custodi”",
+    "tipo": "scuola",
+    "latitudine": 45.3731872,
+    "longitudine": 11.8697617,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'Infanzia Paritaria</li>",
+      "    <li><strong>Indirizzo:</strong> via delle Scuole 3, 35125 Padova (Guizza)</li>",
+      "    <li><strong>Telefono:</strong> 049-8803995</li>",
+      "    <li><strong>Email:</strong> parpadova@libero.it</li>",
+      "</ul>"
+    ]
+  },
+    {
+    "nome": "Scuola dell’Infanzia Statale “L’Aquilone”",
+    "tipo": "scuola",
+    "latitudine": 45.382709,
+    "longitudine": 11.8722277,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'Infanzia Statale (IX IC Ricci Curbastro)</li>",
+      "    <li><strong>Indirizzo:</strong> via dell’Orna 5d, 35124 Padova (Guizza)</li>",
+      "    <li><strong>Telefono:</strong> 049-8207290</li>",
+      "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  }
+]
