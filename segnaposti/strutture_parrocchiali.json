@@ -1,0 +1,167 @@
+[
+  {
+    "nome": "Chiesa Santa Madre di Dio",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.369696,
+    "longitudine": 11.829308,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa</li>",
+      "    <li><strong>Indirizzo:</strong> Via Toblino, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa/cappella (Via Chioggia)",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.373003,
+    "longitudine": 11.812305,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa (senza nome in OSM, da verificare)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Chioggia, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa/cappella (Via del Commissario)",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378227,
+    "longitudine": 11.886098,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa (senza nome in OSM, da verificare)</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa vecchia di Salboro",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359277,
+    "longitudine": 11.89099,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa/cappella (Via Antonio Fogazzaro)",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.369826,
+    "longitudine": 11.868282,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa (senza nome in OSM, da verificare)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Antonio Fogazzaro, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa/cappella (Via Bosco Papadopoli)",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359853,
+    "longitudine": 11.870633,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa (senza nome in OSM, da verificare)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Bosco Papadopoli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Chiesa Santa Maria Assunta",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "chiesa",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359749,
+    "longitudine": 11.891185,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Chiesa</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pomponio Leto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Oratorio di San Michele",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "oratorio",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.352691,
+    "longitudine": 11.899771,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Oratorio</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pozzoveggiani 4-6, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"http://www.padovanet.it/dettaglio.jsp?id=9211#.UAQPtNlDh8E\" target=\"_blank\">http://www.padovanet.it/dettaglio.jsp?id=9211#.UAQPtNlDh8E</a></li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Sala Polivalente \"Itaca\"",
+    "tipo": "struttura_parrocchiale",
+    "sottotipo": "sala_polivalente",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.383512,
+    "longitudine": 11.866221,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Sala polivalente / centro civico</li>",
+      "    <li><strong>Indirizzo:</strong> Via Santa Maria Assunta 35a, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.padovanet.it/luogo/sala-polivalente-di-santa-maria-assunta-quartiere-4-sud-est\" target=\"_blank\">https://www.padovanet.it/luogo/sala-polivalente-di-santa-maria-assunta-quartiere-4-sud-est</a></li>",
+      "    <li><strong>Orario:</strong> &quot;on request&quot;</li>",
+      "    <li><strong>Fonte:</strong> OpenStreetMap</li>",
+      "</ul>"
+    ]
+  }
+]

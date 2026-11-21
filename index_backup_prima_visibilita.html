@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mappa Interattiva - Collaborazione Pastorale Padova</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* ==========================================
+           1. STILI GENERALI E RESET
+           ========================================== */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ==========================================
+           2. PANNELLO SINISTRA (Filtri)
+           ========================================== */
+        .control-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 1px solid #e0e0e0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .control-panel h4 {
+            margin: 10px 0 5px 0;
+            font-size: 13px;
+            color: #334155;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .control-panel label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            color: #334155;
+            font-weight: 500;
+        }
+        .control-panel label:hover { background: #f1f5f9; }
+        .control-panel input { cursor: pointer; width: 16px; height: 16px; accent-color: #0284c7; }
+
+        /* Stile per le miniature dei pin nella legenda */
+        .legend-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .legend-icon svg {
+            width: 16px;
+            height: 20px;
+            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
+        }
+
+
+        /* ==========================================
+           3. PANNELLO DESTRA (Informazioni Dettagliate)
+           ========================================== */
+        .info-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 340px;
+            height: 100%;
+            background: #f8fafc;
+            padding: 20px;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 1px solid #e0e0e0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-panel.closed {
+            transform: translateX(100%);
+        }
+
+        .panel-header h3 { margin: 0 0 5px 0; font-size: 18px; color: #1e293b; }
+        .panel-header p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
+
+        .panel-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .close-btn:hover { background: #cbd5e1; color: #0284c7; }
+        .close-btn.mobile-only { display: none; }
+
+
+        /* ==========================================
+           4. CONTENITORE MAPPA E PULSANTI MOBILI
+           ========================================== */
+        #map {
+            position: absolute;
+            top: 0;
+            left: 280px;
+            right: 340px;
+            bottom: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        #map.expanded-right { right: 0; }
+
+        .mobile-menu-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1002;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e293b;
+        }
+
+
+        /* ==========================================
+           5. COMPONENTI INTERNI (Tabs e Popup)
+           ========================================== */
+        .tab-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 8px 6px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #475569;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background: #0284c7;
+            color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) { background: #cbd5e1; }
+
+        #infoContent { font-size: 13px; color: #334155; line-height: 1.5; }
+        #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
+
+        .leaflet-popup-content-wrapper { border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); padding: 5px; }
+        .leaflet-popup-content { font-size: 13px; line-height: 1.5; color: #334155; }
+
+        .custom-pin-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+        }
+
+
+        /* ==========================================
+           6. RESPONSIVE DESIGN (Smartphone / Tablet)
+           ========================================== */
+        @media (max-width: 900px) {
+            .control-panel { transform: translateX(-100%); }
+            .control-panel.mobile-open { transform: translateX(0); }
+            .info-panel { width: 100%; }
+            .mobile-menu-btn { display: block; }
+            .close-btn.mobile-only { display: flex; }
+            #map { left: 0 !important; right: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pulsante mobile per aprire i filtri a sinistra -->
+    <button class="mobile-menu-btn" onclick="toggleControlPanel()">☰ Filtri Aree</button>
+
+    <!-- BARRA SINISTRA: Filtri -->
+    <div class="control-panel" id="controlPanel">
+        <div class="panel-top-row" style="margin-bottom: 5px;">
+            <div class="panel-header" style="padding:0;">
+                <h3>Collaborazione Pastorale</h3>
+                <p>Gestisci aree e punti di interesse.</p>
+            </div>
+            <button class="close-btn mobile-only" onclick="toggleControlPanel()" title="Chiudi filtri">✕</button>
+        </div>
+
+        <h4>Filtri Aree</h4>
+        <label><input type="checkbox" id="toggleCollaborazionePastorale" checked> <span style="color: #6366f1; font-weight: bold;">■</span> Collaborazione Pastorale</label>
+        <label><input type="checkbox" id="toggleBassanello" checked> <span style="color: #e66200; font-weight: bold;">■</span> Bassanello in Padova</label>
+        <label><input type="checkbox" id="toggleSantaTeresa" checked> <span style="color: #ea580c; font-weight: bold;">■</span> S.Teresa di Gesù Bambino in Padova</label> 
+        <label><input type="checkbox" id="toggleSSAngeliCustodi" checked> <span style="color: #d97706; font-weight: bold;">■</span> Guizza in Padova</label>
+        <label><input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> <span style="color: #0284c7; font-weight: bold;">■</span> Unità Pastorale Guizza</label>
+        <label><input type="checkbox" id="togglePaltana" checked> <span style="color: #0d9488; font-weight: bold;">■</span> S.Giovanni Bosco in Padova</label>
+        <label><input type="checkbox" id="toggleVoltabrusegana" checked> <span style="color: #16a34a; font-weight: bold;">■</span> Voltabrusegana in Padova</label>
+        <label><input type="checkbox" id="toggleMandria" checked> <span style="color: #65a30d; font-weight: bold;">■</span> Mandria in Padova</label>
+        <label><input type="checkbox" id="toggleCrocefisso" checked> <span style="color: #ca8a04; font-weight: bold;">■</span> SS. Crocefisso in Padova</label>
+        <label><input type="checkbox" id="toggleSalboro" checked> <span style="color: #7c3aed; font-weight: bold;">■</span> Salboro in Padova</label>
+
+        <h4>Filtri Contenuti</h4>
+        <label><input type="checkbox" id="toggleChiese" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Chiese</span></label>
+        <label><input type="checkbox" id="toggleScuoleInfanzia" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg></span> <span>Scuole dell'Infanzia</span></label>
+        <label><input type="checkbox" id="toggleScuoleObbligo" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Scuole dell'Obbligo</span></label>
+        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg></span> <span>Altri Segnaposti Sociali</span></label>
+        <label><input type="checkbox" id="toggleScuoleAltre" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#db2777"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg></span> <span>Scuole (nidi, superiori, università…)</span></label>
+        <label><input type="checkbox" id="toggleStrutture" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#4f46e5"/><path d="M17 7V27M11 13H23" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></span> <span>Chiese, oratori, centri</span></label>
+        <label><input type="checkbox" id="toggleParchi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></span> <span>Parchi e aree verdi</span></label>
+        <label><input type="checkbox" id="toggleSport" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><circle cx="17" cy="17" r="8" stroke="white" stroke-width="2"/><path d="M9 17H25M17 9V25" stroke="white" stroke-width="2"/></svg></span> <span>Centri e campi sportivi</span></label>
+
+        <h4>Segnaposti per zona</h4>
+        <label><input type="checkbox" id="zonaTutte" checked> <strong>Tutte le zone</strong></label>
+        <label><input type="checkbox" class="zona-chk" value="bassanello" checked> Bassanello in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="santateresa" checked> S.Teresa di Gesù Bambino in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="ssangelicustodi" checked> Guizza in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="paltana" checked> S.Giovanni Bosco in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="voltabrusegana" checked> Voltabrusegana in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="mandria" checked> Mandria in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="crocefisso" checked> SS. Crocefisso in Padova</label>
+        <label><input type="checkbox" class="zona-chk" value="salboro" checked> Salboro in Padova</label>
+    </div>
+
+    <!-- MAPPA INTERATTIVA -->
+    <div id="map"></div>
+
+    <!-- BARRA DESTRA: Dettagli -->
+    <div class="info-panel" id="infoPanel">
+        <div class="panel-header">
+            <div class="panel-top-row">
+                <h3 id="panelTitle">Dettagli Area</h3>
+                <button class="close-btn" id="closeBtn" onclick="toggleInfoPanel()" title="Chiudi pannello">✕</button>
+            </div>
+        </div>
+
+        <div class="tab-container" id="tabContainer" style="display: none;">
+            <button class="tab-btn active" id="btnCivile" onclick="cambiaAmbito('civile')">Ambito Civile</button>
+            <button class="tab-btn" id="btnEcclesiale" onclick="cambiaAmbito('ecclesiale')">Ambito Ecclesiale</button>
+            <button class="tab-btn" id="btnGrafici" onclick="cambiaAmbito('grafici')">Grafici</button>
+        </div>
+
+        <h4>Informazioni</h4>
+        <div id="infoContent">
+            <p style="color: #94a3b8; font-style: italic;">Nessuna area selezionata.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="grafici.js"></script>
+    <script>
+        // ==========================================
+        // MODULO 1: INIZIALIZZAZIONE MAPPA E LIMITI
+        // ==========================================
+        const confiniZona = [
+            [45.3300, 11.7900], 
+            [45.4200, 11.9300]  
+        ];
+
+        const map = L.map('map', {
+            center: [45.3750, 11.8600],
+            zoom: 13,                    
+            minZoom: 12,            
+            maxZoom: 18,            
+            maxBounds: confiniZona,  
+            maxBoundsViscosity: 1.0  
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let pannelloAperto = true;
+
+        function toggleInfoPanel() {
+            const panel = document.getElementById('infoPanel');
+            const mapDiv = document.getElementById('map');
+            
+            pannelloAperto = !pannelloAperto;
+            panel.classList.toggle('closed', !pannelloAperto);
+            
+            if (window.innerWidth > 900) {
+                mapDiv.classList.toggle('expanded-right', !pannelloAperto);
+            }
+            setTimeout(() => { map.invalidateSize(); }, 300);
+        }
+
+        function toggleControlPanel() {
+            document.getElementById('controlPanel').classList.toggle('mobile-open');
+        }
+
+
+        // ==========================================
+        // MODULO 2: GESTIONE AREE, GEOJSON E INFO JSON
+        // ==========================================
+        const layersAree = {};
+        let zonaCorrente = null;
+        let ambitoCorrente = 'civile';
+        let datiZonaCorrente = { civile: "", ecclesiale: "", grafici: null };
+
+        const configurazioneZone = {
+            'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#4f46e5', fill: '#6366f1', opacity: 0.15 },
+            'bassanello': { nome: 'Bassanello in Padova', colore: '#ff0000', fill: '#e66200', opacity: 0.25 },
+            'santateresa': { nome: 'S.Teresa di Gesù Bambino in Padova', colore: '#ea580c', fill: '#f97316', opacity: 0.3 },
+            'ssangelicustodi': { file: 'ss_angeli_custodi', nome: 'Guizza in Padova', colore: '#d97706', fill: '#f59e0b', opacity: 0.3 },
+            'unitapastoraleguizza': { nome: 'Unità Pastorale alla Guizza', colore: '#0284c7', fill: '#38bdf8', opacity: 0.35 },
+            'paltana': { nome: 'S.Giovanni Bosco in Padova', colore: '#0d9488', fill: '#14b8a6', opacity: 0.3 },
+            'voltabrusegana': { nome: 'Voltabrusegana in Padova', colore: '#16a34a', fill: '#22c55e', opacity: 0.3 },
+            'mandria': { nome: 'Mandria in Padova', colore: '#65a30d', fill: '#84cc16', opacity: 0.3 },
+            'crocefisso': { file: 'ss_crocifisso', nome: 'SS. Crocefisso in Padova', colore: '#ca8a04', fill: '#facc15', opacity: 0.4 },
+            'salboro': { nome: 'Salboro in Padova', colore: '#7c3aed', fill: '#8b5cf6', opacity: 0.3 }
+        };
+
+        function caricaDatiZona(idZona) {
+            const infoZona = configurazioneZone[idZona];
+            if (!infoZona) return;
+
+            zonaCorrente = idZona;
+            
+            document.getElementById('panelTitle').innerText = infoZona.nome;
+            document.getElementById('tabContainer').style.display = 'flex';
+            
+            if (!pannelloAperto) toggleInfoPanel();
+
+            let fileJson = 'info/' + (infoZona.file || idZona) + '.json';
+
+            fetch(fileJson)
+                .then(res => {
+                    if (!res.ok) throw new Error("File JSON non trovato");
+                    return res.json();
+                })
+                .then(jsonData => {
+                    let htmlCivile = Array.isArray(jsonData.civile) ? jsonData.civile.join('\n') : (jsonData.civile || '<p>Informazioni civili non disponibili.</p>');
+                    let htmlEcclesiale = Array.isArray(jsonData.ecclesiale) ? jsonData.ecclesiale.join('\n') : (jsonData.ecclesiale || '<p>Informazioni ecclesiali non disponibili.</p>');
+
+                    datiZonaCorrente = {
+                        civile: htmlCivile,
+                        ecclesiale: htmlEcclesiale,
+                        grafici: jsonData.grafici || null
+                    };
+
+                    mostraContenutoAmbito();
+                })
+                .catch(err => {
+                    datiZonaCorrente = { civile: "", ecclesiale: "" };
+                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento JSON non disponibile per questa zona.</p>`;
+                });
+        }
+
+        function mostraContenutoAmbito() {
+            const box = document.getElementById('infoContent');
+            if (window.distruggiGrafici) window.distruggiGrafici();
+            if (ambitoCorrente === 'grafici') {
+                window.renderGrafici(datiZonaCorrente.grafici, box);
+                return;
+            }
+            const contenutoHtml = datiZonaCorrente[ambitoCorrente] || '<p style="color: #64748b; font-style: italic;">Contenuto non disponibile.</p>';
+            box.innerHTML = contenutoHtml;
+        }
+
+        function cambiaAmbito(ambito) {
+            ambitoCorrente = ambito;
+            document.getElementById('btnCivile').classList.toggle('active', ambito === 'civile');
+            document.getElementById('btnEcclesiale').classList.toggle('active', ambito === 'ecclesiale');
+            document.getElementById('btnGrafici').classList.toggle('active', ambito === 'grafici');
+            mostraContenutoAmbito();
+        }
+
+        // Caricamento dei file GeoJSON delle aree
+        Object.keys(configurazioneZone).forEach(idZona => {
+            const conf = configurazioneZone[idZona];
+            fetch(`geojson/${idZona}.geojson`)
+                .then(res => res.json())
+                .then(data => {
+                    layersAree[idZona] = L.geoJSON(data, {
+                        style: { color: conf.colore, fillColor: conf.fill, fillOpacity: conf.opacity, weight: 2 },
+                        onEachFeature: (feature, layer) => {
+                            layer.on('click', (e) => {
+                                L.DomEvent.stopPropagation(e);
+                                caricaDatiZona(idZona);
+                                document.getElementById('controlPanel').classList.remove('mobile-open');
+                            });
+                        }
+                    }).addTo(map);
+                })
+                .catch(err => console.log("Info caricamento:", err.message));
+        });
+
+        // Configurazione Checkbox Filtri Aree
+        const mapCheckboxIds = {
+            'toggleCollaborazionePastorale': 'collaborazionepastorale',
+            'toggleBassanello': 'bassanello',
+            'toggleSantaTeresa': 'santateresa',
+            'toggleSSAngeliCustodi': 'ssangelicustodi',
+            'toggleUnitaPastoraleGuizza': 'unitapastoraleguizza',
+            'togglePaltana': 'paltana',
+            'toggleVoltabrusegana': 'voltabrusegana',
+            'toggleMandria': 'mandria',
+            'toggleCrocefisso': 'crocefisso',
+            'toggleSalboro': 'salboro'
+        };
+
+        Object.keys(mapCheckboxIds).forEach(checkId => {
+            const el = document.getElementById(checkId);
+            if (el) {
+                el.addEventListener('change', (e) => {
+                    const idZona = mapCheckboxIds[checkId];
+                    if (layersAree[idZona]) {
+                        e.target.checked ? map.addLayer(layersAree[idZona]) : map.removeLayer(layersAree[idZona]);
+                    }
+                });
+            }
+        });
+
+
+        // ==========================================
+        // MODULO 3: GESTIONE SEGNAPOSTI E CATEGORIE
+        // ==========================================
+        const groupChiese = L.layerGroup().addTo(map);
+        const groupScuoleInfanzia = L.layerGroup().addTo(map);
+        const groupScuoleObbligo = L.layerGroup().addTo(map);
+        const groupStandard = L.layerGroup().addTo(map);
+
+        document.getElementById('toggleChiese').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupChiese) : map.removeLayer(groupChiese);
+        });
+
+        document.getElementById('toggleScuoleInfanzia').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleInfanzia) : map.removeLayer(groupScuoleInfanzia);
+        });
+
+        document.getElementById('toggleScuoleObbligo').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleObbligo) : map.removeLayer(groupScuoleObbligo);
+        });
+
+        document.getElementById('toggleStandard').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupStandard) : map.removeLayer(groupStandard);
+        });
+
+        // Definizione Icone SVG per Categoria
+        const iconaChiesa = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        // Icona Ciuccio per Scuole dell'Infanzia
+        const iconaScuolaInfanzia = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        const iconaScuolaObbligo = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        const iconaStandard = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg>`,
+            iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
+        });
+
+        // 1. Caricamento Chiese
+        fetch('segnaposti/chiese.json')
+            .then(res => { if (!res.ok) throw new Error("chiese.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Chiesa';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #7c3aed; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupChiese, item);
+                });
+            })
+            .catch(err => console.log("Errore chiese:", err.message));
+
+        // 2. Caricamento Scuole dell'Infanzia
+        fetch('segnaposti/Scuole_infanzia.json')
+            .then(res => { if (!res.ok) throw new Error("Scuole_infanzia.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Infanzia';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #0d9488; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupScuoleInfanzia, item);
+                });
+            })
+            .catch(err => console.log("Errore scuole infanzia:", err.message));
+
+        // 3. Caricamento Scuole dell'Obbligo
+        fetch('segnaposti/scuole_obbligo.json')
+            .then(res => { if (!res.ok) throw new Error("scuole_obbligo.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Obbligo';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #ea580c; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupScuoleObbligo, item);
+                });
+            })
+            .catch(err => console.log("Errore scuole obbligo:", err.message));
+
+        // ==========================================
+        // MODULO 4: NUOVE CATEGORIE + FILTRO PER ZONA
+        // ==========================================
+        // Registro di tutti i segnaposti: {marker, gruppo, zona}
+        const registroMarker = [];
+        const zoneAttive = new Set(['bassanello','santateresa','ssangelicustodi','paltana','voltabrusegana','mandria','crocefisso','salboro']);
+        const ZONE_PARROCCHIE = Array.from(zoneAttive);
+
+        function registraMarker(marker, gruppo, item) {
+            registroMarker.push({ marker, gruppo, zona: (item && item.zona) || null, lat: marker.getLatLng().lat, lon: marker.getLatLng().lng });
+            aggiornaFiltroZone();
+            return marker;
+        }
+
+        // Point-in-polygon (ray casting) su un anello di L.LatLng
+        function puntoInAnello(lat, lon, anello) {
+            let dentro = false;
+            for (let i = 0, j = anello.length - 1; i < anello.length; j = i++) {
+                const yi = anello[i].lat, xi = anello[i].lng, yj = anello[j].lat, xj = anello[j].lng;
+                if ((yi > lat) !== (yj > lat) && lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) dentro = !dentro;
+            }
+            return dentro;
+        }
+        function puntoInPoligono(lat, lon, latlngs) {
+            // latlngs: [anelloEsterno, buco1, ...] oppure array di poligoni (multipoligono)
+            if (!latlngs.length) return false;
+            if (latlngs[0] && latlngs[0].lat !== undefined) return puntoInAnello(lat, lon, latlngs);
+            if (latlngs[0][0] && latlngs[0][0].lat !== undefined) {
+                if (!puntoInAnello(lat, lon, latlngs[0])) return false;
+                for (let k = 1; k < latlngs.length; k++) if (puntoInAnello(lat, lon, latlngs[k])) return false;
+                return true;
+            }
+            return latlngs.some(p => puntoInPoligono(lat, lon, p));
+        }
+        // Zona di un segnaposto senza campo "zona" (file vecchi): calcolata dai poligoni caricati
+        function zonaDelPunto(lat, lon) {
+            for (const id of ZONE_PARROCCHIE) {
+                const lay = layersAree[id];
+                if (!lay) continue;
+                let trovato = false;
+                lay.eachLayer(l => { if (!trovato && l.getLatLngs && puntoInPoligono(lat, lon, l.getLatLngs())) trovato = true; });
+                if (trovato) return id;
+            }
+            return null;
+        }
+
+        function aggiornaFiltroZone() {
+            const tutte = zoneAttive.size === ZONE_PARROCCHIE.length;
+            registroMarker.forEach(r => {
+                if (!r.zona) r.zona = zonaDelPunto(r.lat, r.lon); // resta null se i poligoni non sono ancora pronti / fuori zona
+                const visibile = tutte || (r.zona && zoneAttive.has(r.zona));
+                if (visibile) { if (!r.gruppo.hasLayer(r.marker)) r.gruppo.addLayer(r.marker); }
+                else { if (r.gruppo.hasLayer(r.marker)) r.gruppo.removeLayer(r.marker); }
+            });
+        }
+
+        const chkTutte = document.getElementById('zonaTutte');
+        const chkZone = Array.from(document.querySelectorAll('.zona-chk'));
+        chkTutte.addEventListener('change', () => {
+            chkZone.forEach(c => { c.checked = chkTutte.checked; });
+            zoneAttive.clear();
+            if (chkTutte.checked) ZONE_PARROCCHIE.forEach(z => zoneAttive.add(z));
+            aggiornaFiltroZone();
+        });
+        chkZone.forEach(c => c.addEventListener('change', () => {
+            c.checked ? zoneAttive.add(c.value) : zoneAttive.delete(c.value);
+            chkTutte.checked = zoneAttive.size === ZONE_PARROCCHIE.length;
+            aggiornaFiltroZone();
+        }));
+        // Quando i poligoni delle zone finiscono di caricare, assegna la zona ai segnaposti dei file vecchi
+        setTimeout(aggiornaFiltroZone, 1500);
+        setTimeout(aggiornaFiltroZone, 4000);
+
+        const nuoveCategorie = [
+            { file: 'scuole_altre.json',       toggle: 'toggleScuoleAltre', colore: '#db2777', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#db2777"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
+            { file: 'strutture_parrocchiali.json', toggle: 'toggleStrutture', colore: '#4f46e5', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#4f46e5"/><path d="M17 7V27M11 13H23" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
+            { file: 'parchi.json',             toggle: 'toggleParchi',      colore: '#16a34a', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
+            { file: 'impianti_sportivi.json',  toggle: 'toggleSport',       colore: '#dc2626', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><circle cx="17" cy="17" r="8" stroke="white" stroke-width="2"/><path d="M9 17H25M17 9V25" stroke="white" stroke-width="2"/></svg>` }
+        ];
+        nuoveCategorie.forEach(cat => {
+            const gruppo = L.layerGroup().addTo(map);
+            document.getElementById(cat.toggle).addEventListener('change', e => {
+                e.target.checked ? map.addLayer(gruppo) : map.removeLayer(gruppo);
+            });
+            const icona = L.divIcon({
+                className: 'custom-pin-icon',
+                html: cat.svg,
+                iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
+            });
+            fetch('segnaposti/' + cat.file)
+                .then(res => { if (!res.ok) throw new Error(cat.file + ' non trovato'); return res.json(); })
+                .then(punti => {
+                    punti.forEach(item => {
+                        const lat = parseFloat(item.latitudine), lon = parseFloat(item.longitudine);
+                        if (isNaN(lat) || isNaN(lon)) return;
+                        const nome = item.nome || 'Segnaposto';
+                        const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                        const popup = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: ${cat.colore}; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                        registraMarker(L.marker([lat, lon], { icon: icona }).addTo(gruppo).bindPopup(popup, { maxWidth: 320 }).bindTooltip(nome), gruppo, item);
+                    });
+                })
+                .catch(err => console.log('Errore ' + cat.file + ':', err.message));
+        });
+    </script>
+</body>
+</html>

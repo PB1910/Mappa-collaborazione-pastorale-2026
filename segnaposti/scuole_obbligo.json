@@ -1,7 +1,9 @@
 [
-   {
+  {
     "nome": "Scuola Primaria “Alfredo Oriani”",
-    "tipo": "scuola",
+    "tipo": "scuola_obbligo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
     "latitudine": 45.3738448,
     "longitudine": 11.8704339,
     "descrizione": [
@@ -17,7 +19,9 @@
   },
   {
     "nome": "Scuola Secondaria di I grado “Marsilio da Padova”",
-    "tipo": "scuola",
+    "tipo": "scuola_obbligo",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
     "latitudine": 45.3807047,
     "longitudine": 11.8728121,
     "descrizione": [
@@ -32,7 +36,9 @@
   },
   {
     "nome": "Scuola Primaria “G. Ricci Curbastro”",
-    "tipo": "scuola",
+    "tipo": "scuola_obbligo",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
     "latitudine": 45.3797861,
     "longitudine": 11.8680192,
     "descrizione": [
@@ -43,6 +49,153 @@
       "    <li><strong>Indirizzo:</strong> via A. Tassoni 17, 35125 Padova (Guizza)</li>",
       "    <li><strong>Telefono:</strong> 049-684729</li>",
       "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Secondaria di I grado Ruzante",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "media",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.38178,
+    "longitudine": 11.848197,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola secondaria di I grado</li>",
+      "    <li><strong>Indirizzo:</strong> Via Adria 6, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8827344</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.ics12padova.edu.it/index.php/le-nostre-scuole/scuola-sec-i-grado\" target=\"_blank\">https://www.ics12padova.edu.it/index.php/le-nostre-scuole/scuola-sec-i-grado</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola primaria Prati",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.389552,
+    "longitudine": 11.836075,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via Decorati al Valore Civile 154, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "    <li><strong>Telefono:</strong> +39 049 680316</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.ics12padova.edu.it/index.php/le-nostre-scuole/scuola-primaria-prati\" target=\"_blank\">https://www.ics12padova.edu.it/index.php/le-nostre-scuole/scuola-primaria-prati</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola primaria Martiri della Vittoria",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.370377,
+    "longitudine": 11.840224,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via Armistizio 298, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Gestione:</strong> pubblica</li>",
+      "    <li><strong>Telefono:</strong> +39 049 715110</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.9icpadova.edu.it/luogo/scuola-primaria-della-vittoria/\" target=\"_blank\">https://www.9icpadova.edu.it/luogo/scuola-primaria-della-vittoria/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Primaria Quattro Martiri",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378119,
+    "longitudine": 11.887144,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario 30, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "    <li><strong>Telefono:</strong> +39 049 684729</li>",
+      "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://9icpadova.it/index.php/le-scuole/206-scuola-primaria-4martiri\" target=\"_blank\">https://9icpadova.it/index.php/le-scuole/206-scuola-primaria-4martiri</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Elementare Elena Cornaro",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.380947,
+    "longitudine": 11.873675,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via dell'Orna 15, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola primaria Don Bosco",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.380905,
+    "longitudine": 11.851466,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via Bressanone 23, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8827529</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Missionaria del Sacro Cuore",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "da_verificare",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.373762,
+    "longitudine": 11.886822,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola (tipo da verificare)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo 98, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Primaria \"Luigi Luzzatti\"",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "primaria",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359315,
+    "longitudine": 11.892155,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola primaria</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
       "</ul>"
     ]
   }

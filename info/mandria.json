@@ -43,6 +43,16 @@
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
     "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Possibili Risorse:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
     "</ul>"
   ],
   "ecclesiale": [
@@ -64,8 +74,45 @@
     "<h4>Presenze e Vita Comunitaria</h4>",
     "<ul>",
     "    <li><strong>Comunità Religiose:</strong> n.d.</li>",
-    "    <li><strong>Battesimi:</strong> 18</li>",
+    "    <li><strong>Battesimi (2025):</strong> 18</li>",
+    "    <li><strong>Prime comunioni / Confermazioni (2025):</strong> 24</li>",
+    "    <li><strong>Matrimoni (2025):</strong> 2</li>",
+    "    <li><strong>Funerali (2025):</strong> 27</li>",
     "    <li><strong>Presenza di altre Chiese / Religioni:</strong> Avventisti del 7° giorno</li>",
+    "</ul>",
+    "",
+    "<h4>Collaborazioni e Iniziative</h4>",
+    "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>transito vie di pellegrinaggio;</li>",
     "</ul>"
-  ]
+  ],
+  "grafici": {
+    "zone": [
+      {
+        "id": "mandria",
+        "nome": "Mandria in Padova",
+        "residenti": 4600.0,
+        "eta": 50.0,
+        "stranieri": 7.5,
+        "battesimi": 18.0,
+        "comunioni": 24.0,
+        "matrimoni": 2.0,
+        "funerali": 27.0,
+        "studenti": "media",
+        "industriali": "nulla",
+        "commerciali": "media"
+      }
+    ],
+    "cp": {
+      "residenti": 30982,
+      "eta": 47.7,
+      "stranieri": 12.2
+    }
+  }
 }

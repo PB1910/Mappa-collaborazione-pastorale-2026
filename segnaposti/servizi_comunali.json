@@ -1,0 +1,109 @@
+[
+  {
+    "nome": "Biblioteca di quartiere Bassanello",
+    "tipo": "servizio_comunale",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.380387,
+    "longitudine": 11.872065,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Biblioteca civica di quartiere (Comune di Padova)</li>",
+      "    <li><strong>Indirizzo:</strong> via dell’Orna 21/a, Padova</li>",
+      "    <li><strong>Quartiere:</strong> 4 Sud-Est</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Ufficio anagrafe decentrato – Bassanello",
+    "tipo": "servizio_comunale",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.382187,
+    "longitudine": 11.878427,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Ufficio anagrafe di quartiere (Comune di Padova)</li>",
+      "    <li><strong>Indirizzo:</strong> via Guasti 12/c, Padova</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Spazio Prisma Guizza",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3732101,
+    "longitudine": 11.8699467,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Servizio comunale di facilitazione e coordinamento territoriale (Progetto Prisma)</li>",
+      "    <li><strong>Sede:</strong> ex Casa del Custode, piano terra</li>",
+      "    <li><strong>Indirizzo:</strong> via delle Scuole 2, Padova</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Sala polivalente “Itaca” (Santa Maria Assunta)",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.383512,
+    "longitudine": 11.866221,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Sala di quartiere / centro civico (Quartiere 4 Sud-Est)</li>",
+      "    <li><strong>Indirizzo:</strong> via Santa Maria Assunta 35a, Padova</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.padovanet.it/luogo/sala-polivalente-di-santa-maria-assunta-quartiere-4-sud-est\" target=\"_blank\">scheda su PadovaNet</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Cimitero di Mandria",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371672,
+    "longitudine": 11.836232,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Cimitero comunale (servizi cimiteriali del Comune di Padova)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Cimitero di Voltabrusegana",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.388172,
+    "longitudine": 11.835822,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Cimitero comunale (servizi cimiteriali del Comune di Padova)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Cimitero di Salboro",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.356049,
+    "longitudine": 11.889552,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Cimitero comunale (servizi cimiteriali del Comune di Padova)</li>",
+      "    <li><strong>Località:</strong> Pozzoveggiani</li>",
+      "</ul>"
+    ]
+  }
+]

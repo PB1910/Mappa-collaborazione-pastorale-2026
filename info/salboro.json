@@ -44,6 +44,16 @@
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
     "    <li>cura giovani famiglie con bambini</li>",
+    "</ul>",
+    "",
+    "<p><strong>Possibili Risorse:</strong></p>",
+    "<ul>",
+    "    <li>centro parrocchiale, prato e giochi come spazio quotidiano d'incontro</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
     "</ul>"
   ],
   "ecclesiale": [
@@ -65,8 +75,45 @@
     "<h4>Presenze e Vita Comunitaria</h4>",
     "<ul>",
     "    <li><strong>Comunità Religiose:</strong> n.d.</li>",
-    "    <li><strong>Battesimi:</strong> 16</li>",
+    "    <li><strong>Battesimi (2025):</strong> 16</li>",
+    "    <li><strong>Prime comunioni / Confermazioni (2025):</strong> n.d.</li>",
+    "    <li><strong>Matrimoni (2025):</strong> n.d.</li>",
+    "    <li><strong>Funerali (2025):</strong> n.d.</li>",
     "    <li><strong>Presenza di altre Chiese / Religioni:</strong> Ortodossi</li>",
+    "</ul>",
+    "",
+    "<h4>Collaborazioni e Iniziative</h4>",
+    "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>Sagra, Festa dello Sport, Festa del Ringraziamento, 3 Pellegrinaggi annuali</li>",
     "</ul>"
-  ]
+  ],
+  "grafici": {
+    "zone": [
+      {
+        "id": "salboro",
+        "nome": "Salboro in Padova",
+        "residenti": 2867.0,
+        "eta": 47.44,
+        "stranieri": 4.0,
+        "battesimi": 16.0,
+        "comunioni": null,
+        "matrimoni": null,
+        "funerali": null,
+        "studenti": "bassa",
+        "industriali": "nulla",
+        "commerciali": "bassa"
+      }
+    ],
+    "cp": {
+      "residenti": 30982,
+      "eta": 47.7,
+      "stranieri": 12.2
+    }
+  }
 }

@@ -43,6 +43,16 @@
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
     "    <li>emergenza casa, luoghi di lavoro</li>",
+    "</ul>",
+    "",
+    "<p><strong>Possibili Risorse:</strong></p>",
+    "<ul>",
+    "    <li>Parchi pubblici, Qui padova</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>CAmpus CIELS, Studentato femminile</li>",
     "</ul>"
   ],
   "ecclesiale": [
@@ -64,8 +74,45 @@
     "<h4>Presenze e Vita Comunitaria</h4>",
     "<ul>",
     "    <li><strong>Comunità Religiose:</strong> 2</li>",
-    "    <li><strong>Battesimi:</strong> 8</li>",
+    "    <li><strong>Battesimi (2025):</strong> 8</li>",
+    "    <li><strong>Prime comunioni / Confermazioni (2025):</strong> 24</li>",
+    "    <li><strong>Matrimoni (2025):</strong> 0</li>",
+    "    <li><strong>Funerali (2025):</strong> 31</li>",
     "    <li><strong>Presenza di altre Chiese / Religioni:</strong> Ortodossi - Islam</li>",
+    "</ul>",
+    "",
+    "<h4>Collaborazioni e Iniziative</h4>",
+    "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
+    "<ul>",
+    "    <li>Consulta quartiere 4B e iniziative delle cooperative</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>Sagra, unica festa del quartiere</li>",
     "</ul>"
-  ]
+  ],
+  "grafici": {
+    "zone": [
+      {
+        "id": "ss_crocifisso",
+        "nome": "SS. Crocefisso in Padova",
+        "residenti": 4809.0,
+        "eta": 44.7,
+        "stranieri": 8.3,
+        "battesimi": 8.0,
+        "comunioni": 24.0,
+        "matrimoni": 0.0,
+        "funerali": 31.0,
+        "studenti": "media",
+        "industriali": "nulla",
+        "commerciali": "bassa"
+      }
+    ],
+    "cp": {
+      "residenti": 30982,
+      "eta": 47.7,
+      "stranieri": 12.2
+    }
+  }
 }

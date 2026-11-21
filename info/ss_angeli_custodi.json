@@ -43,6 +43,16 @@
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
     "    <li>emergenza casa - anziani soli - rete di supporto per stranieri</li>",
+    "</ul>",
+    "",
+    "<p><strong>Possibili Risorse:</strong></p>",
+    "<ul>",
+    "    <li>Parchi pubblici</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
     "</ul>"
   ],
   "ecclesiale": [
@@ -64,8 +74,45 @@
     "<h4>Presenze e Vita Comunitaria</h4>",
     "<ul>",
     "    <li><strong>Comunità Religiose:</strong> 1</li>",
-    "    <li><strong>Battesimi:</strong> 12</li>",
+    "    <li><strong>Battesimi (2025):</strong> 12</li>",
+    "    <li><strong>Prime comunioni / Confermazioni (2025):</strong> 19</li>",
+    "    <li><strong>Matrimoni (2025):</strong> n.d.</li>",
+    "    <li><strong>Funerali (2025):</strong> 45</li>",
     "    <li><strong>Presenza di altre Chiese / Religioni:</strong> Ortodossi - Islam - Induismo - Buddismo</li>",
+    "</ul>",
+    "",
+    "<h4>Collaborazioni e Iniziative</h4>",
+    "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
+    "<ul>",
+    "    <li>Consulta quartiere 4B / Tavolo Adolescenti con realtà territori</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>Centri di ascolto nelle case - Festa patronale - Festa comunitaria unitaria attenta a favorire l'inclusione - Grest e Campiscuola - Oratorio dell'Angelo</li>",
     "</ul>"
-  ]
+  ],
+  "grafici": {
+    "zone": [
+      {
+        "id": "ss_angeli_custodi",
+        "nome": "Guizza in Padova",
+        "residenti": 6005.0,
+        "eta": 47.45,
+        "stranieri": 17.9,
+        "battesimi": 12.0,
+        "comunioni": 19.0,
+        "matrimoni": null,
+        "funerali": 45.0,
+        "studenti": "media",
+        "industriali": "nulla",
+        "commerciali": "alta"
+      }
+    ],
+    "cp": {
+      "residenti": 30982,
+      "eta": 47.7,
+      "stranieri": 12.2
+    }
+  }
 }

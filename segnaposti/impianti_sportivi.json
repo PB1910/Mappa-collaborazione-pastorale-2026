@@ -1,0 +1,760 @@
+[
+  {
+    "nome": "Campo sportivo (calcio) - Via Adria",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.381894,
+    "longitudine": 11.849123,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Adria, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (polivalente) - Via Rovigo",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.382581,
+    "longitudine": 11.849411,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (polivalente)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Rovigo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (tennis) - Via Polveriera",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.388336,
+    "longitudine": 11.830479,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Polveriera, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo - Via Ferdinando Gasparo Turrini",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.37937,
+    "longitudine": 11.842742,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Ferdinando Gasparo Turrini, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo - Vicolo Comelico",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.389831,
+    "longitudine": 11.835692,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Vicolo Comelico, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (rugby) - Via Este",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.368956,
+    "longitudine": 11.840528,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (rugby)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Este, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (basket) - Via Armistizio",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.369652,
+    "longitudine": 11.840029,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (basket)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Armistizio, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (bocce) - Via Gemona",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371048,
+    "longitudine": 11.828746,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (bocce)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Gemona, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo - Via Mestre",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371269,
+    "longitudine": 11.834837,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Mestre, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Passeggiata Mandria",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.369265,
+    "longitudine": 11.841503,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Passeggiata Mandria, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via Rovigo",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.382291,
+    "longitudine": 11.850123,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Rovigo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (tennis) - Via Pietro Pomponazzi",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.381428,
+    "longitudine": 11.888933,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Pomponazzi, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (ping pong) - Via Pietro Pomponazzi",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.382599,
+    "longitudine": 11.888327,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (ping pong)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Pomponazzi, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (polivalente) - Via Fulvio Testi",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.379713,
+    "longitudine": 11.867139,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (polivalente)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Fulvio Testi, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo - Via Annie Vivanti",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.382985,
+    "longitudine": 11.873155,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Annie Vivanti, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via dei Salici",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.380789,
+    "longitudine": 11.875692,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via dei Salici, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (polivalente) - Via Francesco Algarotti",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.378294,
+    "longitudine": 11.873591,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (polivalente)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Francesco Algarotti, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (basket) - Via Pietro Bembo",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.377756,
+    "longitudine": 11.886561,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (basket)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via Martino Sandelli",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.37653,
+    "longitudine": 11.889104,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Martino Sandelli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via del Commissario",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378641,
+    "longitudine": 11.894186,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (pallavolo) - Via Alteniero Azzoni",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378702,
+    "longitudine": 11.893737,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (pallavolo)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Alteniero Azzoni, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via del Commissario",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378114,
+    "longitudine": 11.886798,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via Guido Gozzano",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.374058,
+    "longitudine": 11.869165,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guido Gozzano, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (tennis) - Via Pomponio Leto",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359969,
+    "longitudine": 11.891257,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pomponio Leto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (rugby) - Via Veronica Franco",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.372347,
+    "longitudine": 11.863327,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (rugby)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Veronica Franco, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (tennis) - Via Guido Comini",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.371798,
+    "longitudine": 11.866307,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guido Comini, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via Fratelli Rosselli",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.371599,
+    "longitudine": 11.867806,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Fratelli Rosselli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (polivalente) - Via Matteo Ronto",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.357579,
+    "longitudine": 11.892876,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (polivalente)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Matteo Ronto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Equestre Villa Vanna",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.357539,
+    "longitudine": 11.895385,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (equitazione)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (calcio) - Via Antonio Fogazzaro",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.370575,
+    "longitudine": 11.867422,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (calcio)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Antonio Fogazzaro, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo - Via Bosco Papadopoli",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359255,
+    "longitudine": 11.873037,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Bosco Papadopoli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Campo sportivo (tennis) - Via Guizza",
+    "tipo": "sport",
+    "sottotipo": "campo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.369842,
+    "longitudine": 11.876366,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Campo sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guizza, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Canottieri Padova",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.389601,
+    "longitudine": 11.831835,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Polveriera, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "    <li><strong>Telefono:</strong> +39 049680857</li>",
+      "    <li><strong>Email:</strong> info@canottieripadova.it</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.canottieripadova.it/\" target=\"_blank\">https://www.canottieripadova.it/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Impianto sportivo - Via Gemona",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.370844,
+    "longitudine": 11.827868,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Gemona, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Palazzetto di Ca' Rasi",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371033,
+    "longitudine": 11.839841,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Ca' Rasi, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8670659</li>",
+      "    <li><strong>Email:</strong> padova.usacli@acli.it</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.padovanet.it/informazione/palazzetto-di-ca-rasi\" target=\"_blank\">https://www.padovanet.it/informazione/palazzetto-di-ca-rasi</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Padovanuoto",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.385162,
+    "longitudine": 11.857787,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo (nuoto)</li>",
+      "    <li><strong>Indirizzo:</strong> Ponte pedonale Benito Daga, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Regione Militare Nord",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.382157,
+    "longitudine": 11.889351,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Pomponazzi, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Imp. Sport. Circolo Uff. Aeronautico",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.385172,
+    "longitudine": 11.855933,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo (tennis)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Decorati al Valore Civile, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Villa Ferri",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359318,
+    "longitudine": 11.872136,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Bosco Papadopoli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Impianto sportivo - Via Guido Gozzano",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.373969,
+    "longitudine": 11.865029,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guido Gozzano, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "U.S.D. Salboro Calcio",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362146,
+    "longitudine": 11.890614,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Monsignor Placido Ponchia, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8011288</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.usdsalboro.it/calcio/\" target=\"_blank\">https://www.usdsalboro.it/calcio/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Palazzetto polivalente Salboro \"Luigi De Michiel\"",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362516,
+    "longitudine": 11.891715,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8010256</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.padovanet.it/luogo/palazzetto-polivalente-salboro\" target=\"_blank\">https://www.padovanet.it/luogo/palazzetto-polivalente-salboro</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Sportivo Petrarca - Guizza",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.371657,
+    "longitudine": 11.864315,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro sportivo</li>",
+      "    <li><strong>Indirizzo:</strong> Via Veronica Franco, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Pista (atletica) - Via Venzone",
+    "tipo": "sport",
+    "sottotipo": "pista",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371359,
+    "longitudine": 11.826307,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Pista (atletica)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Venzone, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  }
+]

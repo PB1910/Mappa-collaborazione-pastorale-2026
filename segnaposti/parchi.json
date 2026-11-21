@@ -1,0 +1,597 @@
+[
+  {
+    "nome": "Parco degli Usignoli",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.383518,
+    "longitudine": 11.849062,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Voltabrusegana)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.388267,
+    "longitudine": 11.833259,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco della Mela Rossa",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371815,
+    "longitudine": 11.825301,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Bosco della Pace",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.372318,
+    "longitudine": 11.842229,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Mandria)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.368015,
+    "longitudine": 11.835389,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Santa Teresa)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.383373,
+    "longitudine": 11.871623,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Crocifisso)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.382394,
+    "longitudine": 11.883545,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Guizza)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.375478,
+    "longitudine": 11.873341,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Giardino delle Acacie",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.379874,
+    "longitudine": 11.867064,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco della scuola primaria Elena Cornaro",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.381598,
+    "longitudine": 11.873714,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Guizza-Sant'Agostino",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.374915,
+    "longitudine": 11.865001,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Crocifisso)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.383479,
+    "longitudine": 11.880029,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco dei Salici - Sud",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.38115,
+    "longitudine": 11.874634,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (S. Giovanni Bosco)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.381268,
+    "longitudine": 11.850946,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "    <li><strong>Accesso:</strong> privato</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Giardino del Poeta",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.374837,
+    "longitudine": 11.874731,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco dei Salici Nord",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.382086,
+    "longitudine": 11.875541,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Salboro)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.363617,
+    "longitudine": 11.889287,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area verde (Salboro)",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.361318,
+    "longitudine": 11.891957,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco Villa Vanna",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.358341,
+    "longitudine": 11.895269,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Accesso:</strong> privato</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Parco Chiesetta Pozzoveggiani",
+    "tipo": "parco",
+    "sottotipo": "parco",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.352779,
+    "longitudine": 11.899562,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Parco / area verde</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Polesine)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.383306,
+    "longitudine": 11.84904,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Polesine, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Decorati al Valore Civile)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.389848,
+    "longitudine": 11.835132,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Decorati al Valore Civile, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Felice Casorati)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.373259,
+    "longitudine": 11.82846,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Felice Casorati, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Sirmione)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.372166,
+    "longitudine": 11.832092,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Sirmione, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Gian Giorgio Trissino)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.378029,
+    "longitudine": 11.873235,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Gian Giorgio Trissino, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Marostica)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.383045,
+    "longitudine": 11.858109,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Marostica, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Vincenzo Pinelli)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.377108,
+    "longitudine": 11.892152,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Vincenzo Pinelli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Giovanni Pascoli)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.375434,
+    "longitudine": 11.873317,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Giovanni Pascoli, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Matteo Ronto)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.357603,
+    "longitudine": 11.892482,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Matteo Ronto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Giovanni Someda)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.363458,
+    "longitudine": 11.889106,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Giovanni Someda, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Pomponio Leto)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359755,
+    "longitudine": 11.891909,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pomponio Leto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Accesso:</strong> privato</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area giochi (Via Grazia Deledda)",
+    "tipo": "parco",
+    "sottotipo": "area_giochi",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.366789,
+    "longitudine": 11.871187,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area giochi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Grazia Deledda, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area cani (Via Rovigo)",
+    "tipo": "parco",
+    "sottotipo": "area_cani",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.382374,
+    "longitudine": 11.848024,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area cani</li>",
+      "    <li><strong>Indirizzo:</strong> Via Rovigo, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area cani (Via dei Salici)",
+    "tipo": "parco",
+    "sottotipo": "area_cani",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.38191,
+    "longitudine": 11.87602,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area cani</li>",
+      "    <li><strong>Indirizzo:</strong> Via dei Salici, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Teresa</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area cani (Via Guasti)",
+    "tipo": "parco",
+    "sottotipo": "area_cani",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.374987,
+    "longitudine": 11.875327,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area cani</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guasti, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza (Ss. Angeli Custodi)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Area cani (Via Giovanni Someda)",
+    "tipo": "parco",
+    "sottotipo": "area_cani",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.363937,
+    "longitudine": 11.889289,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Area cani</li>",
+      "    <li><strong>Indirizzo:</strong> Via Giovanni Someda, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "</ul>"
+    ]
+  }
+]

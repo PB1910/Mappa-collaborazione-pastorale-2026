@@ -1,0 +1,21 @@
+[
+  {
+    "nome": "Campus CIELS – Scuola Superiore per Mediatori Linguistici",
+    "tipo": "universita",
+    "sottotipo": "universita",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3757621,
+    "longitudine": 11.8879004,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Università (sede di Padova)</li>",
+      "    <li><strong>Corso:</strong> Laurea triennale in Scienze della Mediazione Linguistica (L-12)</li>",
+      "    <li><strong>Indirizzo:</strong> via Sebastiano Venier 200, 35127 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049-774152</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://www.ciels.it/sede-di-padova/\" target=\"_blank\">www.ciels.it</a></li>",
+      "</ul>"
+    ]
+  }
+]

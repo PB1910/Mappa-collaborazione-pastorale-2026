@@ -1,7 +1,10 @@
 [
   {
     "nome": "Scuola dell’Infanzia “Ss. Angeli Custodi”",
-    "tipo": "scuola",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
     "latitudine": 45.3731872,
     "longitudine": 11.8697617,
     "descrizione": [
@@ -14,9 +17,12 @@
       "</ul>"
     ]
   },
-    {
+  {
     "nome": "Scuola dell’Infanzia Statale “L’Aquilone”",
-    "tipo": "scuola",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
     "latitudine": 45.382709,
     "longitudine": 11.8722277,
     "descrizione": [
@@ -26,6 +32,98 @@
       "    <li><strong>Indirizzo:</strong> via dell’Orna 5d, 35124 Padova (Guizza)</li>",
       "    <li><strong>Telefono:</strong> 049-8207290</li>",
       "    <li><strong>Email:</strong> pdic88600d@istruzione.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Asilo nido Lele Ramin",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "nido",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.381917,
+    "longitudine": 11.847336,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Asilo nido</li>",
+      "    <li><strong>Indirizzo:</strong> Via Rovigo 39, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola dell'infanzia Don Luigi Maran",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.390775,
+    "longitudine": 11.836904,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
+      "    <li><strong>Indirizzo:</strong> Via San Martino 28, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "    <li><strong>Gestione:</strong> privata</li>",
+      "    <li><strong>Telefono:</strong> +39 049 9680509</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola dell'infanzia Giovanni XXIII",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.370285,
+    "longitudine": 11.839276,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
+      "    <li><strong>Indirizzo:</strong> Via Ca' Rasi 1, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Gestione:</strong> privata</li>",
+      "    <li><strong>Telefono:</strong> +39 049 715223</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola dell'infanzia Clara e Guido Ferro",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.372054,
+    "longitudine": 11.828465,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
+      "    <li><strong>Indirizzo:</strong> Via Malcesine 37, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Gestione:</strong> privata</li>",
+      "    <li><strong>Telefono:</strong> +39 049 880361</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"http://community.oiconlus.it/centroinfanzia/\" target=\"_blank\">http://community.oiconlus.it/centroinfanzia/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Scuola Materna \"Wollemborg\"",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.359584,
+    "longitudine": 11.891867,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pomponio Leto, Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
       "</ul>"
     ]
   }

@@ -43,6 +43,16 @@
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
     "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Possibili Risorse:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
     "</ul>"
   ],
   "ecclesiale": [
@@ -64,8 +74,45 @@
     "<h4>Presenze e Vita Comunitaria</h4>",
     "<ul>",
     "    <li><strong>Comunità Religiose:</strong> 1</li>",
-    "    <li><strong>Battesimi:</strong> n.d.</li>",
+    "    <li><strong>Battesimi (2025):</strong> n.d.</li>",
+    "    <li><strong>Prime comunioni / Confermazioni (2025):</strong> n.d.</li>",
+    "    <li><strong>Matrimoni (2025):</strong> n.d.</li>",
+    "    <li><strong>Funerali (2025):</strong> n.d.</li>",
     "    <li><strong>Presenza di altre Chiese / Religioni:</strong> n.d.</li>",
+    "</ul>",
+    "",
+    "<h4>Collaborazioni e Iniziative</h4>",
+    "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
+    "</ul>",
+    "",
+    "<p><strong>Altre Info Rilevanti:</strong></p>",
+    "<ul>",
+    "    <li>n.d.</li>",
     "</ul>"
-  ]
+  ],
+  "grafici": {
+    "zone": [
+      {
+        "id": "paltana",
+        "nome": "S.Giovanni Bosco in Padova",
+        "residenti": 3393.0,
+        "eta": 49.0,
+        "stranieri": 12.4,
+        "battesimi": null,
+        "comunioni": null,
+        "matrimoni": null,
+        "funerali": null,
+        "studenti": "alta",
+        "industriali": "nulla",
+        "commerciali": "bassa"
+      }
+    ],
+    "cp": {
+      "residenti": 30982,
+      "eta": 47.7,
+      "stranieri": 12.2
+    }
+  }
 }

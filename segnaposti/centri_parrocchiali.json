@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "Centro parrocchiale “Ss. Angeli Custodi”",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3732101,
+    "longitudine": 11.8699467,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza</li>",
+      "    <li><strong>Indirizzo:</strong> via delle Scuole 5, 35125 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049-687525</li>",
+      "    <li><strong>Oratorio pubblico:</strong> dell’Angelo</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro parrocchiale “S. Teresa di Gesù Bambino”",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.381993,
+    "longitudine": 11.8725611,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Parrocchia:</strong> S. Teresa di Gesù Bambino</li>",
+      "    <li><strong>Indirizzo:</strong> via dei Salici 34, Padova</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro parrocchiale di Mandria",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3712591,
+    "longitudine": 11.8424814,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Indirizzo:</strong> via Armistizio 281, Padova</li>",
+      "    <li><strong>Telefono:</strong> 049-680257</li>",
+      "    <li><strong>Oratorio pubblico:</strong> Beata Vergine Assunta</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Circolo “San Martino”",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.3902808,
+    "longitudine": 11.8365505,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale (circolo)</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "    <li><strong>Indirizzo:</strong> via San Martino 18, Padova</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  }
+]
