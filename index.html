@@ -97,7 +97,6 @@
         .filter-section:not([open]) > summary::after { transform: rotate(-90deg); }
         .filter-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 6px; }
 
-
         /* Sottosezioni a tendina dentro Filtri Posizioni */
         .filter-sub { margin: 4px 0 2px 0; border-top: 1px solid #e2e8f0; }
         .filter-sub > summary {
@@ -111,32 +110,6 @@
         .filter-sub > summary::after { content: '▾'; font-size: 13px; color: #94a3b8; transition: transform 0.2s; }
         .filter-sub:not([open]) > summary::after { transform: rotate(-90deg); }
         .filter-sub-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 4px; }
-
-        .filter-group-title {
-            margin: 10px 8px 2px 8px;
-            padding-top: 6px;
-            border-top: 1px solid #e2e8f0;
-            font-size: 11px;
-            font-weight: 700;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-        }
-        .sel-tutto + .filter-group-title { border-top: none; padding-top: 0; }
-
-        /* Popup dei segnaposti: altezza fissa con scorrimento verticale */
-        .leaflet-popup-content {
-            max-height: 300px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding-right: 8px;
-            overscroll-behavior: contain;
-            scrollbar-width: thin;
-        }
-        .leaflet-popup-content::-webkit-scrollbar { width: 6px; }
-        .leaflet-popup-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-        .leaflet-popup-content h3 { position: sticky; top: 0; background: #fff; padding-bottom: 4px; z-index: 1; }
-
 
         /* Scheda dettaglio segnaposto nel pannello destro */
         .scheda-segnaposto { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.55; color: #334155; }
@@ -159,7 +132,6 @@
             height: 20px;
             filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
         }
-
 
         /* ==========================================
            3. PANNELLO DESTRA (Informazioni Dettagliate)
@@ -213,7 +185,6 @@
         .close-btn:hover { background: #cbd5e1; color: #0284c7; }
         .close-btn.mobile-only { display: none; }
 
-
         /* ==========================================
            4. CONTENITORE MAPPA E PULSANTI MOBILI
            ========================================== */
@@ -242,7 +213,6 @@
             cursor: pointer;
             color: #1e293b;
         }
-
 
         /* ==========================================
            5. COMPONENTI INTERNI (Tabs e Popup)
@@ -274,16 +244,12 @@
         #infoContent { font-size: 13px; color: #334155; line-height: 1.5; }
         #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
 
-        .leaflet-popup-content-wrapper { border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); padding: 5px; }
-        .leaflet-popup-content { font-size: 13px; line-height: 1.5; color: #334155; }
-
         .custom-pin-icon {
             display: flex;
             justify-content: center;
             align-items: center;
             filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
         }
-
 
         /* ==========================================
            6. RESPONSIVE DESIGN (Smartphone / Tablet)
@@ -377,7 +343,8 @@
 <div class="filter-sub-body">
         <label><input type="checkbox" id="toggleServizi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Servizi comunali</span></label>
         <label><input type="checkbox" id="toggleAssistenza" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg></span> <span>Assistenza e risorse del territorio</span></label>
-        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>RSA</span></label>
+        <label><input type="checkbox" id="toggleAssociazioni" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#84cc16"/><circle cx="12.5" cy="13" r="3.2" fill="white"/><circle cx="21.5" cy="13" r="3.2" fill="white"/><path d="M6.5 25C6.5 20.5 9 18.5 12.5 18.5C16 18.5 18.5 20.5 18.5 25Z" fill="white"/><path d="M15.5 25C15.5 20.5 18 18.5 21.5 18.5C25 18.5 27.5 20.5 27.5 25Z" fill="white"/></svg></span> <span>Associazioni registrate (Comune)</span></label>
+        <label><input type="checkbox" id="toggleRsa" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>RSA</span></label>
         <label><input type="checkbox" id="toggleCollegi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg></span> <span>Collegi/Studentati</span></label>
 </div>
 </details>
@@ -457,7 +424,6 @@
             setTimeout(() => { map.invalidateSize(); }, 300);
         }
 
-
         // Dettaglio segnaposto: mostrato nel pannello destro (altezza fissa, scorrimento verticale)
         function mostraDettaglioSegnaposto(html) {
             if (!pannelloAperto) toggleInfoPanel();
@@ -473,7 +439,6 @@
         function toggleControlPanel() {
             document.getElementById('controlPanel').classList.toggle('mobile-open');
         }
-
 
         // ==========================================
         // MODULO 2: GESTIONE AREE, GEOJSON E INFO JSON
@@ -567,6 +532,7 @@
                             });
                         }
                     }).addTo(map);
+                    aggiornaFiltroZone(); // ora il poligono è pronto: assegna la zona ai segnaposti che ne sono privi
                 })
                 .catch(err => console.log("Info caricamento:", err.message));
         });
@@ -598,101 +564,40 @@
             }
         });
 
-
         // ==========================================
-        // MODULO 3: GESTIONE SEGNAPOSTI E CATEGORIE
+        // MODULO 3: CATEGORIE DI SEGNAPOSTI (dati in segnaposti/*.json)
         // ==========================================
-        const groupChiese = L.layerGroup().addTo(map);
-        const groupScuoleInfanzia = L.layerGroup().addTo(map);
-        const groupScuoleObbligo = L.layerGroup().addTo(map);
-        const groupStandard = L.layerGroup().addTo(map);
-
-        document.getElementById('toggleChiese').addEventListener('change', (e) => {
-            e.target.checked ? map.addLayer(groupChiese) : map.removeLayer(groupChiese);
-        });
-
-        document.getElementById('toggleScuoleInfanzia').addEventListener('change', (e) => {
-            e.target.checked ? map.addLayer(groupScuoleInfanzia) : map.removeLayer(groupScuoleInfanzia);
-        });
-
-        document.getElementById('toggleScuoleObbligo').addEventListener('change', (e) => {
-            e.target.checked ? map.addLayer(groupScuoleObbligo) : map.removeLayer(groupScuoleObbligo);
-        });
-
-        document.getElementById('toggleStandard').addEventListener('change', (e) => {
-            e.target.checked ? map.addLayer(groupStandard) : map.removeLayer(groupStandard);
-        });
-
-        // Definizione Icone SVG per Categoria
-        const iconaChiesa = L.divIcon({
-            className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
-        });
-
-        // Icona Ciuccio per Scuole dell'Infanzia
-        const iconaScuolaInfanzia = L.divIcon({
-            className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg>`,
-            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
-        });
-
-        const iconaScuolaObbligo = L.divIcon({
-            className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg>`,
-            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
-        });
-
-        const iconaStandard = L.divIcon({
-            className: 'custom-pin-icon',
-            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
-            iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
-        });
-
-        // 1. Caricamento Chiese
-        fetch('segnaposti/chiese.json')
-            .then(res => { if (!res.ok) throw new Error("chiese.json non trovato"); return res.json(); })
-            .then(punti => {
-                punti.forEach(item => {
-                    const lat = parseFloat(item.latitudine);
-                    const lon = parseFloat(item.longitudine);
-                    const nome = item.nome || 'Chiesa';
-                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #7c3aed; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupChiese, item);
-                });
-            })
-            .catch(err => console.log("Errore chiese:", err.message));
-
-        // 2. Caricamento Scuole dell'Infanzia
-        fetch('segnaposti/Scuole_infanzia.json')
-            .then(res => { if (!res.ok) throw new Error("Scuole_infanzia.json non trovato"); return res.json(); })
-            .then(punti => {
-                punti.forEach(item => {
-                    const lat = parseFloat(item.latitudine);
-                    const lon = parseFloat(item.longitudine);
-                    const nome = item.nome || 'Scuola Infanzia';
-                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #eab308; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleInfanzia, item);
-                });
-            })
-            .catch(err => console.log("Errore scuole infanzia:", err.message));
-
-        // 3. Caricamento Scuole dell'Obbligo
-        fetch('segnaposti/scuole_obbligo.json')
-            .then(res => { if (!res.ok) throw new Error("scuole_obbligo.json non trovato"); return res.json(); })
-            .then(punti => {
-                punti.forEach(item => {
-                    const lat = parseFloat(item.latitudine);
-                    const lon = parseFloat(item.longitudine);
-                    const nome = item.nome || 'Scuola Obbligo';
-                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #f97316; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleObbligo, item);
-                });
-            })
-            .catch(err => console.log("Errore scuole obbligo:", err.message));
+        // Ogni categoria: file JSON, id della checkbox nel menù, colore del titolo,
+        // nome di riserva e icona SVG. Senza "size" il pin è 30x38.
+        // L'icona del filtro (HTML) e quella sulla mappa devono restare uguali.
+        const CATEGORIE = [
+            { file: 'chiese.json', toggle: 'toggleChiese', colore: '#7c3aed', nome: 'Chiesa', size: [34, 42],
+              svg: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>` },
+            { file: 'Scuole_infanzia.json', toggle: 'toggleScuoleInfanzia', colore: '#eab308', nome: 'Scuola Infanzia', size: [34, 42],
+              svg: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg>` },
+            { file: 'scuole_obbligo.json', toggle: 'toggleScuoleObbligo', colore: '#f97316', nome: 'Scuola Obbligo', size: [34, 42],
+              svg: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg>` },
+            { file: 'centri_parrocchiali.json', toggle: 'toggleCentri', colore: '#2563eb', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>` },
+            { file: 'universita_studentati.json', toggle: 'toggleUniversita', colore: '#0891b2', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
+            { file: 'servizi_comunali.json', toggle: 'toggleServizi', colore: '#475569', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'assistenza_risorse.json', toggle: 'toggleAssistenza', colore: '#dc2626', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg>` },
+            { file: 'associazioni_registrate.json', toggle: 'toggleAssociazioni', colore: '#84cc16', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#84cc16"/><circle cx="12.5" cy="13" r="3.2" fill="white"/><circle cx="21.5" cy="13" r="3.2" fill="white"/><path d="M6.5 25C6.5 20.5 9 18.5 12.5 18.5C16 18.5 18.5 20.5 18.5 25Z" fill="white"/><path d="M15.5 25C15.5 20.5 18 18.5 21.5 18.5C25 18.5 27.5 20.5 27.5 25Z" fill="white"/></svg>` },
+            { file: 'rsa.json', toggle: 'toggleRsa', colore: '#ec4899', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'collegi_studentati.json', toggle: 'toggleCollegi', colore: '#0d9488', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg>` },
+            { file: 'chiese_altri_ordini.json', toggle: 'toggleChieseAltri', colore: '#92400e', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>` },
+            { file: 'parchi.json', toggle: 'toggleParchi', colore: '#16a34a', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
+            { file: 'impianti_sportivi.json', toggle: 'toggleSport', colore: '#1f2937', nome: 'Segnaposto',
+              svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>` }
+        ];
 
         // ==========================================
         // MODULO 4: NUOVE CATEGORIE + FILTRO PER ZONA
@@ -773,41 +678,35 @@
             modoVisibilita = document.querySelector('input[name="visibilita"]:checked').value;
             aggiornaFiltroZone();
         }));
-        // Quando i poligoni delle zone finiscono di caricare, assegna la zona ai segnaposti dei file vecchi
-        setTimeout(aggiornaFiltroZone, 1500);
-        setTimeout(aggiornaFiltroZone, 4000);
+        // Testo HTML della descrizione (il JSON può contenere una stringa o un elenco di righe)
+        const descrizioneHtml = item => Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
 
-        const nuoveCategorie = [
-            { file: 'centri_parrocchiali.json', toggle: 'toggleCentri', colore: '#2563eb', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>` },
-            { file: 'universita_studentati.json', toggle: 'toggleUniversita', colore: '#0891b2', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
-            { file: 'servizi_comunali.json', toggle: 'toggleServizi', colore: '#475569', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
-            { file: 'assistenza_risorse.json', toggle: 'toggleAssistenza', colore: '#dc2626', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg>` },
-            { file: 'rsa.json', toggle: 'toggleStandard', colore: '#ec4899', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
-            { file: 'collegi_studentati.json', toggle: 'toggleCollegi', colore: '#0d9488', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg>` },
-            { file: 'chiese_altri_ordini.json', toggle: 'toggleChieseAltri', colore: '#92400e', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>` },
-            { file: 'parchi.json', toggle: 'toggleParchi', colore: '#16a34a', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
-            { file: 'impianti_sportivi.json', toggle: 'toggleSport', colore: '#1f2937', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>` }
-        ];
-        nuoveCategorie.forEach(cat => {
+        CATEGORIE.forEach(cat => {
+            const [w, h] = cat.size || [30, 38];
             const gruppo = L.layerGroup().addTo(map);
-            document.getElementById(cat.toggle).addEventListener('change', e => {
-                e.target.checked ? map.addLayer(gruppo) : map.removeLayer(gruppo);
-            });
             const icona = L.divIcon({
                 className: 'custom-pin-icon',
                 html: cat.svg,
-                iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
+                iconSize: [w, h], iconAnchor: [w / 2, h], popupAnchor: [0, -(h - 4)]
             });
+
+            document.getElementById(cat.toggle).addEventListener('change', e => {
+                e.target.checked ? map.addLayer(gruppo) : map.removeLayer(gruppo);
+            });
+
             fetch('segnaposti/' + cat.file)
                 .then(res => { if (!res.ok) throw new Error(cat.file + ' non trovato'); return res.json(); })
                 .then(punti => {
                     punti.forEach(item => {
                         const lat = parseFloat(item.latitudine), lon = parseFloat(item.longitudine);
                         if (isNaN(lat) || isNaN(lon)) return;
-                        const nome = item.nome || 'Segnaposto';
-                        const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                        const popup = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: ${cat.colore}; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                        registraMarker(L.marker([lat, lon], { icon: icona }).addTo(gruppo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popup)), gruppo, item);
+                        const nome = item.nome || cat.nome;
+                        const scheda = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: ${cat.colore}; font-size: 15px;">${nome}</h3>${descrizioneHtml(item)}</div>`;
+                        const marker = L.marker([lat, lon], { icon: icona })
+                            .addTo(gruppo)
+                            .bindTooltip(nome)
+                            .on('click', () => mostraDettaglioSegnaposto(scheda));
+                        registraMarker(marker, gruppo, item);
                     });
                 })
                 .catch(err => console.log('Errore ' + cat.file + ':', err.message));
