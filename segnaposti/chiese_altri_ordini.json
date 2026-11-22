@@ -1,0 +1,21 @@
+[
+  {
+    "nome": "Chiesa Cristiana Avventista del 7° Giorno",
+    "tipo": "chiesa_altri_ordini",
+    "sottotipo": "chiesa_avventista",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.37196729489324,
+    "longitudine": 11.834049512499671,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Indirizzo:</strong> Via Mestre, 1 – 35142 Padova</li>",
+      "    <li><strong>Telefono:</strong> +39 049 715772</li>",
+      "    <li><strong>Orari:</strong> sabato 10:00–12:30 e 16:00–18:00 (studio della Bibbia, culto e canti)</li>",
+      "    <li><strong>Accessibilità:</strong> ingresso, parcheggio e servizi igienici accessibili in sedia a rotelle</li>",
+      "    <li><strong>Online:</strong> <a href=\"https://www.youtube.com/channel/UCb8khuDww0UU9OcfNMjT2vw\" target=\"_blank\">Canale YouTube</a> (<a href=\"https://www.youtube.com/@ChiesaCristianaAvventistaPD/streams\" target=\"_blank\">dirette e sermoni</a>) | <a href=\"https://www.instagram.com/chiesa_avventista_padova/\" target=\"_blank\">Instagram</a></li>",
+      "</ul>"
+    ]
+  }
+]

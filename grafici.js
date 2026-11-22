@@ -190,7 +190,7 @@
         const T = [
             ['Residenti', nf(resTot), multi ? 'totale su ' + zone.length + ' parrocchie' : nf(resTot / cp.residenti * 100, 1) + '% della CP'],
             ['Et\u00e0 media', has(eta) ? nf(eta, 1) : ND, (multi ? 'anni, media ponderata' : 'anni (CP: ' + nf(cp.eta, 1) + ')')],
-            ['Stranieri', has(str) ? nf(str, 1) + '%' : ND, multi ? 'media ponderata' : 'CP: ' + nf(cp.stranieri, 1) + '%']
+            ['Altre etnie', has(str) ? nf(str, 1) + '%' : ND, multi ? 'media ponderata' : 'CP: ' + nf(cp.stranieri, 1) + '%']
         ];
         const w = document.createElement('div'); w.className = 'viz-tiles';
         T.forEach(t => { const d = document.createElement('div'); d.className = 'viz-tile'; d.innerHTML = `<div class="k">${t[0]}</div><div class="v">${t[1]}</div><div class="s">${t[2]}</div>`; w.appendChild(d); });
@@ -201,7 +201,7 @@
         const d = document.createElement('details'); d.className = 'viz-details';
         const rows = zone.map(z => `<tr><td>${z.nome}</td><td>${has(z.residenti) ? nf(z.residenti) : ND}</td><td>${has(z.eta) ? nf(z.eta, 1) : ND}</td><td>${has(z.stranieri) ? nf(z.stranieri, 1) : ND}</td>` +
             SAC.map(s => `<td>${has(z[s[0]]) ? nf(z[s[0]]) : ND}</td>`).join('') + '</tr>').join('');
-        d.innerHTML = '<summary>Tabella dei dati</summary><table><thead><tr><th>Zona</th><th>Resid.</th><th>Et\u00e0</th><th>Str. %</th><th>Bat.</th><th>Com./Cre.</th><th>Matr.</th><th>Fun.</th></tr></thead><tbody>' + rows + '</tbody></table>';
+        d.innerHTML = '<summary>Tabella dei dati</summary><table><thead><tr><th>Zona</th><th>Resid.</th><th>Et\u00e0</th><th>Altre etnie %</th><th>Bat.</th><th>Com./Cre.</th><th>Matr.</th><th>Fun.</th></tr></thead><tbody>' + rows + '</tbody></table>';
         host.appendChild(d);
     }
 
@@ -223,7 +223,7 @@
         if (multi) {
             barSingle(host, 'Residenti', null, zone, 'residenti', v => nf(v));
             barSingle(host, 'Et\u00e0 media', 'anni', zone, 'eta', v => nf(v, 1));
-            barSingle(host, 'Stranieri', '% sui residenti', zone, 'stranieri', v => nf(v, 1) + '%');
+            barSingle(host, 'Altre etnie', '% sui residenti', zone, 'stranieri', v => nf(v, 1) + '%');
         }
         sacramenti(host, zone);
         heat(host, zone);

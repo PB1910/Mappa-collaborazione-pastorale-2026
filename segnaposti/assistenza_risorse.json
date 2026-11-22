@@ -1,0 +1,356 @@
+[
+  {
+    "nome": "CAV Padova – Centro di Aiuto alla Vita",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "ascolto_maternita",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3768854,
+    "longitudine": 11.8738426,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Organizzazione di volontariato collegata al Movimento per la Vita</li>",
+      "    <li><strong>Attività:</strong> ascolto e aiuto concreto a donne e madri in gravidanza difficile o inattesa</li>",
+      "    <li><strong>Indirizzo:</strong> Via Tiberio Umberto Barbarani 6, 35125 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049 8806330</li>",
+      "    <li><strong>Email:</strong> cavpd@mpv.org</li>",
+      "    <li><strong>Numero verde SOS Vita:</strong> 800 813 000 (attivo 24/7)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Mondo Amico",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "casa_accoglienza",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3822,
+    "longitudine": 11.8555,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Casa di accoglienza residenziale e di supporto</li>",
+      "    <li><strong>Destinatari:</strong> mamme con bambine e bambini e donne sole in grave disagio abitativo o sociale</li>",
+      "    <li><strong>Capienza:</strong> 22 posti letto</li>",
+      "    <li><strong>Spazi:</strong> cucina comune, servizi igienici, lavanderia, sale comuni per attività e giochi dei bambini, parco esterno</li>",
+      "    <li><strong>Gestione:</strong> volontari e personale delle parrocchie di Mandria e Voltabrusegana, con i Servizi Sociali del Comune di Padova</li>",
+      "    <li><strong>Indirizzo:</strong> Via Armistizio 285, 35142 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049 715898</li>",
+      "    <li><em>Nota:</em> la fonte lo colloca nel quartiere Mandria, ma le coordinate ricadono nel poligono di S.Giovanni Bosco: verificare.</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Diurno Il Fienile (Cooperativa L'Iride)",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "disabilita",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3822,
+    "longitudine": 11.8555,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro diurno socio-educativo e occupazionale per persone con disabilità, in particolare autismo</li>",
+      "    <li><strong>Gestione:</strong> associazione Il Fienile in convenzione con ULSS 6 Euganea, insieme a L'Iride Cooperativa Sociale</li>",
+      "    <li><strong>Attività:</strong> spazi su due piani con ascensore per attività sociali, ricreative e laboratoriali in piccoli gruppi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Armistizio 285, 35142 Padova (accanto alla parrocchia)</li>",
+      "    <li><strong>Telefono:</strong> +39 049 715754</li>",
+      "    <li><strong>Email:</strong> ilfienile@liride.org</li>",
+      "    <li><em>Nota:</em> coordinate identiche al Centro Mondo Amico (stesso indirizzo).</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Sportello Nuovi Passi – sede Via Toblino",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "demenze",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3702,
+    "longitudine": 11.83,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Gestione:</strong> Fondazione OIC Onlus; servizio gratuito</li>",
+      "    <li><strong>Destinatari:</strong> persone con Alzheimer, demenze e disturbi neurocognitivi, familiari e caregiver</li>",
+      "    <li><strong>Cosa offre:</strong> ascolto e sostegno psicologico, orientamento alla rete dei servizi, suggerimenti per la gestione quotidiana, percorsi personalizzati</li>",
+      "    <li><strong>Orari:</strong> martedì 14:30–17:00; venerdì 10:00–12:30 (su appuntamento)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Toblino 49, 35142 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049 6683 000</li>",
+      "    <li><strong>Email:</strong> sportellonuovipassi.cv@oiconlus.it</li>",
+      "    <li><strong>Modalità:</strong> in presenza su appuntamento o online; posti limitati, prenotazione richiesta</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "AIL Padova – Casa di accoglienza Federica",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "casa_accoglienza_sanitaria",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.385,
+    "longitudine": 11.84917,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Gestione:</strong> AIL Padova</li>",
+      "    <li><strong>Destinatari:</strong> pazienti in cura presso il reparto di Ematologia dell'Ospedale di Padova</li>",
+      "    <li><strong>Struttura:</strong> 3 camere doppie, ciascuna con bagno; aria condizionata, TV, biancheria letto (asciugamani esclusi)</li>",
+      "    <li><strong>Spazi comuni:</strong> cucina con biancheria e stoviglie, lavanderia con lavatrice, asse e ferro da stiro, posto auto</li>",
+      "    <li><strong>Raggiungibilità:</strong> circa 5 km dall'ospedale; autobus linea 5, fermata vicina</li>",
+      "    <li><strong>Indirizzo:</strong> Via S. Martino 26, Padova</li>",
+      "    <li><em>Nota:</em> coordinate approssimative (da gradi, minuti e secondi della fonte). Contatto personale del responsabile omesso.</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Salboro Incontra",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "volontariato",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.3594,
+    "longitudine": 11.8909,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> iniziativa presso la Parrocchia di S. Maria Assunta in Salboro</li>",
+      "    <li><strong>Indirizzo:</strong> via Salboro 4B, 35124 Padova</li>",
+      "    <li><em>Nota:</em> nessun contatto indicato nella fonte.</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Circolo NOI \"Mons. Placido Ponchia\" (Salboro)",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "circolo_parrocchiale",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.3594,
+    "longitudine": 11.8909,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Attività:</strong> ludico-ricreative, GREST (Estate Ragazzi), gite e momenti di aggregazione per giovani e famiglie</li>",
+      "    <li><strong>Servizio alla comunità:</strong> gestione degli spazi parrocchiali per riunioni e attività del quartiere; servizio bar</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro 4/B, 35124 Padova</li>",
+      "    <li><strong>Telefono:</strong> 347 5006980</li>",
+      "    <li><strong>Email:</strong> circolonoisalboro@gmail.com</li>",
+      "    <li><em>Nota:</em> coordinate identiche a Salboro Incontra (stessa parrocchia).</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "APS Holding S.p.A.",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "servizi_mobilita",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.366945,
+    "longitudine": 11.878345,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Attività:</strong> servizi di trasporto, parcheggi e mobilità a Padova</li>",
+      "    <li><strong>Sede:</strong> ospita anche Confcooperative Padova e Confapi Padova</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro 22/b, 35124 Padova</li>",
+      "    <li><strong>Telefono:</strong> +39 049 5660111</li>",
+      "    <li><strong>Fax:</strong> +39 049 5660112</li>",
+      "    <li><strong>Email:</strong> info@apsholding.it</li>",
+      "    <li><strong>PEC:</strong> apsholding@legalmail.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Qui Padova – polo multifunzionale e housing sociale",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "housing_sociale",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3786,
+    "longitudine": 11.8853,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> progetto di housing sociale su un'area di 18.000 m²</li>",
+      "    <li><strong>Abitare solidale:</strong> alloggi di edilizia residenziale sociale per persone o famiglie in disagio abitativo o lavorativo</li>",
+      "    <li><strong>Servizi e spazi:</strong> attività ricreative, coworking, polo direzionale, palestra, centro medico poli-specialistico, struttura per vacanze sociali Casa a Colori</li>",
+      "    <li><strong>Promotori:</strong> Città Solare (cooperativa promotrice), Cassa Depositi e Prestiti, Fondazione Cassa di Risparmio di Padova e Rovigo, Sinloc, Regione Veneto</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario 42, 35124 Padova</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Sala Pinelli (Spazio Allegro)",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "spazio_civico",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.379761,
+    "longitudine": 11.883778,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> spazio civico di proprietà comunale</li>",
+      "    <li><strong>Indirizzo:</strong> Via Vincenzo Pinelli 2, 35124 Padova (rione Crocifisso)</li>",
+      "    <li><strong>Capienza:</strong> circa 50 persone, locale unico con bagno e antibagno</li>",
+      "    <li><strong>Accessibilità:</strong> accessibile a persone con disabilità (ingresso, parcheggio, servizi igienici)</li>",
+      "    <li><strong>Gestione:</strong> in partecipazione con la comunità Spazio Allegro (Portoallegro APS, Gli Antenori, Quarto Tempo APS, Banda di Quartiere e altre realtà)</li>",
+      "    <li><strong>Iniziative:</strong> incontri, laboratori, assemblee di quartiere, progetti culturali e sociali</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Alisolidali ODV – sede via Telesio",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "volontariato_famiglie",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3796,
+    "longitudine": 11.8859,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> associazione di volontariato che sostiene bambini, ragazzi e mamme sole</li>",
+      "    <li><strong>Attività:</strong> progetti di accoglienza e sostegno familiare, affido; sostegno educativo pomeridiano dal lunedì al venerdì su segnalazione di servizi sociali, scuole o parrocchie; Emporio della Solidarietà (spesa gratuita con sistema a punti per famiglie in difficoltà a Padova e Ponte San Nicolò)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Bernardino Telesio 25, Padova</li>",
+      "    <li><strong>Contatti:</strong> sito Alisolidali ODV; pagine Facebook e Instagram Alisolidali</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Comunità Missionaria Malbes",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "comunita_missionaria",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.38486484976971,
+    "longitudine": 11.865119636831428,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> comunità di vita e condivisione ispirata al carisma di san Daniele Comboni (famiglie, laici, single e suore comboniane)</li>",
+      "    <li><strong>Sede:</strong> canonica della parrocchia di Santa Maria Assunta al Bassanello, Unità Pastorale alla Guizza</li>",
+      "    <li><strong>Missione:</strong> accoglienza di nuclei familiari e situazioni di fragilità, vicinanza concreta con il quartiere</li>",
+      "    <li><strong>Indirizzo:</strong> Via Adriatica 5, 35125 Padova</li>",
+      "    <li><em>Nota:</em> coordinate approssimative; comunità fondata nel 2015.</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Cooperativa Progetto Now",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "cooperativa_sociale",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.38306322597197,
+    "longitudine": 11.869297708591295,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Chi è:</strong> cooperativa sociale che opera in zona Guizza (Padova) con servizi educativi, per le famiglie e socio-sanitari; gestisce anche l'accoglienza di donne rifugiate, richiedenti asilo o in situazioni di vulnerabilità</li>",
+      "    <li><strong>Sito:</strong> <a href=\"https://www.coopnow.it/\" target=\"_blank\">coopnow.it</a> · <a href=\"https://www.facebook.com/cooperativaprogettonow/\" target=\"_blank\">Facebook</a></li>",
+      "    <li><strong>Email:</strong> <a href=\"mailto:info@coopnow.it\">info@coopnow.it</a> (candidature e selezione: <a href=\"mailto:selezione@coopnow.it\">selezione@coopnow.it</a>)</li>",
+      "</ul>",
+      "<h4>Sedi e recapiti in zona Guizza</h4>",
+      "<ul>",
+      "    <li><strong>Progetto Now Società Cooperativa Sociale:</strong> Via Guizza Conselvana, 43, 35125 Padova – tel. +39 049 681549 (presso Medicina di Gruppo Integrata Guizza)</li>",
+      "    <li><strong>Micronido Samarcanda:</strong> Via Giorgio Pullè, 35, 35136 Padova – tel. +39 049 735 5551 (nido 3–36 mesi con attività educative e di famiglia)</li>",
+      "    <li><strong>Famiglie al Centro:</strong> Via Giorgio Pullè, 15, Padova – sportello e centro per il supporto alla genitorialità, consulenza psicologica ed educativa (<a href=\"https://www.coopnow.it/servizi-socio-educativi/famiglie-al-centro/\" target=\"_blank\">scheda</a>)</li>",
+      "    <li><strong>Sede amministrativa / contatti generali:</strong> Via Giorgio Pullè, 45, 35136 Padova – tel. +39 049 890 0798</li>",
+      "    <li><strong>Sede storica / legale:</strong> Piazza Cesare Battisti, 21, 35026 Conselve (PD) – tel. 049 9500612</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Casa Famiglia \"Domenico Leonati\"",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "casa_famiglia",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.38197286003304,
+    "longitudine": 11.869601844121828,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Attività:</strong> accoglienza di minori affidati dai servizi sociali</li>",
+      "    <li><strong>Gestione:</strong> Suore di San Francesco di Sales (Suore Salesie), attiva dal 1993</li>",
+      "    <li><strong>Indirizzo:</strong> Via Arturo Graf 7, 35125 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049 8802754</li>",
+      "    <li><strong>Email:</strong> casafamiglialeonati@virgilio.it</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Nuovi Passi – Fondazione OIC (Alzheimer e decadimento cognitivo)",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "alzheimer_caregiver",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.370859112243465,
+    "longitudine": 11.829469080804483,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Cos'è:</strong> progetto e rete di servizi della Fondazione OIC ETS (Opera Immacolata Concezione) per persone con decadimento cognitivo, Alzheimer o disturbi neurocognitivi e per le loro famiglie e caregiver</li>",
+      "    <li><strong>Sedi a Padova:</strong> Civitas Vitae Angelo Ferro (Via Toblino, 49) e Civitas Vitae Nazareth (Via Nazareth, 38)</li>",
+      "</ul>",
+      "<h4>Sportello Nuovi Passi (gratuito)</h4>",
+      "<ul>",
+      "    <li>Ascolto e sostegno gratuiti per familiari e caregiver, su appuntamento in presenza o online</li>",
+      "    <li>Ascolto e sostegno psicologico, orientamento alla rete dei servizi, consigli pratici per la gestione quotidiana, incontri formativi e percorsi di potenziamento cognitivo per caregiver</li>",
+      "    <li><strong>Telefono:</strong> 049 867 22 13 (oppure centralino 049 6683 000)</li>",
+      "    <li><strong>Email:</strong> <a href=\"mailto:sportellonuovipassi.cv@oiconlus.it\">sportellonuovipassi.cv@oiconlus.it</a></li>",
+      "    <li><a href=\"https://www.oiconlus.it/2026/07/10/sportello-nuovi-passi-fondazione-oic-dal-24-luglio-ancora-piu-vicino-alle-famiglie-con-una-nuova-sede-presso-civitas-vitae-nazareth/\" target=\"_blank\">Dettagli sul sito Fondazione OIC</a></li>",
+      "</ul>",
+      "<h4>Centro Diurno e Nuclei Nuovi Passi</h4>",
+      "<ul>",
+      "    <li><strong>Centro Diurno</strong> (Villa De Gasperi – Civitas Vitae Nazareth): accoglienza giornaliera per persone con decadimento cognitivo lieve o moderato (fino a 20 ospiti), con attività psicomotorie, relazionali e di stimolazione cognitiva/sensoriale. Accesso convenzionato ULSS tramite pratica SVAMA. <a href=\"https://nazareth.oiconlus.it/offerta/centro-diurno-per-non-autosufficienti/\" target=\"_blank\">Scheda del centro diurno</a></li>",
+      "    <li><strong>Nuclei e Borgo Nuovi Passi</strong> (es. Borgo Nuovi Passi in Civitas Vitae Angelo Ferro): spazi residenziali dedicati, progettati per favorire orientamento, deambulazione e attività occupazionali/multisensoriali</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Casetta di Quartiere – Comunità di Sant'Egidio (Piazzale Cuoco)",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "casetta_santegidio",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.37981165122617,
+    "longitudine": 11.869219219822906,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Dove:</strong> area di Piazzale / Via Vincenzo Cuoco, quartiere Guizza (Padova)</li>",
+      "    <li><strong>Casetta di Quartiere:</strong> secondo i documenti della <a href=\"https://www.comune.padova.it/sites/default/files/attachment/Verbale%20e%20relazione%20Consulta%204B%2028032022.pdf\" target=\"_blank\">Consulta di Quartiere 4B</a>, in Piazzale Cuoco è stata attiva una casetta (collocata dal Natale 2020) usata come punto di ritrovo, per attività e per la raccolta di generi di prima necessità in concomitanza con il mercato del sabato</li>",
+      "    <li><strong>Comunità di Sant'Egidio:</strong> opera alla Guizza con volontari, iniziative di socialità e raccolta alimentare legate al territorio e al mercato rionale. <a href=\"https://www.difesapopolo.it/la-comunita-di-santegidio-vai-a-trovare-un-tuo-vicino-anziano-o-unisciti-ai-volontari/\" target=\"_blank\">Approfondimento</a></li>",
+      "    <li><a href=\"https://www.facebook.com/p/CIC-Casetta-in-Comune-61570831858123/\" target=\"_blank\">Pagina Facebook “CIC – Casetta in Comune”</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Associazione Abracalam APS",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "associazione_teatrale",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.384605978609464,
+    "longitudine": 11.866621204621723,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Chi è:</strong> associazione di promozione sociale e gruppo teatrale indipendente di Padova, attivo dal 1997 nella sperimentazione performativa, nelle arti sceniche e nella promozione socio-culturale</li>",
+      "    <li><strong>Indirizzo:</strong> Via Alessandro Guidi, 32 – 35125 Padova</li>",
+      "    <li><strong>Sito:</strong> <a href=\"http://www.abracalam.org/\" target=\"_blank\">abracalam.org</a> · <a href=\"https://padovaper.comune.padova.it/strutture/associazionismo-e-privato-sociale/abracalam-associazione-di-promozione-sociale\" target=\"_blank\">scheda su Padova Per</a></li>",
+      "</ul>",
+      "<h4>Attività principali</h4>",
+      "<ul>",
+      "    <li><strong>Laboratori e formazione:</strong> percorsi di arte scenica, teatro e danza contemporanea nella propria sede operativa</li>",
+      "    <li><strong>Spettacoli e performance:</strong> azioni performative, concerti letterari ed eventi teatrali, in rassegne e manifestazioni locali e nazionali</li>",
+      "    <li><strong>Progetti socio-teatrali:</strong> collaborazioni con scuole, enti e spazi associativi del territorio per inclusione, pari opportunità, cittadinanza attiva e diritti culturali</li>",
+      "</ul>"
+    ]
+  }
+]

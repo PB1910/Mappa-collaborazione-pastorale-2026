@@ -198,5 +198,35 @@
       "    <li><strong>Parrocchia:</strong> Salboro</li>",
       "</ul>"
     ]
+  },
+  {
+    "nome": "ENGIM Padova – Scuola di Formazione Professionale (SFP)",
+    "tipo": "scuola_obbligo",
+    "sottotipo": "formazione_professionale",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3845477793081,
+    "longitudine": 11.865155055996643,
+    "descrizione": [
+      "<h4>Informazioni Scolastiche</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Scuola di Formazione Professionale ENGIM Veneto, nuova sede padovana operativa dal 2 marzo 2026 (subentra alle attività formative ex IRPEA)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Santa Maria Assunta, 4 – 35125 Padova (zona Bassanello-Guizza)</li>",
+      "    <li><strong>Telefono didattica:</strong> 049 7160670</li>",
+      "    <li><strong>Telefono lavoro:</strong> 049 7160669</li>",
+      "    <li><strong>Email:</strong> <a href=\"mailto:segreteria.padova@engimveneto.org\">segreteria.padova@engimveneto.org</a></li>",
+      "    <li><strong>Siti:</strong> <a href=\"https://padova.engimveneto.org/\" target=\"_blank\">ENGIM Padova</a> · <a href=\"https://engimveneto.org/content/engim-veneto-arriva-a-padova\" target=\"_blank\">ENGIM Veneto</a></li>",
+      "</ul>",
+      "<h4>Struttura</h4>",
+      "<ul>",
+      "    <li>Edificio su 3 piani con 6 aule, 5 laboratori (grafica, informatica, autoriparazione, termoclima ed elettromeccanica) e un salone polivalente</li>",
+      "    <li>Capienza di circa 170 studentesse e studenti</li>",
+      "</ul>",
+      "<h4>Offerta formativa e servizi</h4>",
+      "<ul>",
+      "    <li>Percorsi triennali di qualifica (con possibilità di proseguire con il 4° anno e percorsi IFTS di specializzazione): autoriparazione, termoidraulica, grafica ipermediale</li>",
+      "    <li><strong>Servizi al lavoro:</strong> orientamento, aggiornamento professionale e supporto all'inserimento lavorativo per giovani, adulti e aziende</li>",
+      "</ul>"
+    ]
   }
 ]

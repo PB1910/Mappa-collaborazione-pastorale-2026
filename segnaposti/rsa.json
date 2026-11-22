@@ -1,0 +1,21 @@
+[
+  {
+    "nome": "Civitas Vitae \"Angelo Ferro\" – RSA Santa Chiara, Pio XII e Residenza Giubileo (Fondazione OIC)",
+    "tipo": "rsa",
+    "sottotipo": "rsa",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3710102910795,
+    "longitudine": 11.829616838770185,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> RSA / centro servizi per anziani non autosufficienti</li>",
+      "    <li><strong>Gestore:</strong> Fondazione Opera Immacolata Concezione (OIC) Onlus</li>",
+      "    <li><strong>Indirizzo:</strong> Via Toblino, 51 – Padova (Mandria)</li>",
+      "    <li><strong>Telefono:</strong> 049 8281111 (Santa Chiara); 049 6683000 (OIC Mandria)</li>",
+      "    <li><strong>Note:</strong> complesso con più residenze (Santa Chiara, circa 460 posti letto; Pio XII; Residenza Giubileo, Via Gemona 8), ospedale di comunità, hospice, palestra riabilitativa e parco</li>",
+      "</ul>"
+    ]
+  }
+]

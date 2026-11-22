@@ -126,5 +126,32 @@
       "    <li><strong>Parrocchia:</strong> Salboro</li>",
       "</ul>"
     ]
+  },
+  {
+    "nome": "Scuola dell'Infanzia paritaria “M. Dositea Bottani” – Centro Infanzia “Bambini del Mediterraneo”",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.37752810024017,
+    "longitudine": 11.886312960047807,
+    "descrizione": [
+      "<h4>Scuola dell'Infanzia paritaria “M. Dositea Bottani”</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> scuola dell'infanzia cattolica paritaria, legata alla parrocchia del Santissimo Crocifisso</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo, 61/B, 35124 Padova</li>",
+      "    <li><strong>Telefono:</strong> +39 049 880 3233</li>",
+      "    <li><strong>Orari indicati:</strong> lunedì–venerdì 07:45–17:30</li>",
+      "    <li>Attività e laboratori educativi, giardino e iniziative comunitarie</li>",
+      "    <li><a href=\"https://ufficioscuola.diocesipadova.it/scuole-cattoliche-paritarie/scuole-dellinfanzia/provincia-di-padova/\" target=\"_blank\">Ufficio Scuola della Diocesi di Padova</a> · <a href=\"https://www.crocifissonet.it/tag/scuola-infanzia/\" target=\"_blank\">Crocifissonet</a></li>",
+      "</ul>",
+      "<h4>Centro Infanzia “Bambini del Mediterraneo” (nido + infanzia)</h4>",
+      "<ul>",
+      "    <li>Servizio educativo nel quartiere Crocifisso per bambine e bambini dai 3 mesi ai 5 anni, con sezioni nido e infanzia in spazi distinti</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario, 35124 Padova</li>",
+      "    <li><strong>Telefono:</strong> +39 049 729 9180</li>",
+      "    <li><a href=\"https://padovaper.comune.padova.it/servizi/educazione-e-formazione/centro-infanzia-bambini-del-mediterraneo-crocefisso\" target=\"_blank\">Scheda su Padova Per</a></li>",
+      "</ul>"
+    ]
   }
 ]

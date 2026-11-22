@@ -1,6 +1,6 @@
 [
   {
-    "nome": "Centro parrocchiale “Ss. Angeli Custodi”",
+    "nome": "Centro parrocchiale – Guizza in Padova",
     "tipo": "centro_parrocchiale",
     "parrocchia": "Guizza in Padova",
     "zona": "ssangelicustodi",
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "nome": "Centro parrocchiale “S. Teresa di Gesù Bambino”",
+    "nome": "Centro parrocchiale – S.Teresa di Gesù Bambino in Padova",
     "tipo": "centro_parrocchiale",
     "parrocchia": "S.Teresa di Gesù Bambino in Padova",
     "zona": "santateresa",
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "nome": "Centro parrocchiale di Mandria",
+    "nome": "Centro parrocchiale – Mandria in Padova",
     "tipo": "centro_parrocchiale",
     "parrocchia": "Mandria in Padova",
     "zona": "mandria",
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "nome": "Circolo “San Martino”",
+    "nome": "Centro parrocchiale – Voltabrusegana in Padova",
     "tipo": "centro_parrocchiale",
     "parrocchia": "Voltabrusegana in Padova",
     "zona": "voltabrusegana",
@@ -64,9 +64,70 @@
     "descrizione": [
       "<h4>Informazioni</h4>",
       "<ul>",
-      "    <li><strong>Tipologia:</strong> Centro parrocchiale (circolo)</li>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Nome:</strong> Circolo “San Martino”</li>",
       "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
       "    <li><strong>Indirizzo:</strong> via San Martino 18, Padova</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro parrocchiale – SS. Crocefisso in Padova",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3779723,
+    "longitudine": 11.8862213,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Parrocchia:</strong> Santissimo Crocifisso</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo 61/A, 35124 Padova (PD)</li>",
+      "    <li><strong>Telefono:</strong> +39 049 685510</li>",
+      "    <li><strong>Email:</strong> parrocchia@crocifissonet.it</li>",
+      "    <li><strong>Siti web:</strong> Crocifissonet e pagina dedicata a NOI Patronato</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro parrocchiale – Salboro in Padova",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.3599829,
+    "longitudine": 11.8906503,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Parrocchia:</strong> Santa Maria Assunta in Salboro</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro 4/B, 35124 Padova (PD)</li>",
+      "    <li><strong>Telefono:</strong> 049 801 1409 (Centro Parrocchiale) / 049 801 0183 (Parrocchia)</li>",
+      "    <li><strong>Email:</strong> salboro@diocesipadova.it</li>",
+      "    <li><strong>Siti web:</strong> Salboro.net e sezione Circolo NOI Mons. P. Ponchia</li>",
+      "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro parrocchiale – S.Giovanni Bosco in Padova",
+    "tipo": "centro_parrocchiale",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3820504,
+    "longitudine": 11.8513978,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro parrocchiale</li>",
+      "    <li><strong>Nome:</strong> Oratorio Don Bosco</li>",
+      "    <li><strong>Parrocchia:</strong> San Giovanni Bosco (Paltana)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Adria 2, 35142 Padova (PD)</li>",
+      "    <li><strong>Telefono:</strong> +39 049 882 7320 / +39 375 917 7333</li>",
+      "    <li><strong>Email:</strong> parrocchiapaltana@gmail.com</li>",
       "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
       "</ul>"
     ]

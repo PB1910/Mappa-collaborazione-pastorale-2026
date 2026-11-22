@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mappa Interattiva - Collaborazione Pastorale Padova</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* ==========================================
+           1. STILI GENERALI E RESET
+           ========================================== */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ==========================================
+           2. PANNELLO SINISTRA (Filtri)
+           ========================================== */
+        .control-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 1px solid #e0e0e0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .control-panel h4 {
+            margin: 10px 0 5px 0;
+            font-size: 13px;
+            color: #334155;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .control-panel label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            color: #334155;
+            font-weight: 500;
+        }
+        .control-panel label:hover { background: #f1f5f9; }
+        .control-panel input { cursor: pointer; width: 16px; height: 16px; accent-color: #0284c7; }
+
+        /* Menù a tendina (sezioni comprimibili) del pannello filtri */
+        .filter-section {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .filter-section > summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 6px 0 4px 0;
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .filter-section > summary::-webkit-details-marker { display: none; }
+        .filter-section > summary:hover { background: #f1f5f9; }
+        .filter-section > summary::after {
+            content: '▾';
+            font-size: 14px;
+            color: #64748b;
+            transition: transform 0.2s;
+        }
+        .filter-section:not([open]) > summary::after { transform: rotate(-90deg); }
+        .filter-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 6px; }
+
+
+        /* Sottosezioni a tendina dentro Filtri Posizioni */
+        .filter-sub { margin: 4px 0 2px 0; border-top: 1px solid #e2e8f0; }
+        .filter-sub > summary {
+            list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            margin: 4px 0 2px 0; padding: 5px 8px; border-radius: 8px;
+            font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;
+            user-select: none; transition: background 0.2s;
+        }
+        .filter-sub > summary::-webkit-details-marker { display: none; }
+        .filter-sub > summary:hover { background: #f1f5f9; }
+        .filter-sub > summary::after { content: '▾'; font-size: 13px; color: #94a3b8; transition: transform 0.2s; }
+        .filter-sub:not([open]) > summary::after { transform: rotate(-90deg); }
+        .filter-sub-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 4px; }
+
+        .filter-group-title {
+            margin: 10px 8px 2px 8px;
+            padding-top: 6px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .sel-tutto + .filter-group-title { border-top: none; padding-top: 0; }
+
+        /* Popup dei segnaposti: altezza fissa con scorrimento verticale */
+        .leaflet-popup-content {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+            overscroll-behavior: contain;
+            scrollbar-width: thin;
+        }
+        .leaflet-popup-content::-webkit-scrollbar { width: 6px; }
+        .leaflet-popup-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .leaflet-popup-content h3 { position: sticky; top: 0; background: #fff; padding-bottom: 4px; z-index: 1; }
+
+
+        /* Scheda dettaglio segnaposto nel pannello destro */
+        .scheda-segnaposto { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.55; color: #334155; }
+        .scheda-segnaposto h3 { margin: 0 0 10px 0; font-size: 16px; }
+        .scheda-segnaposto ul { padding-left: 18px; margin: 6px 0; }
+        .btn-torna-area { background: none; border: none; color: #4f46e5; font-size: 13px; cursor: pointer; padding: 0 0 8px 0; text-align: left; }
+        .btn-torna-area:hover { text-decoration: underline; }
+
+        /* Stile per le miniature dei pin nella legenda */
+        .legend-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .legend-icon svg {
+            width: 16px;
+            height: 20px;
+            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
+        }
+
+
+        /* ==========================================
+           3. PANNELLO DESTRA (Informazioni Dettagliate)
+           ========================================== */
+        .info-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 340px;
+            height: 100%;
+            background: #f8fafc;
+            padding: 20px;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 1px solid #e0e0e0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-panel.closed {
+            transform: translateX(100%);
+        }
+
+        .panel-header h3 { margin: 0 0 5px 0; font-size: 18px; color: #1e293b; }
+        .panel-header p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
+
+        .panel-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .close-btn:hover { background: #cbd5e1; color: #0284c7; }
+        .close-btn.mobile-only { display: none; }
+
+
+        /* ==========================================
+           4. CONTENITORE MAPPA E PULSANTI MOBILI
+           ========================================== */
+        #map {
+            position: absolute;
+            top: 0;
+            left: 280px;
+            right: 340px;
+            bottom: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        #map.expanded-right { right: 0; }
+
+        .mobile-menu-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1002;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e293b;
+        }
+
+
+        /* ==========================================
+           5. COMPONENTI INTERNI (Tabs e Popup)
+           ========================================== */
+        .tab-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 8px 6px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #475569;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background: #0284c7;
+            color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) { background: #cbd5e1; }
+
+        #infoContent { font-size: 13px; color: #334155; line-height: 1.5; }
+        #infoContent h3 { color: #0284c7; margin-top: 0; font-size: 16px; }
+
+        .leaflet-popup-content-wrapper { border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); padding: 5px; }
+        .leaflet-popup-content { font-size: 13px; line-height: 1.5; color: #334155; }
+
+        .custom-pin-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+        }
+
+
+        /* ==========================================
+           6. RESPONSIVE DESIGN (Smartphone / Tablet)
+           ========================================== */
+        @media (max-width: 900px) {
+            .control-panel { transform: translateX(-100%); }
+            .control-panel.mobile-open { transform: translateX(0); }
+            .info-panel { width: 100%; }
+            .mobile-menu-btn { display: block; }
+            .close-btn.mobile-only { display: flex; }
+            #map { left: 0 !important; right: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pulsante mobile per aprire i filtri a sinistra -->
+    <button class="mobile-menu-btn" onclick="toggleControlPanel()">☰ Filtri</button>
+
+    <!-- BARRA SINISTRA: Filtri -->
+    <div class="control-panel" id="controlPanel">
+        <div class="panel-top-row" style="margin-bottom: 5px;">
+            <div class="panel-header" style="padding:0;">
+                <h3>Collaborazione Pastorale</h3>
+                <p>Gestisci aree e punti di interesse.</p>
+            </div>
+            <button class="close-btn mobile-only" onclick="toggleControlPanel()" title="Chiudi filtri">✕</button>
+        </div>
+
+        <!-- MENÙ 1: Visibilità dei segnaposti -->
+        <details class="filter-section" id="sezVisibilita" open>
+            <summary>Visibilità</summary>
+            <div class="filter-body">
+                <label><input type="radio" name="visibilita" id="visTutto" value="tutto" checked> Visualizza tutto</label>
+                <label><input type="radio" name="visibilita" id="visZona" value="zona"> Solo per zona</label>
+
+            </div>
+        </details>
+
+        <!-- MENÙ 2: Filtri Aree -->
+        <details class="filter-section" id="sezAree" open>
+        <summary>Filtri Aree</summary>
+        <div class="filter-body">
+        <label class="sel-tutto"><input type="checkbox" id="selTuttoAree" checked> <strong>Seleziona tutto</strong></label>
+        <label><input type="checkbox" id="toggleCollaborazionePastorale" checked> <span style="color: #64748b; font-weight: bold;">■</span> Collaborazione Pastorale</label>
+        <label><input type="checkbox" id="toggleBassanello" checked> <span style="color: #3b82f6; font-weight: bold;">■</span> Bassanello in Padova</label>
+        <label><input type="checkbox" id="toggleSantaTeresa" checked> <span style="color: #f97316; font-weight: bold;">■</span> S.Teresa di Gesù Bambino in Padova</label> 
+        <label><input type="checkbox" id="toggleSSAngeliCustodi" checked> <span style="color: #ef4444; font-weight: bold;">■</span> Guizza in Padova</label>
+        <label><input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> <span style="color: #ec4899; font-weight: bold;">■</span> Unità Pastorale Guizza</label>
+        <label><input type="checkbox" id="togglePaltana" checked> <span style="color: #facc15; font-weight: bold;">■</span> S.Giovanni Bosco in Padova</label>
+        <label><input type="checkbox" id="toggleVoltabrusegana" checked> <span style="color: #22c55e; font-weight: bold;">■</span> Voltabrusegana in Padova</label>
+        <label><input type="checkbox" id="toggleMandria" checked> <span style="color: #06b6d4; font-weight: bold;">■</span> Mandria in Padova</label>
+        <label><input type="checkbox" id="toggleCrocefisso" checked> <span style="color: #a16207; font-weight: bold;">■</span> SS. Crocefisso in Padova</label>
+        <label><input type="checkbox" id="toggleSalboro" checked> <span style="color: #8b5cf6; font-weight: bold;">■</span> Salboro in Padova</label>
+
+        </div>
+        </details>
+
+        <!-- MENÙ 3: Filtri Posizioni -->
+        <details class="filter-section" id="sezPosizioni" open>
+        <summary>Filtri Posizioni</summary>
+        <div class="filter-body">
+        <label class="sel-tutto"><input type="checkbox" id="selTuttoPosizioni" checked> <strong>Seleziona tutto</strong></label>
+        <details class="filter-sub" open>
+<summary>Culto e comunità</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleChiese" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Chiese e oratori</span></label>
+        <label><input type="checkbox" id="toggleCentri" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></span> <span>Centri parrocchiali</span></label>
+        <label><input type="checkbox" id="toggleChieseAltri" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></span> <span>Chiese altri ordini</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Istruzione e formazione</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleScuoleInfanzia" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg></span> <span>Nidi e Scuole dell'Infanzia</span></label>
+        <label><input type="checkbox" id="toggleScuoleObbligo" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg></span> <span>Scuole dell'Obbligo</span></label>
+        <label><input type="checkbox" id="toggleUniversita" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg></span> <span>Università</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Servizi alla persona</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleServizi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Servizi comunali</span></label>
+        <label><input type="checkbox" id="toggleAssistenza" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg></span> <span>Assistenza e risorse del territorio</span></label>
+        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>RSA</span></label>
+        <label><input type="checkbox" id="toggleCollegi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg></span> <span>Collegi/Studentati</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Tempo libero e sport</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleParchi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></span> <span>Parchi e aree verdi</span></label>
+        <label><input type="checkbox" id="toggleSport" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg></span> <span>Centri e campi sportivi</span></label>
+</div>
+</details>
+        </div>
+        </details>
+    </div>
+
+    <!-- MAPPA INTERATTIVA -->
+    <div id="map"></div>
+
+    <!-- BARRA DESTRA: Dettagli -->
+    <div class="info-panel" id="infoPanel">
+        <div class="panel-header">
+            <div class="panel-top-row">
+                <h3 id="panelTitle">Dettagli Area</h3>
+                <button class="close-btn" id="closeBtn" onclick="toggleInfoPanel()" title="Chiudi pannello">✕</button>
+            </div>
+        </div>
+
+        <div class="tab-container" id="tabContainer" style="display: none;">
+            <button class="tab-btn active" id="btnCivile" onclick="cambiaAmbito('civile')">Ambito Civile</button>
+            <button class="tab-btn" id="btnEcclesiale" onclick="cambiaAmbito('ecclesiale')">Ambito Ecclesiale</button>
+            <button class="tab-btn" id="btnGrafici" onclick="cambiaAmbito('grafici')">Grafici</button>
+        </div>
+
+        <h4>Informazioni</h4>
+        <div id="infoContent">
+            <p style="color: #94a3b8; font-style: italic;">Nessuna area selezionata.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="grafici.js"></script>
+    <script>
+        // ==========================================
+        // MODULO 1: INIZIALIZZAZIONE MAPPA E LIMITI
+        // ==========================================
+        const confiniZona = [
+            [45.3300, 11.7900], 
+            [45.4200, 11.9300]  
+        ];
+
+        const map = L.map('map', {
+            center: [45.3750, 11.8600],
+            zoom: 13,                    
+            minZoom: 12,            
+            maxZoom: 18,            
+            maxBounds: confiniZona,  
+            maxBoundsViscosity: 1.0  
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let pannelloAperto = true;
+
+        function toggleInfoPanel() {
+            const panel = document.getElementById('infoPanel');
+            const mapDiv = document.getElementById('map');
+            
+            pannelloAperto = !pannelloAperto;
+            panel.classList.toggle('closed', !pannelloAperto);
+            
+            if (window.innerWidth > 900) {
+                mapDiv.classList.toggle('expanded-right', !pannelloAperto);
+            }
+            setTimeout(() => { map.invalidateSize(); }, 300);
+        }
+
+
+        // Dettaglio segnaposto: mostrato nel pannello destro (altezza fissa, scorrimento verticale)
+        function mostraDettaglioSegnaposto(html) {
+            if (!pannelloAperto) toggleInfoPanel();
+            if (window.distruggiGrafici) window.distruggiGrafici();
+            document.getElementById('panelTitle').innerText = 'Dettaglio segnaposto';
+            document.getElementById('tabContainer').style.display = 'none';
+            const torna = zonaCorrente && configurazioneZone[zonaCorrente]
+                ? `<button class="btn-torna-area" onclick="caricaDatiZona('${zonaCorrente}')">← Torna a ${configurazioneZone[zonaCorrente].nome}</button>` : '';
+            document.getElementById('infoContent').innerHTML = torna + `<div class="scheda-segnaposto">${html}</div>`;
+            document.getElementById('infoPanel').scrollTop = 0;
+        }
+
+        function toggleControlPanel() {
+            document.getElementById('controlPanel').classList.toggle('mobile-open');
+        }
+
+
+        // ==========================================
+        // MODULO 2: GESTIONE AREE, GEOJSON E INFO JSON
+        // ==========================================
+        const layersAree = {};
+        let zonaCorrente = null;
+        let ambitoCorrente = 'civile';
+        let datiZonaCorrente = { civile: "", ecclesiale: "", grafici: null };
+
+        const configurazioneZone = {
+            'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#475569', fill: '#64748b', opacity: 0.1 },
+            'bassanello': { nome: 'Bassanello in Padova', colore: '#1d4ed8', fill: '#3b82f6', opacity: 0.3 },
+            'santateresa': { nome: 'S.Teresa di Gesù Bambino in Padova', colore: '#ea580c', fill: '#f97316', opacity: 0.35 },
+            'ssangelicustodi': { file: 'ss_angeli_custodi', nome: 'Guizza in Padova', colore: '#b91c1c', fill: '#ef4444', opacity: 0.35 },
+            'unitapastoraleguizza': { nome: 'Unità Pastorale alla Guizza', colore: '#be185d', fill: '#ec4899', opacity: 0.15 },
+            'paltana': { nome: 'S.Giovanni Bosco in Padova', colore: '#ca8a04', fill: '#facc15', opacity: 0.4 },
+            'voltabrusegana': { nome: 'Voltabrusegana in Padova', colore: '#15803d', fill: '#22c55e', opacity: 0.35 },
+            'mandria': { nome: 'Mandria in Padova', colore: '#0e7490', fill: '#06b6d4', opacity: 0.35 },
+            'crocefisso': { file: 'ss_crocifisso', nome: 'SS. Crocefisso in Padova', colore: '#78350f', fill: '#a16207', opacity: 0.4 },
+            'salboro': { nome: 'Salboro in Padova', colore: '#6d28d9', fill: '#8b5cf6', opacity: 0.35 }
+        };
+
+        function caricaDatiZona(idZona) {
+            const infoZona = configurazioneZone[idZona];
+            if (!infoZona) return;
+
+            zonaCorrente = idZona;
+            
+            document.getElementById('panelTitle').innerText = infoZona.nome;
+            document.getElementById('tabContainer').style.display = 'flex';
+            
+            if (!pannelloAperto) toggleInfoPanel();
+
+            let fileJson = 'info/' + (infoZona.file || idZona) + '.json';
+
+            fetch(fileJson)
+                .then(res => {
+                    if (!res.ok) throw new Error("File JSON non trovato");
+                    return res.json();
+                })
+                .then(jsonData => {
+                    let htmlCivile = Array.isArray(jsonData.civile) ? jsonData.civile.join('\n') : (jsonData.civile || '<p>Informazioni civili non disponibili.</p>');
+                    let htmlEcclesiale = Array.isArray(jsonData.ecclesiale) ? jsonData.ecclesiale.join('\n') : (jsonData.ecclesiale || '<p>Informazioni ecclesiali non disponibili.</p>');
+
+                    datiZonaCorrente = {
+                        civile: htmlCivile,
+                        ecclesiale: htmlEcclesiale,
+                        grafici: jsonData.grafici || null
+                    };
+
+                    mostraContenutoAmbito();
+                })
+                .catch(err => {
+                    datiZonaCorrente = { civile: "", ecclesiale: "" };
+                    document.getElementById('infoContent').innerHTML = `<p style="color: #64748b; font-style: italic;">File di approfondimento JSON non disponibile per questa zona.</p>`;
+                });
+        }
+
+        function mostraContenutoAmbito() {
+            const box = document.getElementById('infoContent');
+            if (window.distruggiGrafici) window.distruggiGrafici();
+            if (ambitoCorrente === 'grafici') {
+                window.renderGrafici(datiZonaCorrente.grafici, box);
+                return;
+            }
+            const contenutoHtml = datiZonaCorrente[ambitoCorrente] || '<p style="color: #64748b; font-style: italic;">Contenuto non disponibile.</p>';
+            box.innerHTML = contenutoHtml;
+        }
+
+        function cambiaAmbito(ambito) {
+            ambitoCorrente = ambito;
+            document.getElementById('btnCivile').classList.toggle('active', ambito === 'civile');
+            document.getElementById('btnEcclesiale').classList.toggle('active', ambito === 'ecclesiale');
+            document.getElementById('btnGrafici').classList.toggle('active', ambito === 'grafici');
+            mostraContenutoAmbito();
+        }
+
+        // Caricamento dei file GeoJSON delle aree
+        Object.keys(configurazioneZone).forEach(idZona => {
+            const conf = configurazioneZone[idZona];
+            fetch(`geojson/${idZona}.geojson`)
+                .then(res => res.json())
+                .then(data => {
+                    layersAree[idZona] = L.geoJSON(data, {
+                        style: { color: conf.colore, fillColor: conf.fill, fillOpacity: conf.opacity, weight: 2 },
+                        onEachFeature: (feature, layer) => {
+                            layer.on('click', (e) => {
+                                L.DomEvent.stopPropagation(e);
+                                caricaDatiZona(idZona);
+                                document.getElementById('controlPanel').classList.remove('mobile-open');
+                            });
+                        }
+                    }).addTo(map);
+                })
+                .catch(err => console.log("Info caricamento:", err.message));
+        });
+
+        // Configurazione Checkbox Filtri Aree
+        const mapCheckboxIds = {
+            'toggleCollaborazionePastorale': 'collaborazionepastorale',
+            'toggleBassanello': 'bassanello',
+            'toggleSantaTeresa': 'santateresa',
+            'toggleSSAngeliCustodi': 'ssangelicustodi',
+            'toggleUnitaPastoraleGuizza': 'unitapastoraleguizza',
+            'togglePaltana': 'paltana',
+            'toggleVoltabrusegana': 'voltabrusegana',
+            'toggleMandria': 'mandria',
+            'toggleCrocefisso': 'crocefisso',
+            'toggleSalboro': 'salboro'
+        };
+
+        Object.keys(mapCheckboxIds).forEach(checkId => {
+            const el = document.getElementById(checkId);
+            if (el) {
+                el.addEventListener('change', (e) => {
+                    const idZona = mapCheckboxIds[checkId];
+                    if (layersAree[idZona]) {
+                        e.target.checked ? map.addLayer(layersAree[idZona]) : map.removeLayer(layersAree[idZona]);
+                    }
+                    aggiornaFiltroZone(); // in modalità "Solo per zona" i segnaposti seguono le aree spuntate
+                });
+            }
+        });
+
+
+        // ==========================================
+        // MODULO 3: GESTIONE SEGNAPOSTI E CATEGORIE
+        // ==========================================
+        const groupChiese = L.layerGroup().addTo(map);
+        const groupScuoleInfanzia = L.layerGroup().addTo(map);
+        const groupScuoleObbligo = L.layerGroup().addTo(map);
+        const groupStandard = L.layerGroup().addTo(map);
+
+        document.getElementById('toggleChiese').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupChiese) : map.removeLayer(groupChiese);
+        });
+
+        document.getElementById('toggleScuoleInfanzia').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleInfanzia) : map.removeLayer(groupScuoleInfanzia);
+        });
+
+        document.getElementById('toggleScuoleObbligo').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupScuoleObbligo) : map.removeLayer(groupScuoleObbligo);
+        });
+
+        document.getElementById('toggleStandard').addEventListener('change', (e) => {
+            e.target.checked ? map.addLayer(groupStandard) : map.removeLayer(groupStandard);
+        });
+
+        // Definizione Icone SVG per Categoria
+        const iconaChiesa = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        // Icona Ciuccio per Scuole dell'Infanzia
+        const iconaScuolaInfanzia = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        const iconaScuolaObbligo = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg>`,
+            iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
+        });
+
+        const iconaStandard = L.divIcon({
+            className: 'custom-pin-icon',
+            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+            iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
+        });
+
+        // 1. Caricamento Chiese
+        fetch('segnaposti/chiese.json')
+            .then(res => { if (!res.ok) throw new Error("chiese.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Chiesa';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #7c3aed; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupChiese, item);
+                });
+            })
+            .catch(err => console.log("Errore chiese:", err.message));
+
+        // 2. Caricamento Scuole dell'Infanzia
+        fetch('segnaposti/Scuole_infanzia.json')
+            .then(res => { if (!res.ok) throw new Error("Scuole_infanzia.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Infanzia';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #eab308; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleInfanzia, item);
+                });
+            })
+            .catch(err => console.log("Errore scuole infanzia:", err.message));
+
+        // 3. Caricamento Scuole dell'Obbligo
+        fetch('segnaposti/scuole_obbligo.json')
+            .then(res => { if (!res.ok) throw new Error("scuole_obbligo.json non trovato"); return res.json(); })
+            .then(punti => {
+                punti.forEach(item => {
+                    const lat = parseFloat(item.latitudine);
+                    const lon = parseFloat(item.longitudine);
+                    const nome = item.nome || 'Scuola Obbligo';
+                    const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #f97316; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleObbligo, item);
+                });
+            })
+            .catch(err => console.log("Errore scuole obbligo:", err.message));
+
+        // ==========================================
+        // MODULO 4: NUOVE CATEGORIE + FILTRO PER ZONA
+        // ==========================================
+        // Registro di tutti i segnaposti: {marker, gruppo, zona}
+        const registroMarker = [];
+        // Parrocchie coperte da ogni area del menù "Filtri Aree" (le aree aggregate includono le parrocchie che le compongono)
+        const ZONE_PARROCCHIE = ['bassanello','santateresa','ssangelicustodi','paltana','voltabrusegana','mandria','crocefisso','salboro'];
+        const PARROCCHIE_PER_AREA = {
+            'collaborazionepastorale': ZONE_PARROCCHIE,
+            'unitapastoraleguizza': ['bassanello','santateresa','ssangelicustodi']
+        };
+        // Parrocchie "attive" = quelle delle aree spuntate in Filtri Aree
+        function zoneAttiveDaFiltriAree() {
+            const attive = new Set();
+            Object.keys(mapCheckboxIds).forEach(checkId => {
+                const el = document.getElementById(checkId);
+                if (!el || !el.checked) return;
+                const idArea = mapCheckboxIds[checkId];
+                (PARROCCHIE_PER_AREA[idArea] || [idArea]).forEach(z => attive.add(z));
+            });
+            return attive;
+        }
+
+        function registraMarker(marker, gruppo, item) {
+            registroMarker.push({ marker, gruppo, zona: (item && item.zona) || null, lat: marker.getLatLng().lat, lon: marker.getLatLng().lng });
+            aggiornaFiltroZone();
+            return marker;
+        }
+
+        // Point-in-polygon (ray casting) su un anello di L.LatLng
+        function puntoInAnello(lat, lon, anello) {
+            let dentro = false;
+            for (let i = 0, j = anello.length - 1; i < anello.length; j = i++) {
+                const yi = anello[i].lat, xi = anello[i].lng, yj = anello[j].lat, xj = anello[j].lng;
+                if ((yi > lat) !== (yj > lat) && lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) dentro = !dentro;
+            }
+            return dentro;
+        }
+        function puntoInPoligono(lat, lon, latlngs) {
+            // latlngs: [anelloEsterno, buco1, ...] oppure array di poligoni (multipoligono)
+            if (!latlngs.length) return false;
+            if (latlngs[0] && latlngs[0].lat !== undefined) return puntoInAnello(lat, lon, latlngs);
+            if (latlngs[0][0] && latlngs[0][0].lat !== undefined) {
+                if (!puntoInAnello(lat, lon, latlngs[0])) return false;
+                for (let k = 1; k < latlngs.length; k++) if (puntoInAnello(lat, lon, latlngs[k])) return false;
+                return true;
+            }
+            return latlngs.some(p => puntoInPoligono(lat, lon, p));
+        }
+        // Zona di un segnaposto senza campo "zona" (file vecchi): calcolata dai poligoni caricati
+        function zonaDelPunto(lat, lon) {
+            for (const id of ZONE_PARROCCHIE) {
+                const lay = layersAree[id];
+                if (!lay) continue;
+                let trovato = false;
+                lay.eachLayer(l => { if (!trovato && l.getLatLngs && puntoInPoligono(lat, lon, l.getLatLngs())) trovato = true; });
+                if (trovato) return id;
+            }
+            return null;
+        }
+
+        // Modalità di visibilità: 'tutto' = segnaposti visibili ovunque; 'zona' = solo quelli delle zone selezionate
+        let modoVisibilita = 'tutto';
+
+        function aggiornaFiltroZone() {
+            const zoneAttive = zoneAttiveDaFiltriAree();
+            registroMarker.forEach(r => {
+                if (!r.zona) r.zona = zonaDelPunto(r.lat, r.lon); // resta null se i poligoni non sono ancora pronti / fuori zona
+                const visibile = modoVisibilita === 'tutto' || (r.zona && zoneAttive.has(r.zona));
+                if (visibile) { if (!r.gruppo.hasLayer(r.marker)) r.gruppo.addLayer(r.marker); }
+                else { if (r.gruppo.hasLayer(r.marker)) r.gruppo.removeLayer(r.marker); }
+            });
+        }
+
+        // Menù "Visibilità": Visualizza tutto / Solo per zona
+        document.querySelectorAll('input[name="visibilita"]').forEach(r => r.addEventListener('change', () => {
+            modoVisibilita = document.querySelector('input[name="visibilita"]:checked').value;
+            aggiornaFiltroZone();
+        }));
+        // Quando i poligoni delle zone finiscono di caricare, assegna la zona ai segnaposti dei file vecchi
+        setTimeout(aggiornaFiltroZone, 1500);
+        setTimeout(aggiornaFiltroZone, 4000);
+
+        const nuoveCategorie = [
+            { file: 'centri_parrocchiali.json', toggle: 'toggleCentri', colore: '#2563eb', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>` },
+            { file: 'universita_studentati.json', toggle: 'toggleUniversita', colore: '#0891b2', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
+            { file: 'servizi_comunali.json', toggle: 'toggleServizi', colore: '#475569', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'assistenza_risorse.json', toggle: 'toggleAssistenza', colore: '#dc2626', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg>` },
+            { file: 'rsa.json', toggle: 'toggleStandard', colore: '#ec4899', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'collegi_studentati.json', toggle: 'toggleCollegi', colore: '#0d9488', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg>` },
+            { file: 'chiese_altri_ordini.json', toggle: 'toggleChieseAltri', colore: '#92400e', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>` },
+            { file: 'parchi.json', toggle: 'toggleParchi', colore: '#16a34a', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
+            { file: 'impianti_sportivi.json', toggle: 'toggleSport', colore: '#1f2937', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>` }
+        ];
+        nuoveCategorie.forEach(cat => {
+            const gruppo = L.layerGroup().addTo(map);
+            document.getElementById(cat.toggle).addEventListener('change', e => {
+                e.target.checked ? map.addLayer(gruppo) : map.removeLayer(gruppo);
+            });
+            const icona = L.divIcon({
+                className: 'custom-pin-icon',
+                html: cat.svg,
+                iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
+            });
+            fetch('segnaposti/' + cat.file)
+                .then(res => { if (!res.ok) throw new Error(cat.file + ' non trovato'); return res.json(); })
+                .then(punti => {
+                    punti.forEach(item => {
+                        const lat = parseFloat(item.latitudine), lon = parseFloat(item.longitudine);
+                        if (isNaN(lat) || isNaN(lon)) return;
+                        const nome = item.nome || 'Segnaposto';
+                        const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
+                        const popup = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: ${cat.colore}; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                        registraMarker(L.marker([lat, lon], { icon: icona }).addTo(gruppo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popup)), gruppo, item);
+                    });
+                })
+                .catch(err => console.log('Errore ' + cat.file + ':', err.message));
+        });
+
+        // ==========================================
+        // "Seleziona tutto" nei menù Filtri Aree e Filtri Posizioni
+        // ==========================================
+        function collegaSelezionaTutto(idSezione, idMaster) {
+            const master = document.getElementById(idMaster);
+            const figli = Array.from(document.querySelectorAll('#' + idSezione + ' .filter-body input[type="checkbox"]'))
+                .filter(c => c !== master);
+            function sincronizza() {
+                const n = figli.filter(c => c.checked).length;
+                master.checked = (n === figli.length);
+                master.indeterminate = (n > 0 && n < figli.length);
+            }
+            master.addEventListener('change', () => {
+                const valore = master.checked;
+                figli.forEach(c => {
+                    if (c.checked !== valore) {
+                        c.checked = valore;
+                        c.dispatchEvent(new Event('change')); // fa scattare i filtri già esistenti
+                    }
+                });
+                master.indeterminate = false;
+            });
+            figli.forEach(c => c.addEventListener('change', sincronizza));
+            sincronizza();
+        }
+        collegaSelezionaTutto('sezAree', 'selTuttoAree');
+        collegaSelezionaTutto('sezPosizioni', 'selTuttoPosizioni');
+    </script>
+</body>
+</html>

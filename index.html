@@ -97,6 +97,21 @@
         .filter-section:not([open]) > summary::after { transform: rotate(-90deg); }
         .filter-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 6px; }
 
+
+        /* Sottosezioni a tendina dentro Filtri Posizioni */
+        .filter-sub { margin: 4px 0 2px 0; border-top: 1px solid #e2e8f0; }
+        .filter-sub > summary {
+            list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            margin: 4px 0 2px 0; padding: 5px 8px; border-radius: 8px;
+            font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;
+            user-select: none; transition: background 0.2s;
+        }
+        .filter-sub > summary::-webkit-details-marker { display: none; }
+        .filter-sub > summary:hover { background: #f1f5f9; }
+        .filter-sub > summary::after { content: '▾'; font-size: 13px; color: #94a3b8; transition: transform 0.2s; }
+        .filter-sub:not([open]) > summary::after { transform: rotate(-90deg); }
+        .filter-sub-body { display: flex; flex-direction: column; gap: 2px; padding-bottom: 4px; }
+
         .filter-group-title {
             margin: 10px 8px 2px 8px;
             padding-top: 6px;
@@ -108,6 +123,27 @@
             letter-spacing: 0.6px;
         }
         .sel-tutto + .filter-group-title { border-top: none; padding-top: 0; }
+
+        /* Popup dei segnaposti: altezza fissa con scorrimento verticale */
+        .leaflet-popup-content {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+            overscroll-behavior: contain;
+            scrollbar-width: thin;
+        }
+        .leaflet-popup-content::-webkit-scrollbar { width: 6px; }
+        .leaflet-popup-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .leaflet-popup-content h3 { position: sticky; top: 0; background: #fff; padding-bottom: 4px; z-index: 1; }
+
+
+        /* Scheda dettaglio segnaposto nel pannello destro */
+        .scheda-segnaposto { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.55; color: #334155; }
+        .scheda-segnaposto h3 { margin: 0 0 10px 0; font-size: 16px; }
+        .scheda-segnaposto ul { padding-left: 18px; margin: 6px 0; }
+        .btn-torna-area { background: none; border: none; color: #4f46e5; font-size: 13px; cursor: pointer; padding: 0 0 8px 0; text-align: left; }
+        .btn-torna-area:hover { text-decoration: underline; }
 
         /* Stile per le miniature dei pin nella legenda */
         .legend-icon {
@@ -292,17 +328,26 @@
         <summary>Filtri Aree</summary>
         <div class="filter-body">
         <label class="sel-tutto"><input type="checkbox" id="selTuttoAree" checked> <strong>Seleziona tutto</strong></label>
-        <label><input type="checkbox" id="toggleCollaborazionePastorale" checked> <span style="color: #6366f1; font-weight: bold;">■</span> Collaborazione Pastorale</label>
-        <label><input type="checkbox" id="toggleBassanello" checked> <span style="color: #e66200; font-weight: bold;">■</span> Bassanello in Padova</label>
-        <label><input type="checkbox" id="toggleSantaTeresa" checked> <span style="color: #ea580c; font-weight: bold;">■</span> S.Teresa di Gesù Bambino in Padova</label> 
-        <label><input type="checkbox" id="toggleSSAngeliCustodi" checked> <span style="color: #d97706; font-weight: bold;">■</span> Guizza in Padova</label>
-        <label><input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> <span style="color: #0284c7; font-weight: bold;">■</span> Unità Pastorale Guizza</label>
-        <label><input type="checkbox" id="togglePaltana" checked> <span style="color: #0d9488; font-weight: bold;">■</span> S.Giovanni Bosco in Padova</label>
-        <label><input type="checkbox" id="toggleVoltabrusegana" checked> <span style="color: #16a34a; font-weight: bold;">■</span> Voltabrusegana in Padova</label>
-        <label><input type="checkbox" id="toggleMandria" checked> <span style="color: #65a30d; font-weight: bold;">■</span> Mandria in Padova</label>
-        <label><input type="checkbox" id="toggleCrocefisso" checked> <span style="color: #ca8a04; font-weight: bold;">■</span> SS. Crocefisso in Padova</label>
-        <label><input type="checkbox" id="toggleSalboro" checked> <span style="color: #7c3aed; font-weight: bold;">■</span> Salboro in Padova</label>
-
+        <details class="filter-sub" open>
+<summary>Aggregazioni parrocchiali</summary>
+<div class="filter-sub-body">
+<label><input type="checkbox" id="toggleCollaborazionePastorale" checked> <span style="color: #64748b; font-weight: bold;">■</span> Collaborazione Pastorale</label>
+<label><input type="checkbox" id="toggleUnitaPastoraleGuizza" checked> <span style="color: #ec4899; font-weight: bold;">■</span> Unità Pastorale Guizza</label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Singole parrocchie</summary>
+<div class="filter-sub-body">
+<label><input type="checkbox" id="toggleBassanello" checked> <span style="color: #3b82f6; font-weight: bold;">■</span> Bassanello in Padova</label>
+<label><input type="checkbox" id="toggleSantaTeresa" checked> <span style="color: #f97316; font-weight: bold;">■</span> S.Teresa di Gesù Bambino in Padova</label>
+<label><input type="checkbox" id="toggleSSAngeliCustodi" checked> <span style="color: #ef4444; font-weight: bold;">■</span> Guizza in Padova</label>
+<label><input type="checkbox" id="togglePaltana" checked> <span style="color: #facc15; font-weight: bold;">■</span> S.Giovanni Bosco in Padova</label>
+<label><input type="checkbox" id="toggleVoltabrusegana" checked> <span style="color: #22c55e; font-weight: bold;">■</span> Voltabrusegana in Padova</label>
+<label><input type="checkbox" id="toggleMandria" checked> <span style="color: #06b6d4; font-weight: bold;">■</span> Mandria in Padova</label>
+<label><input type="checkbox" id="toggleCrocefisso" checked> <span style="color: #a16207; font-weight: bold;">■</span> SS. Crocefisso in Padova</label>
+<label><input type="checkbox" id="toggleSalboro" checked> <span style="color: #8b5cf6; font-weight: bold;">■</span> Salboro in Padova</label>
+</div>
+</details>
         </div>
         </details>
 
@@ -311,19 +356,38 @@
         <summary>Filtri Posizioni</summary>
         <div class="filter-body">
         <label class="sel-tutto"><input type="checkbox" id="selTuttoPosizioni" checked> <strong>Seleziona tutto</strong></label>
-        <div class="filter-group-title">Culto e comunità</div>
+        <details class="filter-sub" open>
+<summary>Culto e comunità</summary>
+<div class="filter-sub-body">
         <label><input type="checkbox" id="toggleChiese" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#7c3aed"/><path d="M17 7V17M13 10H21M11 25H23V19L17 14L11 19V25Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Chiese e oratori</span></label>
-        <label><input type="checkbox" id="toggleCentri" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#4f46e5"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></span> <span>Centri parrocchiali</span></label>
-        <div class="filter-group-title">Istruzione e formazione</div>
-        <label><input type="checkbox" id="toggleScuoleInfanzia" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg></span> <span>Nidi e Scuole dell'Infanzia</span></label>
-        <label><input type="checkbox" id="toggleScuoleObbligo" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Scuole dell'Obbligo</span></label>
-        <label><input type="checkbox" id="toggleUniversita" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#db2777"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg></span> <span>Università e studentati</span></label>
-        <div class="filter-group-title">Servizi alla persona</div>
-        <label><input type="checkbox" id="toggleServizi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#d97706"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Servizi comunali</span></label>
-        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg></span> <span>Altri Segnaposti Sociali</span></label>
-        <div class="filter-group-title">Tempo libero e sport</div>
+        <label><input type="checkbox" id="toggleCentri" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg></span> <span>Centri parrocchiali</span></label>
+        <label><input type="checkbox" id="toggleChieseAltri" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></span> <span>Chiese altri ordini</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Istruzione e formazione</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleScuoleInfanzia" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg></span> <span>Nidi e Scuole dell'Infanzia</span></label>
+        <label><input type="checkbox" id="toggleScuoleObbligo" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg></span> <span>Scuole dell'Obbligo</span></label>
+        <label><input type="checkbox" id="toggleUniversita" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg></span> <span>Università</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Servizi alla persona</summary>
+<div class="filter-sub-body">
+        <label><input type="checkbox" id="toggleServizi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>Servizi comunali</span></label>
+        <label><input type="checkbox" id="toggleAssistenza" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg></span> <span>Assistenza e risorse del territorio</span></label>
+        <label><input type="checkbox" id="toggleStandard" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span> <span>RSA</span></label>
+        <label><input type="checkbox" id="toggleCollegi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg></span> <span>Collegi/Studentati</span></label>
+</div>
+</details>
+<details class="filter-sub" open>
+<summary>Tempo libero e sport</summary>
+<div class="filter-sub-body">
         <label><input type="checkbox" id="toggleParchi" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></span> <span>Parchi e aree verdi</span></label>
-        <label><input type="checkbox" id="toggleSport" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><circle cx="17" cy="17" r="8" stroke="white" stroke-width="2"/><path d="M9 17H25M17 9V25" stroke="white" stroke-width="2"/></svg></span> <span>Centri e campi sportivi</span></label>
+        <label><input type="checkbox" id="toggleSport" checked> <span class="legend-icon"><svg viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg></span> <span>Centri e campi sportivi</span></label>
+</div>
+</details>
         </div>
         </details>
     </div>
@@ -378,24 +442,6 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Popup sempre leggibili: dimensioni adattate allo spazio visibile della mappa
-        // (altezza max = 60% della mappa, larghezza max = mappa - margini) e pan automatico con margini
-        L.Popup.mergeOptions({
-            autoPan: true,
-            keepInView: true,
-            autoPanPaddingTopLeft: [20, 20],
-            autoPanPaddingBottomRight: [20, 20]
-        });
-        map.on('popupopen', function (e) {
-            const dim = map.getSize();
-            const maxW = Math.max(200, Math.min(320, dim.x - 70));
-            const maxH = Math.max(150, Math.round(dim.y * 0.6));
-            e.popup.options.maxWidth = maxW;
-            const contenuto = e.popup.getElement() && e.popup.getElement().querySelector('.leaflet-popup-content');
-            if (contenuto) contenuto.style.maxHeight = maxH + 'px';
-            e.popup.update(); // ricalcola dimensione e riporta il riquadro dentro la vista
-        });
-
         let pannelloAperto = true;
 
         function toggleInfoPanel() {
@@ -409,6 +455,19 @@
                 mapDiv.classList.toggle('expanded-right', !pannelloAperto);
             }
             setTimeout(() => { map.invalidateSize(); }, 300);
+        }
+
+
+        // Dettaglio segnaposto: mostrato nel pannello destro (altezza fissa, scorrimento verticale)
+        function mostraDettaglioSegnaposto(html) {
+            if (!pannelloAperto) toggleInfoPanel();
+            if (window.distruggiGrafici) window.distruggiGrafici();
+            document.getElementById('panelTitle').innerText = 'Dettaglio segnaposto';
+            document.getElementById('tabContainer').style.display = 'none';
+            const torna = zonaCorrente && configurazioneZone[zonaCorrente]
+                ? `<button class="btn-torna-area" onclick="caricaDatiZona('${zonaCorrente}')">← Torna a ${configurazioneZone[zonaCorrente].nome}</button>` : '';
+            document.getElementById('infoContent').innerHTML = torna + `<div class="scheda-segnaposto">${html}</div>`;
+            document.getElementById('infoPanel').scrollTop = 0;
         }
 
         function toggleControlPanel() {
@@ -425,16 +484,16 @@
         let datiZonaCorrente = { civile: "", ecclesiale: "", grafici: null };
 
         const configurazioneZone = {
-            'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#4f46e5', fill: '#6366f1', opacity: 0.15 },
-            'bassanello': { nome: 'Bassanello in Padova', colore: '#ff0000', fill: '#e66200', opacity: 0.25 },
-            'santateresa': { nome: 'S.Teresa di Gesù Bambino in Padova', colore: '#ea580c', fill: '#f97316', opacity: 0.3 },
-            'ssangelicustodi': { file: 'ss_angeli_custodi', nome: 'Guizza in Padova', colore: '#d97706', fill: '#f59e0b', opacity: 0.3 },
-            'unitapastoraleguizza': { nome: 'Unità Pastorale alla Guizza', colore: '#0284c7', fill: '#38bdf8', opacity: 0.35 },
-            'paltana': { nome: 'S.Giovanni Bosco in Padova', colore: '#0d9488', fill: '#14b8a6', opacity: 0.3 },
-            'voltabrusegana': { nome: 'Voltabrusegana in Padova', colore: '#16a34a', fill: '#22c55e', opacity: 0.3 },
-            'mandria': { nome: 'Mandria in Padova', colore: '#65a30d', fill: '#84cc16', opacity: 0.3 },
-            'crocefisso': { file: 'ss_crocifisso', nome: 'SS. Crocefisso in Padova', colore: '#ca8a04', fill: '#facc15', opacity: 0.4 },
-            'salboro': { nome: 'Salboro in Padova', colore: '#7c3aed', fill: '#8b5cf6', opacity: 0.3 }
+            'collaborazionepastorale': { nome: 'Collaborazione Pastorale', colore: '#475569', fill: '#64748b', opacity: 0.1 },
+            'bassanello': { nome: 'Bassanello in Padova', colore: '#1d4ed8', fill: '#3b82f6', opacity: 0.3 },
+            'santateresa': { nome: 'S.Teresa di Gesù Bambino in Padova', colore: '#ea580c', fill: '#f97316', opacity: 0.35 },
+            'ssangelicustodi': { file: 'ss_angeli_custodi', nome: 'Guizza in Padova', colore: '#b91c1c', fill: '#ef4444', opacity: 0.35 },
+            'unitapastoraleguizza': { nome: 'Unità Pastorale alla Guizza', colore: '#be185d', fill: '#ec4899', opacity: 0.15 },
+            'paltana': { nome: 'S.Giovanni Bosco in Padova', colore: '#ca8a04', fill: '#facc15', opacity: 0.4 },
+            'voltabrusegana': { nome: 'Voltabrusegana in Padova', colore: '#15803d', fill: '#22c55e', opacity: 0.35 },
+            'mandria': { nome: 'Mandria in Padova', colore: '#0e7490', fill: '#06b6d4', opacity: 0.35 },
+            'crocefisso': { file: 'ss_crocifisso', nome: 'SS. Crocefisso in Padova', colore: '#78350f', fill: '#a16207', opacity: 0.4 },
+            'salboro': { nome: 'Salboro in Padova', colore: '#6d28d9', fill: '#8b5cf6', opacity: 0.35 }
         };
 
         function caricaDatiZona(idZona) {
@@ -574,19 +633,19 @@
         // Icona Ciuccio per Scuole dell'Infanzia
         const iconaScuolaInfanzia = L.divIcon({
             className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><circle cx="17" cy="17" r="4" fill="white"/><path d="M14 11C14 9.34315 15.3431 8 17 8C18.6569 8 20 9.34315 20 11V13H14V11Z" fill="white"/><path d="M13 19C13 16.7909 14.7909 15 17 15C19.2091 15 21 16.7909 21 19V25C21 27.2091 19.2091 29 17 29C14.7909 29 13 27.2091 13 25V19Z" stroke="white" stroke-width="2"/></svg>`,
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#eab308"/><circle cx="17" cy="9.5" r="3.5" stroke="white" stroke-width="2"/><path d="M8 17C8 14.5 12 14 17 14C22 14 26 14.5 26 17C26 20 22 22 17 22C12 22 8 20 8 17Z" fill="white"/><circle cx="17" cy="26" r="3.5" fill="white"/></svg>`,
             iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
         });
 
         const iconaScuolaObbligo = L.divIcon({
             className: 'custom-pin-icon',
-            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ea580c"/><path d="M11 14H23V28H11V14Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 18H19M15 22H19" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
+            html: `<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#f97316"/><path d="M17 12C14 10 10 10 8 11V25C10 24 14 24 17 26C20 24 24 24 26 25V11C24 10 20 10 17 12Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 12V26" stroke="white" stroke-width="2"/></svg>`,
             iconSize: [34, 42], iconAnchor: [17, 42], popupAnchor: [0, -38]
         });
 
         const iconaStandard = L.divIcon({
             className: 'custom-pin-icon',
-            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0284c7"/><circle cx="17" cy="16" r="6" fill="white"/></svg>`,
+            html: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
             iconSize: [30, 38], iconAnchor: [15, 38], popupAnchor: [0, -34]
         });
 
@@ -600,7 +659,7 @@
                     const nome = item.nome || 'Chiesa';
                     const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
                     const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #7c3aed; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupChiese, item);
+                    registraMarker(L.marker([lat, lon], { icon: iconaChiesa }).addTo(groupChiese).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupChiese, item);
                 });
             })
             .catch(err => console.log("Errore chiese:", err.message));
@@ -614,8 +673,8 @@
                     const lon = parseFloat(item.longitudine);
                     const nome = item.nome || 'Scuola Infanzia';
                     const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #0d9488; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupScuoleInfanzia, item);
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #eab308; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaInfanzia }).addTo(groupScuoleInfanzia).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleInfanzia, item);
                 });
             })
             .catch(err => console.log("Errore scuole infanzia:", err.message));
@@ -629,8 +688,8 @@
                     const lon = parseFloat(item.longitudine);
                     const nome = item.nome || 'Scuola Obbligo';
                     const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
-                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #ea580c; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindPopup(popupContent, { maxWidth: 320 }).bindTooltip(nome), groupScuoleObbligo, item);
+                    const popupContent = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: #f97316; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
+                    registraMarker(L.marker([lat, lon], { icon: iconaScuolaObbligo }).addTo(groupScuoleObbligo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popupContent)), groupScuoleObbligo, item);
                 });
             })
             .catch(err => console.log("Errore scuole obbligo:", err.message));
@@ -719,11 +778,15 @@
         setTimeout(aggiornaFiltroZone, 4000);
 
         const nuoveCategorie = [
-            { file: 'centri_parrocchiali.json', toggle: 'toggleCentri', colore: '#4f46e5', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#4f46e5"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>` },
-            { file: 'universita_studentati.json', toggle: 'toggleUniversita', colore: '#db2777', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#db2777"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
-            { file: 'servizi_comunali.json', toggle: 'toggleServizi', colore: '#d97706', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#d97706"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'centri_parrocchiali.json', toggle: 'toggleCentri', colore: '#2563eb', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#2563eb"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M15 27V22H19V27" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>` },
+            { file: 'universita_studentati.json', toggle: 'toggleUniversita', colore: '#0891b2', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0891b2"/><path d="M17 9L7 14L17 19L27 14L17 9Z" fill="white"/><path d="M11 17V22C11 24 14 26 17 26C20 26 23 24 23 22V17L17 20L11 17Z" fill="white"/></svg>` },
+            { file: 'servizi_comunali.json', toggle: 'toggleServizi', colore: '#475569', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#475569"/><path d="M17 8L8 13H26L17 8Z" fill="white"/><path d="M11 15V24M17 15V24M23 15V24M9 27H25" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'assistenza_risorse.json', toggle: 'toggleAssistenza', colore: '#dc2626', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><path d="M17 26C17 26 8 20 8 14.5C8 11.5 10.2 9.5 12.8 9.5C14.6 9.5 16.2 10.5 17 12C17.8 10.5 19.4 9.5 21.2 9.5C23.8 9.5 26 11.5 26 14.5C26 20 17 26 17 26Z" fill="white"/></svg>` },
+            { file: 'rsa.json', toggle: 'toggleStandard', colore: '#ec4899', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#ec4899"/><path d="M10 19L17 12L24 19V27H10V19Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M17 17V23M14 20H20" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>` },
+            { file: 'collegi_studentati.json', toggle: 'toggleCollegi', colore: '#0d9488', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#0d9488"/><path d="M8 11V26M8 22H26V26M8 22V18H15C17 18 18 19 18 21V22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="15" r="2" fill="white"/></svg>` },
+            { file: 'chiese_altri_ordini.json', toggle: 'toggleChieseAltri', colore: '#92400e', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#92400e"/><circle cx="17" cy="17" r="9" stroke="white" stroke-width="2"/><path d="M17 11V23M12 16H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>` },
             { file: 'parchi.json', toggle: 'toggleParchi', colore: '#16a34a', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#16a34a"/><circle cx="17" cy="14" r="7" fill="white"/><path d="M17 20V28" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>` },
-            { file: 'impianti_sportivi.json', toggle: 'toggleSport', colore: '#dc2626', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#dc2626"/><circle cx="17" cy="17" r="8" stroke="white" stroke-width="2"/><path d="M9 17H25M17 9V25" stroke="white" stroke-width="2"/></svg>` }
+            { file: 'impianti_sportivi.json', toggle: 'toggleSport', colore: '#1f2937', svg: `<svg width="30" height="38" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 0C7.6 0 0 7.6 0 17C0 29.8 17 42 17 42C17 42 34 29.8 34 17C34 7.6 26.4 0 17 0Z" fill="#1f2937"/><circle cx="17" cy="17" r="9.5" stroke="white" stroke-width="1.8"/><path d="M17 12.8L21 15.7L19.5 20.3H14.5L13 15.7Z" fill="white"/><path d="M17 12.8V7.5M21 15.7L26 14M19.5 20.3L22.5 24.5M14.5 20.3L11.5 24.5M13 15.7L8 14" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>` }
         ];
         nuoveCategorie.forEach(cat => {
             const gruppo = L.layerGroup().addTo(map);
@@ -744,7 +807,7 @@
                         const nome = item.nome || 'Segnaposto';
                         const descHtml = Array.isArray(item.descrizione) ? item.descrizione.join('\n') : (item.descrizione || '');
                         const popup = `<div style="min-width: 200px;"><h3 style="margin: 0 0 8px 0; color: ${cat.colore}; font-size: 15px;">${nome}</h3>${descHtml}</div>`;
-                        registraMarker(L.marker([lat, lon], { icon: icona }).addTo(gruppo).bindPopup(popup, { maxWidth: 320 }).bindTooltip(nome), gruppo, item);
+                        registraMarker(L.marker([lat, lon], { icon: icona }).addTo(gruppo).bindTooltip(nome).on('click', () => mostraDettaglioSegnaposto(popup)), gruppo, item);
                     });
                 })
                 .catch(err => console.log('Errore ' + cat.file + ':', err.message));

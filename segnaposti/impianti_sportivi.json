@@ -756,5 +756,30 @@
       "    <li><strong>Parrocchia:</strong> Mandria</li>",
       "</ul>"
     ]
+  },
+  {
+    "nome": "Palestra Santi Angeli Custodi",
+    "tipo": "sport",
+    "sottotipo": "centro_sportivo",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.373782115644104,
+    "longitudine": 11.869541336986671,
+    "descrizione": [
+      "<h4>Informazioni Sportive</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Palestra parrocchiale (campi da basket e pallavolo), legata alla parrocchia e al patronato dei Santi Angeli Custodi alla Guizza</li>",
+      "    <li><strong>Indirizzo:</strong> Via delle Scuole, 5 – 35125 Padova</li>",
+      "    <li><strong>Telefono:</strong> +39 049 880 9147</li>",
+      "    <li><strong>Orari indicati:</strong> lunedì–venerdì 09:00–12:00 e 15:00–21:00</li>",
+      "    <li><strong>Accessibilità:</strong> servizi igienici, accesso e parcheggio accessibili in sedia a rotelle</li>",
+      "    <li><strong>Lavori:</strong> ristrutturazione avviata a fine giugno 2026</li>",
+      "</ul>",
+      "<h4>Attività sportive e corsi</h4>",
+      "<ul>",
+      "    <li><strong>Basket e minibasket:</strong> corsi di minibasket, tra cui quelli di <a href=\"https://petrarcabasket.it/minibasket-padova/\" target=\"_blank\">Petrarca Basket</a></li>",
+      "    <li><strong>Scuola e attività motoria:</strong> la scuola parrocchiale ha convenzioni con associazioni sportive (basket e danza), con accompagnamento in palestra dopo l'orario scolastico, e propone percorsi di <a href=\"https://www.angelicustodipadova.it/attivita-motoria/\" target=\"_blank\">attività motoria</a></li>",
+      "</ul>"
+    ]
   }
 ]
