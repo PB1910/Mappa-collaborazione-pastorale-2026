@@ -1,0 +1,275 @@
+[
+  {
+    "nome": "Canottieri Padova ASD",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.389701,
+    "longitudine": 11.832015,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Canottaggio (remiera)</li>",
+      "    <li><strong>Impianto:</strong> Canottieri Padova</li>",
+      "    <li><strong>Indirizzo:</strong> Via Polveriera 3/G, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Società sportiva con sede nell'impianto</li>",
+      "    <li><strong>Telefono:</strong> +39 049 680857</li>",
+      "    <li><strong>Note:</strong> Collabora con Università di Padova e CUS Padova al progetto «Remare all'Università»</li>",
+      "    <li><strong>Parrocchia:</strong> Voltabrusegana</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.canottieripadova.it/\" target=\"_blank\">https://www.canottieripadova.it/</a> · <a href=\"https://www.unipd.it/attivita-remiere\" target=\"_blank\">Università di Padova</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "PadovaNuoto",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.385262,
+    "longitudine": 11.857967,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Nuoto, pallanuoto</li>",
+      "    <li><strong>Impianto:</strong> Padovanuoto</li>",
+      "    <li><strong>Indirizzo:</strong> Via Decorati al Valor Civile 2, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore del complesso natatorio</li>",
+      "    <li><strong>Telefono:</strong> +39 049 681300</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"http://www.padovanuoto.it/\" target=\"_blank\">http://www.padovanuoto.it/</a> · <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Rari Nantes Patavium 1905 ASD",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.385262,
+    "longitudine": 11.858147,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Nuoto</li>",
+      "    <li><strong>Impianto:</strong> Padovanuoto</li>",
+      "    <li><strong>Indirizzo:</strong> Complesso natatorio di Via Decorati al Valor Civile, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Indicata come gestore del complesso natatorio insieme a Padovanuoto</li>",
+      "    <li><strong>Parrocchia:</strong> Bassanello</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Rugby Petrarca",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.371757,
+    "longitudine": 11.864495,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Rugby</li>",
+      "    <li><strong>Impianto:</strong> Centro Sportivo Petrarca - Guizza</li>",
+      "    <li><strong>Indirizzo:</strong> Impianti «Memo Geremia», Via Guido Gozzano 64, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Società con sede e campi di gioco nell'impianto</li>",
+      "    <li><strong>Note:</strong> Il club è la sezione rugby dell'U.S. Petrarca</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.petrarcarugby.it/\" target=\"_blank\">https://www.petrarcarugby.it/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Guizza Plus Center SSD a r.l.",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.37333204088478,
+    "longitudine": 11.86562824676423,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Impianto polivalente (padel e altre attività)</li>",
+      "    <li><strong>Impianto:</strong> Impianto sportivo - Via Guido Gozzano</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guido Gozzano, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore dell'impianto</li>",
+      "    <li><strong>Telefono:</strong> +39 366 137 2333</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"http://plus-center.com/\" target=\"_blank\">http://plus-center.com/</a> · <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Nuova Età Beta",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.374069,
+    "longitudine": 11.865389,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Attività sportive nel palazzetto (da verificare)</li>",
+      "    <li><strong>Impianto:</strong> Impianto sportivo - Via Guido Gozzano</li>",
+      "    <li><strong>Indirizzo:</strong> Palazzetto dello Sport «Gozzano», Via Guido Gozzano 60, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore del palazzetto comunale</li>",
+      "    <li><strong>Note:</strong> Il Compendio indica l'associazione come gestore del palazzetto, ma non l'esatta posizione sulla mappa rispetto al Guizza Plus Center, nella stessa via</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "A.C.D. Virtus Padova",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.380889,
+    "longitudine": 11.875872,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Calcio</li>",
+      "    <li><strong>Impianto:</strong> Campo sportivo (calcio) - Via dei Salici</li>",
+      "    <li><strong>Indirizzo:</strong> Via dei Salici 25, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore dell'impianto</li>",
+      "    <li><strong>Note:</strong> Organizza anche un centro estivo presso l'impianto</li>",
+      "    <li><strong>Parrocchia:</strong> S.Teresa di Gesù Bambino</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a> · Comune di Padova, elenco centri estivi</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "BluKippe SSD a r.l.",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362616,
+    "longitudine": 11.891895,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Pallavolo e altre attività sportive</li>",
+      "    <li><strong>Impianto:</strong> Palazzetto polivalente Salboro &quot;Luigi De Michiel&quot;</li>",
+      "    <li><strong>Indirizzo:</strong> Via Monsignor Placido Ponchia 1, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore del palazzetto (con l'arcostruttura di Salboro)</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASD Petrarca Basket",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362616,
+    "longitudine": 11.892075,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Pallacanestro, minibasket</li>",
+      "    <li><strong>Impianto:</strong> Palazzetto polivalente Salboro &quot;Luigi De Michiel&quot;</li>",
+      "    <li><strong>Indirizzo:</strong> Via Monsignor Placido Ponchia 1, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Utilizzatrice della palestra</li>",
+      "    <li><strong>Note:</strong> Centro estivo «Sport & green» presso la palestra «Luigi De Michiel»</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> Comune di Padova, elenco centri estivi</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "U.S.D. Salboro Calcio",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362246,
+    "longitudine": 11.890794,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Calcio</li>",
+      "    <li><strong>Impianto:</strong> U.S.D. Salboro Calcio</li>",
+      "    <li><strong>Indirizzo:</strong> Via Monsignor Placido Ponchia, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Società che dà il nome all'impianto</li>",
+      "    <li><strong>Telefono:</strong> +39 049 8011288</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.usdsalboro.it/calcio/\" target=\"_blank\">https://www.usdsalboro.it/calcio/</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "US ACLI Padova",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.371133,
+    "longitudine": 11.840021,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Pickleball e altre attività</li>",
+      "    <li><strong>Impianto:</strong> Palazzetto di Ca' Rasi</li>",
+      "    <li><strong>Indirizzo:</strong> Via Ca' Rasi 2/B, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Gestore del palazzetto</li>",
+      "    <li><strong>Email:</strong> padova.usacli@acli.it</li>",
+      "    <li><strong>Note:</strong> Nel Compendio comunale il palazzetto compare come «Palazzetto Mandria», gestito da US Acli 2020 SSD a r.l.</li>",
+      "    <li><strong>Parrocchia:</strong> Mandria</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.padovanet.it/informazione/palazzetto-di-ca-rasi\" target=\"_blank\">Padovanet</a> · <a href=\"https://www.comune.padova.it/sites/default/files/2025-09/CompendioAssSportive.pdf\" target=\"_blank\">Comune di Padova – Compendio delle società sportive (2025)</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Ippico Villa Vanna",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.357639,
+    "longitudine": 11.895565,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Equitazione (scuola FISE, gare di dressage)</li>",
+      "    <li><strong>Impianto:</strong> Centro Equestre Villa Vanna</li>",
+      "    <li><strong>Indirizzo:</strong> Via Pietro Bembo, Padova</li>",
+      "    <li><strong>Ruolo:</strong> Società che gestisce il centro</li>",
+      "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://cavallomagazine.it/sport-equestri/regioni/gran-ritorno-di-villa-vanna\" target=\"_blank\">Cavallo Magazine</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Q4 Padova ASD (ex U.S. Crocefisso, dal 1972)",
+    "tipo": "associazione_sportiva",
+    "sottotipo": "associazione_sportiva",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.376804651474295,
+    "longitudine": 11.889032002081555,
+    "descrizione": [
+      "<h4>Informazioni Associazione</h4>",
+      "<ul>",
+      "    <li><strong>Sport:</strong> Calcio (campo di via Sandelli); altre attività non specificate nella fonte</li>",
+      "    <li><strong>Sede:</strong> Via Venier, 35124 Padova</li>",
+      "    <li><strong>Ruolo:</strong> Società sportiva parrocchiale, fondata nel 1972 da P. Italo Fattor con i parrocchiani; rinominata Q4 Padova ASD nel 2023</li>",
+      "    <li><strong>Telefono:</strong> +39 049 685510 (numero della parrocchia)</li>",
+      "    <li><strong>Email:</strong> q4padovaasd@gmail.com</li>",
+      "    <li><strong>Impianto:</strong> Campo sportivo (calcio) - Via Martino Sandelli</li>",
+      "    <li><strong>Parrocchia:</strong> Crocefisso</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://www.crocifissonet.it/servizi/asd-crocefisso-1972/\" target=\"_blank\">Crocifissonet – ASD Crocefisso 1972</a></li>",
+      "</ul>"
+    ]
+  }
+]

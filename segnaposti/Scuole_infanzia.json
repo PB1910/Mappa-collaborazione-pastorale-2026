@@ -91,7 +91,7 @@
     ]
   },
   {
-    "nome": "Scuola dell'infanzia Clara e Guido Ferro",
+    "nome": "Centro Infanzia Intergenerazionale “Clara e Guido Ferro” (scuola dell’infanzia e asilo nido)",
     "tipo": "scuola_infanzia",
     "sottotipo": "infanzia",
     "parrocchia": "Mandria in Padova",
@@ -101,17 +101,22 @@
     "descrizione": [
       "<h4>Informazioni Scolastiche</h4>",
       "<ul>",
-      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
-      "    <li><strong>Indirizzo:</strong> Via Malcesine 37, Padova</li>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia (3–6 anni) e asilo nido (0–3 anni)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Malcesine 37, 35142 Padova</li>",
       "    <li><strong>Parrocchia:</strong> Mandria</li>",
-      "    <li><strong>Gestione:</strong> privata</li>",
-      "    <li><strong>Telefono:</strong> +39 049 880361</li>",
-      "    <li><strong>Sito web:</strong> <a href=\"http://community.oiconlus.it/centroinfanzia/\" target=\"_blank\">http://community.oiconlus.it/centroinfanzia/</a></li>",
+      "    <li><strong>Gestione:</strong> privata (Fondazione OIC – Civitas Vitae “Angelo Ferro”)</li>",
+      "    <li><strong>Orari struttura:</strong> lunedì–venerdì 7:30–18:30 (scuola dell’infanzia fino al 30 giugno, nido fino al 31 luglio)</li>",
+      "    <li><strong>Scuola dell’infanzia:</strong> orario ordinario 8:00–16:00, doposcuola 16:00–18:00</li>",
+      "    <li><strong>Asilo nido:</strong> orario ordinario 7:30–16:30 (orario ridotto fino alle 13:00; tempo prolungato 16:30–18:30 su adesioni)</li>",
+      "    <li><strong>Servizi:</strong> progetto intergenerazionale con gli anziani (Nonni del Cuore), palestra per psicomotricità, giardino attrezzato, biblioteca, supporto alle famiglie, cucina centrale con menù dedicati</li>",
+      "    <li><strong>Telefono:</strong> 049 880 0361</li>",
+      "    <li><strong>Email:</strong> centroinfanzia@oiconlus.it</li>",
+      "    <li><strong>Sito web:</strong> <a href=\"https://centroinfanziaferro.oiconlus.it/\" target=\"_blank\">https://centroinfanziaferro.oiconlus.it/</a></li>",
       "</ul>"
     ]
   },
   {
-    "nome": "Scuola Materna \"Wollemborg\"",
+    "nome": "Scuola dell’infanzia comunale “Wollemborg”",
     "tipo": "scuola_infanzia",
     "sottotipo": "infanzia",
     "parrocchia": "Salboro in Padova",
@@ -121,14 +126,20 @@
     "descrizione": [
       "<h4>Informazioni Scolastiche</h4>",
       "<ul>",
-      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia</li>",
-      "    <li><strong>Indirizzo:</strong> Via Pomponio Leto, Padova</li>",
+      "    <li><strong>Tipologia:</strong> Scuola dell'infanzia comunale (3–6 anni)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Salboro 4, Padova</li>",
       "    <li><strong>Parrocchia:</strong> Salboro</li>",
+      "    <li><strong>Gestione:</strong> pubblica, Comune di Padova – Settore Servizi Scolastici (servizio a pagamento con refezione, previa iscrizione)</li>",
+      "    <li><strong>Struttura:</strong> tre sezioni da 25 bambini (75 in totale), sei insegnanti, ampio giardino attrezzato</li>",
+      "    <li><strong>Telefono:</strong> 049 8010197</li>",
+      "    <li><strong>Informazioni:</strong> Ufficio Coordinamento pedagogico, 049 8204019</li>",
+      "    <li><strong>Nota:</strong> posizione da verificare rispetto a via Salboro 4</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://padovaper.comune.padova.it/servizi/educazione-e-formazione/scuola-dellinfanzia-comunale-wollemborg\" target=\"_blank\">Padova Per – Scuola dell'infanzia comunale Wollemborg</a></li>",
       "</ul>"
     ]
   },
   {
-    "nome": "Scuola dell'Infanzia paritaria “M. Dositea Bottani” – Centro Infanzia “Bambini del Mediterraneo”",
+    "nome": "Scuola dell'Infanzia paritaria “M. Dositea Bottani”",
     "tipo": "scuola_infanzia",
     "sottotipo": "infanzia",
     "parrocchia": "SS. Crocefisso in Padova",
@@ -144,10 +155,22 @@
       "    <li><strong>Orari indicati:</strong> lunedì–venerdì 07:45–17:30</li>",
       "    <li>Attività e laboratori educativi, giardino e iniziative comunitarie</li>",
       "    <li><a href=\"https://ufficioscuola.diocesipadova.it/scuole-cattoliche-paritarie/scuole-dellinfanzia/provincia-di-padova/\" target=\"_blank\">Ufficio Scuola della Diocesi di Padova</a> · <a href=\"https://www.crocifissonet.it/tag/scuola-infanzia/\" target=\"_blank\">Crocifissonet</a></li>",
-      "</ul>",
-      "<h4>Centro Infanzia “Bambini del Mediterraneo” (nido + infanzia)</h4>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro Infanzia “Bambini del Mediterraneo” (nido e scuola dell’infanzia)",
+    "tipo": "scuola_infanzia",
+    "sottotipo": "infanzia",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.37918246661424,
+    "longitudine": 11.894062569939583,
+    "descrizione": [
+      "<h4>Centro Infanzia “Bambini del Mediterraneo”</h4>",
       "<ul>",
-      "    <li>Servizio educativo nel quartiere Crocifisso per bambine e bambini dai 3 mesi ai 5 anni, con sezioni nido e infanzia in spazi distinti</li>",
+      "    <li><strong>Tipologia:</strong> nido e scuola dell’infanzia, sezioni in spazi distinti</li>",
+      "    <li><strong>Età:</strong> da 3 mesi a 5 anni</li>",
       "    <li><strong>Indirizzo:</strong> Via del Commissario, 35124 Padova</li>",
       "    <li><strong>Telefono:</strong> +39 049 729 9180</li>",
       "    <li><a href=\"https://padovaper.comune.padova.it/servizi/educazione-e-formazione/centro-infanzia-bambini-del-mediterraneo-crocefisso\" target=\"_blank\">Scheda su Padova Per</a></li>",

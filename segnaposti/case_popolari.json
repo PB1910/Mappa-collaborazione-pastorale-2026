@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Case popolari – Via Pietro Verri",
+    "tipo": "case_popolari",
+    "sottotipo": "erp",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3774,
+    "longitudine": 11.8713,
+    "descrizione": [
+      "<h4>Case popolari – Via Pietro Verri</h4>",
+      "<ul>",
+      "<li><strong>Tipologia:</strong> edilizia residenziale pubblica (ERP)</li>",
+      "<li><strong>Via:</strong> Via Pietro Verri, Padova</li>",
+      "<li><strong>Intervento:</strong> 12 alloggi</li>",
+      "<li><strong>Gestione:</strong> ATER Padova</li>",
+      "<li><em>Posizione indicativa a metà strada: civici ERP da verificare</em></li>",
+      "<li><strong>Fonte:</strong> <a href=\"https://comune.padova.it/sites/default/files/attachment/Slide%20convegno%2012%20febbraio%20POR%20FESR%2014-20_PR%20FESR%2021-27_v1.0_13.02.2024.pdf\" target=\"_blank\">Comune di Padova – interventi ERP a cura di ATER Padova</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Case popolari – Via Nicolò da Lonigo",
+    "tipo": "case_popolari",
+    "sottotipo": "erp",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3778,
+    "longitudine": 11.8877,
+    "descrizione": [
+      "<h4>Case popolari – Via Nicolò da Lonigo</h4>",
+      "<ul>",
+      "<li><strong>Tipologia:</strong> edilizia residenziale pubblica (ERP)</li>",
+      "<li><strong>Via:</strong> Via Nicolò da Lonigo, Padova</li>",
+      "<li><strong>Intervento:</strong> 3 fabbricati</li>",
+      "<li><strong>Gestione:</strong> ATER Padova</li>",
+      "<li><em>Posizione indicativa a metà strada: civici ERP da verificare</em></li>",
+      "<li><strong>Fonte:</strong> <a href=\"https://comune.padova.it/sites/default/files/attachment/Slide%20convegno%2012%20febbraio%20POR%20FESR%2014-20_PR%20FESR%2021-27_v1.0_13.02.2024.pdf\" target=\"_blank\">Comune di Padova – interventi ERP a cura di ATER Padova</a></li>",
+      "</ul>"
+    ]
+  }
+]

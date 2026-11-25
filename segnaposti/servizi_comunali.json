@@ -41,9 +41,11 @@
       "<h4>Informazioni</h4>",
       "<ul>",
       "    <li><strong>Tipologia:</strong> Servizio comunale di facilitazione e coordinamento territoriale (Progetto Prisma)</li>",
+      "    <li><strong>Altri servizi nella stessa sede:</strong> CAT Janadaya (Comune di Padova, Settore Servizi Sociali)</li>",
       "    <li><strong>Sede:</strong> ex Casa del Custode, piano terra</li>",
       "    <li><strong>Indirizzo:</strong> via delle Scuole 2, Padova</li>",
       "    <li><strong>Nota:</strong> posizione indicativa (ricavata dall’indirizzo), da verificare</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://padovaper.comune.padova.it/sites/default/files/paragraph/documento/field_file/2026-05/Galassia%20-%20Mappa%20delle%20Case%20e%20Casette%20di%20Quartiere%20di%20Padova.pdf\" target=\"_blank\">Galassia – Mappa delle Case e Casette di Quartiere</a></li>",
       "</ul>"
     ]
   },
@@ -123,6 +125,85 @@
       "    <li><strong>Partecipazione:</strong> candidatura tramite l'Albo delle disponibilità nel Portale istanze online del Comune di Padova</li>",
       "    <li><strong>Aggiornamenti:</strong> pagina Facebook B4padova o gruppo ufficiale della Consulta 4B</li>",
       "    <li><em>Nota:</em> coordinate sul confine tra le zone S.Teresa e Crocefisso; stesso edificio dell'ufficio anagrafe già presente in servizi_comunali.</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Centro di raccolta rifiuti Guizza",
+    "tipo": "servizio_comunale",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.378225954709094,
+    "longitudine": 11.879777029057301,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Centro di raccolta rifiuti urbani differenziati (Comune di Padova, gestione AcegasApsAmga)</li>",
+      "    <li><strong>Indirizzo:</strong> via Pontedera, Padova</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://padovanet.it/11122023-verbale-viii-commissione\" target=\"_blank\">Verbale VIII Commissione</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Fronte del Porto – Una sala in comune",
+    "tipo": "servizio_comunale",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.38317724782729,
+    "longitudine": 11.865782591649854,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Sala di quartiere (Comune di Padova, zona 4B)</li>",
+      "    <li><strong>Indirizzo:</strong> via Santa Maria Assunta 20, Padova</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://padovaper.comune.padova.it/sites/default/files/paragraph/documento/field_file/2026-05/Galassia%20-%20Mappa%20delle%20Case%20e%20Casette%20di%20Quartiere%20di%20Padova.pdf\" target=\"_blank\">Galassia – Mappa delle Case e Casette di Quartiere</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Attività del Comune (sopra l’Ali, Santa Teresa)",
+    "tipo": "servizio_comunale",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.381694686212875,
+    "longitudine": 11.872754208280174,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Uffici e attività del Comune di Padova</li>",
+      "    <li><strong>Sede:</strong> sopra il supermercato Ali, di fronte alla chiesa di Santa Teresa di Gesù Bambino</li>",
+      "    <li><strong>Nota:</strong> posizione indicata dal referente; elenco delle attività da completare</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Sala Pinelli – Spazio Allegro (Crocifisso)",
+    "tipo": "servizio_comunale",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.377120822577915,
+    "longitudine": 11.890975799473647,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Sala di quartiere (Comune di Padova, zona 4B)</li>",
+      "    <li><strong>Indirizzo:</strong> via Vincenzo Pinelli 2, Padova</li>",
+      "    <li><strong>Fonte:</strong> <a href=\"https://padovaper.comune.padova.it/sites/default/files/paragraph/documento/field_file/2026-05/Galassia%20-%20Mappa%20delle%20Case%20e%20Casette%20di%20Quartiere%20di%20Padova.pdf\" target=\"_blank\">Galassia – Mappa delle Case e Casette di Quartiere</a></li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Polizia Locale",
+    "tipo": "servizio_comunale",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.38192775538834,
+    "longitudine": 11.878172987732789,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Polizia Locale (Comune di Padova)</li>",
+      "    <li><strong>Nota:</strong> posizione indicata dal referente; il Comando generale è in via Gaspare Gozzi 32 (fuori zona)</li>",
       "</ul>"
     ]
   }

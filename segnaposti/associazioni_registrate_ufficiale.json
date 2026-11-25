@@ -1,0 +1,733 @@
+[
+  {
+    "nome": "ACS - ASSOCIAZIONE DI COOPERAZIONE E SOLIDARIETA' ONG",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3725722,
+    "longitudine": 11.8266209,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA BOCCIONI, 30, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 514</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASD TEAM VENETO",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3846581,
+    "longitudine": 11.8574369,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DECORATI AL VALOR CIVILE, 2, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3455</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE AGORA' LABORATORIO TERZA ETA' PROTAGONISTA",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3700923,
+    "longitudine": 11.8303635,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA TOBLINO, 51, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1954</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE ARTEAM E.T.S.",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3804777,
+    "longitudine": 11.853802,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA ARMISTIZIO, 47 D, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3832</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE BALLET CENTER ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3846689,
+    "longitudine": 11.8498062,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA MONFALCONE, 13, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 518</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE COOPERAZIONE SOCIO CULTURALE TEMPI E RITMI ARTISTI VENETI PER LO SPORT E L'ANIMAZIONE",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3726917,
+    "longitudine": 11.8321833,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CA' RASI, 10 c, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3641</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CULTURA SENZA FRONTIERE APS - ETS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.3839237,
+    "longitudine": 11.8203613,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA IRPINIA, 10, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 2060</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE DACCAPO TRAUMA CRANICO ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3826395,
+    "longitudine": 11.853082,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CIVIDALE, 10, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1632</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE GRUPPO ARCOBALENO CTG APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3820504,
+    "longitudine": 11.8513978,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA ADRIA, 2, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1408</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE I BARCARI DEL BACCHIGLION APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3857581,
+    "longitudine": 11.8497806,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA POLESINE, 7, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3798</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE NAZIONALE TRA LAVORATORI MUTILATI ED INVALIDI DEL LAVORO",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3674758,
+    "longitudine": 11.8290374,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA ROMANA APONENSE, 125, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1140</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE NEW ESEDRA SKATING A.S.D",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3710323,
+    "longitudine": 11.8300871,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA TOBLINO, 53, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 398</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE PENSIONATI E FAMIGLIE PADOVA ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.3839237,
+    "longitudine": 11.8203613,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA IRPINIA, 10, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3299</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE RARI NANTES PATAVIUM 1905 ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3846581,
+    "longitudine": 11.8574369,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DECORATI AL VALOR CIVILE, 2, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 266</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE RITMO E MOVIMENTO ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Mandria in Padova",
+    "zona": "mandria",
+    "latitudine": 45.3736229,
+    "longitudine": 11.8296069,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CA' RASI, 9/D, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1586</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE U.G.O. UNITE GAREGGIAMO OVUNQUE ONLUS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.3893299,
+    "longitudine": 11.8323528,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA POLVERIERA, 3/g, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3647</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE VIP VIVIAMO IN POSITIVO PADOVA ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Voltabrusegana in Padova",
+    "zona": "voltabrusegana",
+    "latitudine": 45.3892366,
+    "longitudine": 11.8366914,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DECORATI AL VALOR CIVILE, 150, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 1896</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ORATORIO DON BOSCO APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3816482,
+    "longitudine": 11.8509153,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA ADRIA, 2/A, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 5A Sud-Ovest</li>",
+      "<li><strong>N. registro comunale:</strong> 3855</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE AMICI DI NUOVO VILLAGGIO ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3783267,
+    "longitudine": 11.88921,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DEL COMMISSARIO, 42, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 1842</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CALABRESI VENETO",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.37712,
+    "longitudine": 11.8706842,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA GUIZZA, 240, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3561</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CICAP APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3753036,
+    "longitudine": 11.874308,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA GIOVANNI PASCOLI, 1A, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 1689</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CULTURALE TEATRO LATERALE APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3807604,
+    "longitudine": 11.8634394,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA GUIDI, 44, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 939</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CULTURALE TEATROPIRATA",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.3840585,
+    "longitudine": 11.8730867,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA RAMUSIO GIROLAMO, 5, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3347</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE DONATORI MIDOLLO OSSEO E CELLULE STAMINALI EMOPOIETICHE DELLA REGIONE VENETO - ADMO ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3807356,
+    "longitudine": 11.8632896,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA ALESSANDRO GUIDI, 48, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 81</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE ECCE CORO",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3799424,
+    "longitudine": 11.8632182,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CARLO ALBERTO DIANO, 11, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3044</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE GUIZZODINERGIA CERS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3789296,
+    "longitudine": 11.8677431,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CHIABRERA, 9, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3840</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE LA CASA AZZURRA ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.3846805,
+    "longitudine": 11.8748441,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CIRIACO ANCONITANO, 1 A, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3041</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE LEONATI ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.3818861,
+    "longitudine": 11.869606,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA ARTURO GRAF, 7, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 885</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE LINFA ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3783339,
+    "longitudine": 11.88904,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DEL COMMISSARIO, 40/A, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 930</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE NUOVA ETA BETA ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.373254,
+    "longitudine": 11.864787,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> PIAZZA F. GARDELLIN, 8, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3844</li>",
+      "<li><strong>Posizione:</strong> approssimata (punto sulla via)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE PER LA PACE DI PADOVA",
+    "tipo": "associazione_registrata",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3772563,
+    "longitudine": 11.8909134,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA VINCENZO PINELLI, 4, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 62</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE PETRARCA BASKET ASD",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3738483,
+    "longitudine": 11.8696576,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DELLE SCUOLE, 5, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3595</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE PUGLIESI PADOVA",
+    "tipo": "associazione_registrata",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3783267,
+    "longitudine": 11.88921,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DEL COMMISSARIO, 42, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3109</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE QUARTO TEMPO APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.3804943,
+    "longitudine": 11.8674208,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA TASSONI (n. civico non indicato), Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3708</li>",
+      "<li><strong>Posizione:</strong> approssimata (punto sulla via)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE SALBOROINCONTRA APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.3595211,
+    "longitudine": 11.8903094,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA SALBORO, 6, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3423</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE SPORTIVA DILETTANTISTICA BLUKIPPE",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Salboro in Padova",
+    "zona": "salboro",
+    "latitudine": 45.362703,
+    "longitudine": 11.8903475,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA PONCHIA, 1, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 1218</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE TECHSTATION ETS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.3783267,
+    "longitudine": 11.88921,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA DEL COMMISSARIO, 42, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3679</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE VOCI GLOBALI APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Bassanello in Padova",
+    "zona": "bassanello",
+    "latitudine": 45.384274,
+    "longitudine": 11.8691884,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA CONSELVANA GUIZZA, 13BIS, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3477</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "CENTRO DI AIUTO ALLA VITA ODV",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3768571,
+    "longitudine": 11.8738252,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA BARBARANI, 6, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 104</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "COMITATO GENITORI SCUOLA GUIZZA",
+    "tipo": "associazione_registrata",
+    "parrocchia": "S.Teresa di Gesù Bambino in Padova",
+    "zona": "santateresa",
+    "latitudine": 45.3796536,
+    "longitudine": 11.8738835,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede operativa):</strong> VIA VERGA GIOVANNI, 7/c, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 1833</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "OPERA MUNDUS APS ETS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3733316,
+    "longitudine": 11.872275,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA GIOVANNI PASCOLI, 20, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3851</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE CULTURALE GLI ENARMONICI APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3777373,
+    "longitudine": 11.869596,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA MONTI, 5, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3508</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "ASSOCIAZIONE OFFICINE ARTE TEATRO APS",
+    "tipo": "associazione_registrata",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.3779833,
+    "longitudine": 11.8704041,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "<li><strong>Indirizzo (sede legale):</strong> VIA MONTI, 2, Padova</li>",
+      "<li><strong>Consulta:</strong> Quartiere 4B Sud-Est</li>",
+      "<li><strong>N. registro comunale:</strong> 3639</li>",
+      "<li><strong>Posizione:</strong> civico ufficiale (Comune di Padova, 2022)</li>",
+      "</ul>"
+    ]
+  }
+]

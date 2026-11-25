@@ -1,0 +1,21 @@
+[
+  {
+    "nome": "Piccolo Teatro Don Bosco",
+    "tipo": "teatro",
+    "sottotipo": "teatro",
+    "parrocchia": "S.Giovanni Bosco in Padova",
+    "zona": "paltana",
+    "latitudine": 45.3826696,
+    "longitudine": 11.8523517,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Teatro / sala spettacoli (oratorio Don Bosco)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Asolo 2, 35142 Padova</li>",
+      "    <li><strong>Parrocchia:</strong> S. Giovanni Bosco (Paltana)</li>",
+      "    <li><strong>Attività:</strong> stagione teatrale, teatro ragazzi, concerti, cinema all'aperto estivo</li>",
+      "    <li><strong>Sito:</strong> <a href=\"https://www.piccolo-padova.it/\" target=\"_blank\">piccolo-padova.it</a></li>",
+      "</ul>"
+    ]
+  }
+]

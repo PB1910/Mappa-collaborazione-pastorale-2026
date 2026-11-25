@@ -93,6 +93,18 @@
         charts.push(new Chart(cv, config));
     }
 
+    // etichette asse Y: toglie " in Padova" e va a capo (max ~16 caratteri per riga) per non tagliarle
+    function wrapLabel(t) {
+        t = String(t == null ? '' : t).replace(/\s+in Padova$/i, '');
+        const out = []; let riga = '';
+        t.split(' ').forEach(w => {
+            if (riga && (riga + ' ' + w).length > 16) { out.push(riga); riga = w; }
+            else riga = riga ? riga + ' ' + w : w;
+        });
+        if (riga) out.push(riga);
+        return out;
+    }
+
     function baseOptions(fmt, labelsOn, legend) {
         return {
             indexAxis: 'y', responsive: true, maintainAspectRatio: false,
@@ -104,7 +116,7 @@
             },
             scales: {
                 x: { beginAtZero: true, grid: { color: GRID }, border: { color: BASE }, ticks: { color: MUTED, font: { family: FONT, size: 10 }, precision: 0, callback: v => nf(v) } },
-                y: { grid: { display: false }, border: { color: BASE }, ticks: { color: INK2, font: { family: FONT, size: 11 } } }
+                y: { grid: { display: false }, border: { color: BASE }, ticks: { color: INK2, font: { family: FONT, size: 11 }, callback: function (v) { return wrapLabel(this.getLabelForValue(v)); } } }
             }
         };
     }
@@ -117,7 +129,7 @@
     function barSingle(host, t, sub, zone, key, fmt) {
         title(host, t, sub);
         const sorted = zone.slice().sort((a, b) => (has(b[key]) ? b[key] : -1) - (has(a[key]) ? a[key] : -1));
-        addChart(host, sorted.length * 24 + 30, {
+        addChart(host, sorted.length * 32 + 30, {
             type: 'bar',
             data: { labels: sorted.map(z => z.nome), datasets: [{ data: sorted.map(z => has(z[key]) ? z[key] : null), backgroundColor: COL.blue, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: 'start', barThickness: 14 }] },
             options: baseOptions(fmt, true, false)
