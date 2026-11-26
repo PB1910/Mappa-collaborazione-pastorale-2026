@@ -14,7 +14,7 @@
     "<ul>",
     "    <li><strong>Edilizia Prevalente:</strong> Quartieri densamente popolati in tutte e 3 le parrocchie</li>",
     "    <li><strong>Presenza di stabilimenti industriali:</strong> Nulla in tutte e 3 le parrocchie</li>",
-    "    <li><strong>Presenza di esercizi commerciali:</strong><ul><li>Alta: SS. Angeli Custodi</li><li>Media: Bassanello</li><li>Bassa: Santa Teresa</li></ul></li>",
+    "    <li><strong>Presenza di esercizi commerciali:</strong><ul><li>Alta: Guizza in Padova</li><li>Media: Bassanello in Padova</li><li>Bassa: S.Teresa di Gesù Bambino in Padova</li></ul></li>",
     "</ul>",
     "",
     "<h4>Servizi</h4>",
@@ -28,33 +28,33 @@
     "<p><strong>Opere sociali significative:</strong></p>",
     "<ul>",
     "    <li><strong>Accoglienza e ospitalità:</strong><ul><li>Comunità Malbes (donne rifugiate)</li><li>Casa Famiglia Leonati</li><li>Foresteria giovanile</li></ul></li>",
-    "    <li><strong>Solidarietà e sostegno:</strong><ul><li>Pranzo di solidarietà (Santa Teresa, SS. Angeli Custodi)</li><li>Centro Aiuto alla Vita</li><li>CAT</li></ul></li>",
+    "    <li><strong>Solidarietà e sostegno:</strong><ul><li>Pranzo di solidarietà (S.Teresa di Gesù Bambino in Padova, Guizza in Padova)</li><li>Centro Aiuto alla Vita</li><li>CAT</li></ul></li>",
     "    <li><strong>Giovani, cultura e spazi di incontro:</strong><ul><li>Abracalam (associazione teatrale)</li><li>Collegio femminile P.A.R.</li><li>Spazio Prisma (casetta)</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Poli sportivi rilevanti:</strong></p>",
     "<ul>",
     "    <li><strong>Numero di poli:</strong><ul><li>Totale: 7</li><li>Media: 3.5</li></ul></li>",
-    "    <li><strong>Santa Teresa:</strong><ul><li>CSI</li><li>ASD Guizza</li></ul></li>",
-    "    <li><strong>SS. Angeli Custodi:</strong><ul><li>Petrarca Rugby</li><li>Palestra Gozzano</li><li>Impianti Sportivi Fasolo</li><li>Guizza Plus Center</li><li>Palestra parrocchiale</li></ul></li>",
+    "    <li><strong>S.Teresa di Gesù Bambino in Padova:</strong><ul><li>CSI</li><li>ASD Guizza</li></ul></li>",
+    "    <li><strong>Guizza in Padova:</strong><ul><li>Petrarca Rugby</li><li>Palestra Gozzano</li><li>Impianti Sportivi Fasolo</li><li>Guizza Plus Center</li><li>Palestra parrocchiale</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Situazioni Problematiche:</strong></p>",
     "<ul>",
-    "    <li><strong>Marginalità sociale giovanile:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
+    "    <li><strong>Marginalità sociale giovanile:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Bisogni Emergenti:</strong></p>",
     "<ul>",
-    "    <li><strong>Emergenza casa:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
-    "    <li><strong>Anziani soli:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
-    "    <li><strong>Rete di supporto per altre etnie:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
+    "    <li><strong>Emergenza casa:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
+    "    <li><strong>Anziani soli:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
+    "    <li><strong>Rete di supporto per altre etnie:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Possibili Risorse:</strong></p>",
     "<ul>",
-    "    <li><strong>Spazi verdi:</strong><ul><li>Parchi pubblici (Santa Teresa, SS. Angeli Custodi)</li><li>Parco parrocchiale (Santa Teresa)</li></ul></li>",
-    "    <li><strong>Servizi e spazi di incontro (Bassanello):</strong><ul><li>Sportello lavoro ENGIM</li><li>Piazzale Cuoco</li><li>Casetta Sant'Egidio</li><li>Cinema con sala pubblica comunale</li></ul></li>",
+    "    <li><strong>Spazi verdi:</strong><ul><li>Parchi pubblici (S.Teresa di Gesù Bambino in Padova, Guizza in Padova)</li><li>Parco parrocchiale (S.Teresa di Gesù Bambino in Padova)</li></ul></li>",
+    "    <li><strong>Servizi e spazi di incontro (Bassanello in Padova):</strong><ul><li>Sportello lavoro ENGIM</li><li>Piazzale Cuoco</li><li>Casetta Sant'Egidio</li><li>Cinema con sala pubblica comunale</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Altre Info Rilevanti:</strong></p>",
@@ -85,21 +85,21 @@
     "    <li><strong>Prime comunioni / Confermazioni (2025):</strong><ul><li>Totale: 19</li><li>Media: 19</li></ul></li>",
     "    <li><strong>Matrimoni (2025):</strong><ul><li>Totale: 1</li><li>Media: 1</li></ul></li>",
     "    <li><strong>Funerali (2025):</strong><ul><li>Totale: 105</li><li>Media: 35</li></ul></li>",
-    "    <li><strong>Presenza di altre Chiese / Religioni:</strong><ul><li>Ortodossi: tutte e tre le parrocchie</li><li>Islam: tutte e tre le parrocchie</li><li>Induismo e Buddismo: SS. Angeli Custodi</li></ul></li>",
+    "    <li><strong>Presenza di altre Chiese / Religioni:</strong><ul><li>Ortodossi: tutte e tre le parrocchie</li><li>Islam: tutte e tre le parrocchie</li><li>Induismo e Buddismo: Guizza in Padova</li></ul></li>",
     "</ul>",
     "",
     "<h4>Collaborazioni e Iniziative</h4>",
     "<p><strong>Collaborazioni positive con il territorio:</strong></p>",
     "<ul>",
-    "    <li><strong>Consulta di quartiere 4B:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
-    "    <li><strong>Tavolo Adolescenti con le realtà del territorio:</strong><ul><li>Bassanello</li><li>Santa Teresa</li><li>SS. Angeli Custodi</li></ul></li>",
+    "    <li><strong>Consulta di quartiere 4B:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
+    "    <li><strong>Tavolo Adolescenti con le realtà del territorio:</strong><ul><li>Bassanello in Padova</li><li>S.Teresa di Gesù Bambino in Padova</li><li>Guizza in Padova</li></ul></li>",
     "</ul>",
     "",
     "<p><strong>Altre Info Rilevanti:</strong></p>",
     "<ul>",
     "    <li><strong>In comune:</strong><ul><li>Centri di ascolto nelle case</li><li>Festa patronale</li><li>Festa comunitaria unitaria attenta all'inclusione</li><li>Grest e campi scuola</li></ul></li>",
-    "    <li><strong>Santa Teresa:</strong><ul><li>Gruppo Preghiera Padre Pio</li><li>Comunità Sant'Egidio</li></ul></li>",
-    "    <li><strong>SS. Angeli Custodi:</strong><ul><li>Oratorio dell'Angelo</li></ul></li>",
+    "    <li><strong>S.Teresa di Gesù Bambino in Padova:</strong><ul><li>Gruppo Preghiera Padre Pio</li><li>Comunità Sant'Egidio</li></ul></li>",
+    "    <li><strong>Guizza in Padova:</strong><ul><li>Oratorio dell'Angelo</li></ul></li>",
     "</ul>"
   ],
   "grafici": {
@@ -116,7 +116,15 @@
         "funerali": 32.0,
         "studenti": "media",
         "industriali": "nulla",
-        "commerciali": "media"
+        "commerciali": "media",
+        "problemi": {
+          "giovani": ""
+        },
+        "bisogni": {
+          "casa": "",
+          "anziani": "",
+          "etnie": ""
+        }
       },
       {
         "id": "santateresa",
@@ -130,7 +138,15 @@
         "funerali": 28.0,
         "studenti": "media",
         "industriali": "nulla",
-        "commerciali": "bassa"
+        "commerciali": "bassa",
+        "problemi": {
+          "giovani": ""
+        },
+        "bisogni": {
+          "casa": "",
+          "anziani": "",
+          "etnie": ""
+        }
       },
       {
         "id": "ss_angeli_custodi",
@@ -144,7 +160,15 @@
         "funerali": 45.0,
         "studenti": "media",
         "industriali": "nulla",
-        "commerciali": "alta"
+        "commerciali": "alta",
+        "problemi": {
+          "giovani": ""
+        },
+        "bisogni": {
+          "casa": "",
+          "anziani": "",
+          "etnie": ""
+        }
       }
     ],
     "cp": {

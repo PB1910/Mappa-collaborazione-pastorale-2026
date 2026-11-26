@@ -106,7 +106,15 @@
         "funerali": 28.0,
         "studenti": "media",
         "industriali": "nulla",
-        "commerciali": "bassa"
+        "commerciali": "bassa",
+        "problemi": {
+          "giovani": ""
+        },
+        "bisogni": {
+          "casa": "",
+          "anziani": "",
+          "etnie": ""
+        }
       }
     ],
     "cp": {

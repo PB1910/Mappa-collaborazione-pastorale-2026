@@ -168,7 +168,7 @@
   {
     "nome": "Scuola Missionaria del Sacro Cuore",
     "tipo": "scuola_obbligo",
-    "sottotipo": "da_verificare",
+    "sottotipo": "scuola",
     "parrocchia": "SS. Crocefisso in Padova",
     "zona": "crocefisso",
     "latitudine": 45.373762,
@@ -176,7 +176,7 @@
     "descrizione": [
       "<h4>Informazioni Scolastiche</h4>",
       "<ul>",
-      "    <li><strong>Tipologia:</strong> Scuola (tipo da verificare)</li>",
+      "    <li><strong>Tipologia:</strong> Scuola</li>",
       "    <li><strong>Indirizzo:</strong> Via Pietro Bembo 98, Padova</li>",
       "    <li><strong>Parrocchia:</strong> Crocifisso</li>",
       "</ul>"

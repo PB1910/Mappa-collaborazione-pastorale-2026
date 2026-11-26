@@ -106,7 +106,12 @@
         "funerali": null,
         "studenti": "molto bassa",
         "industriali": "nulla",
-        "commerciali": "nulla"
+        "commerciali": "nulla",
+        "problemi": {
+          "anziani": "",
+          "altro": "Scarsa partecipazione dei giovani; marginalità delle famiglie Sinti"
+        },
+        "bisogni": null
       }
     ],
     "cp": {

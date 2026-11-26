@@ -55,6 +55,10 @@
         .viz-heat .r { font-size:11px; color:${INK2}; align-self:center; padding-right:4px; }
         .viz-heat .c { height:26px; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:10.5px; }
         .viz-heat .c.nd { background:#f1f5f9; color:${MUTED}; border:1px dashed ${BASE}; }
+        .viz-heat .c.on { color:#fff; font-size:12px; cursor:default; }
+        .viz-heat .c.off { background:#f8fafc; border:1px solid ${GRID}; }
+        .viz-heat .c.tot { font-weight:600; color:${INK}; font-size:11px; }
+        .viz-heat .r.tot { font-weight:600; }
         .viz-legend { display:flex; flex-wrap:wrap; gap:4px 10px; margin-top:6px; font-size:10px; color:${INK2}; }
         .viz-legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:4px; vertical-align:-1px; }
         .viz-details { margin-top:14px; font-size:11px; color:${INK2}; }
@@ -93,12 +97,12 @@
         charts.push(new Chart(cv, config));
     }
 
-    // etichette asse Y: toglie " in Padova" e va a capo (max ~16 caratteri per riga) per non tagliarle
+    // etichette asse Y: nome completo della parrocchia, a capo (max ~20 caratteri per riga) per non tagliarle
     function wrapLabel(t) {
-        t = String(t == null ? '' : t).replace(/\s+in Padova$/i, '');
+        t = String(t == null ? '' : t);
         const out = []; let riga = '';
         t.split(' ').forEach(w => {
-            if (riga && (riga + ' ' + w).length > 16) { out.push(riga); riga = w; }
+            if (riga && (riga + ' ' + w).length > 20) { out.push(riga); riga = w; }
             else riga = riga ? riga + ' ' + w : w;
         });
         if (riga) out.push(riga);
@@ -195,6 +199,47 @@
         host.appendChild(lg);
     }
 
+    const PROB = [['giovani', 'Marginalit\u00e0 giovanile'], ['anziani', 'Solitudine anziani'], ['poverta', 'Povert\u00e0 e lavoro'], ['altro', 'Altro']];
+    const BIS = [['casa', 'Emergenza casa'], ['anziani', 'Anziani soli'], ['etnie', 'Supporto altre etnie'], ['lavoro', 'Luoghi di lavoro'], ['famiglie', 'Giovani famiglie con bambini']];
+
+    // matrice parrocchie x categorie (segnalato / non segnalato / n.d.)
+    function matrice(host, zone, key, titolo, cols, colore) {
+        if (!zone.some(z => z[key] !== undefined)) return;
+        title(host, titolo, 'Categorie segnalate da ciascuna parrocchia');
+        const multi = zone.length > 1;
+        const g = document.createElement('div'); g.className = 'viz-heat';
+        g.style.gridTemplateColumns = (multi ? '112px ' : '') + 'repeat(' + cols.length + ',1fr)';
+        if (multi) g.appendChild(document.createElement('div'));
+        cols.forEach(c => { const h = document.createElement('div'); h.className = 'h'; h.textContent = c[1]; g.appendChild(h); });
+        zone.forEach(z => {
+            if (multi) { const r = document.createElement('div'); r.className = 'r'; r.textContent = z.nome; g.appendChild(r); }
+            const v = z[key];
+            if (v === null || v === undefined) {
+                const d = document.createElement('div'); d.className = 'c nd'; d.textContent = ND;
+                d.style.gridColumn = (multi ? '2' : '1') + ' / -1'; d.title = z.nome + ': ' + ND; g.appendChild(d); return;
+            }
+            cols.forEach(c => {
+                const d = document.createElement('div');
+                if (Object.prototype.hasOwnProperty.call(v, c[0])) {
+                    d.className = 'c on'; d.style.background = colore; d.textContent = '\u25cf';
+                    d.title = z.nome + ' - ' + c[1] + (v[c[0]] ? ': ' + v[c[0]] : '');
+                } else { d.className = 'c off'; d.title = z.nome + ' - ' + c[1] + ': non segnalato'; }
+                g.appendChild(d);
+            });
+        });
+        if (multi) {
+            const r = document.createElement('div'); r.className = 'r tot'; r.textContent = 'Parrocchie'; g.appendChild(r);
+            cols.forEach(c => {
+                const n = zone.filter(z => z[key] && Object.prototype.hasOwnProperty.call(z[key], c[0])).length;
+                const d = document.createElement('div'); d.className = 'c tot'; d.textContent = n; d.title = n + ' parrocchie segnalano: ' + c[1]; g.appendChild(d);
+            });
+        }
+        host.appendChild(g);
+        const nt = document.createElement('p'); nt.className = 'viz-note';
+        nt.textContent = '\u25cf = segnalato dalla parrocchia. ' + (multi ? 'In fondo: numero di parrocchie che lo segnalano. ' : '') + 'n.d. = dato non dichiarato.';
+        host.appendChild(nt);
+    }
+
     function tiles(host, g) {
         const zone = g.zone, multi = zone.length > 1, cp = g.cp;
         const resTot = zone.reduce((a, z) => a + (has(z.residenti) ? z.residenti : 0), 0);
@@ -239,6 +284,8 @@
         }
         sacramenti(host, zone);
         heat(host, zone);
+        matrice(host, zone, 'problemi', 'Situazioni problematiche', PROB, COL.orange);
+        matrice(host, zone, 'bisogni', 'Bisogni emergenti', BIS, COL.blue);
         table(host, zone);
     };
 })();

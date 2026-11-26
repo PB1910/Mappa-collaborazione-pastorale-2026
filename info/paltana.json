@@ -106,7 +106,9 @@
         "funerali": null,
         "studenti": "alta",
         "industriali": "nulla",
-        "commerciali": "bassa"
+        "commerciali": "bassa",
+        "problemi": null,
+        "bisogni": null
       }
     ],
     "cp": {

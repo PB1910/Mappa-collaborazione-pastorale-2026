@@ -107,7 +107,13 @@
         "funerali": null,
         "studenti": "bassa",
         "industriali": "nulla",
-        "commerciali": "bassa"
+        "commerciali": "bassa",
+        "problemi": {
+          "poverta": "Situazioni cristallizzate di povertà"
+        },
+        "bisogni": {
+          "famiglie": ""
+        }
       }
     ],
     "cp": {
