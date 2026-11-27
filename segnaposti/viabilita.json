@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "Tram SIR1 – Capolinea Sud (Guizza)",
+    "tipo": "tram",
+    "sottotipo": "capolinea_tram",
+    "parrocchia": "Guizza in Padova",
+    "zona": "ssangelicustodi",
+    "latitudine": 45.36778,
+    "longitudine": 11.87359,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> Capolinea sud del tram (linea SIR1 Pontevigodarzere – Guizza)</li>",
+      "    <li><strong>Indirizzo:</strong> Via Guizza, 35125 Padova</li>",
+      "    <li><strong>Parrocchia:</strong> Guizza in Padova</li>",
+      "    <li><strong>Servizi:</strong> parcheggio scambiatore, deposito e officine del tram, collegamento con le linee bus</li>",
+      "</ul>"
+    ]
+  }
+]

@@ -88,8 +88,8 @@
     "sottotipo": "casa_accoglienza_sanitaria",
     "parrocchia": "S.Giovanni Bosco in Padova",
     "zona": "paltana",
-    "latitudine": 45.385,
-    "longitudine": 11.84917,
+    "latitudine": 45.39034109738334,
+    "longitudine": 11.836808070629543,
     "descrizione": [
       "<h4>Informazioni</h4>",
       "<ul>",
@@ -347,6 +347,27 @@
       "    <li><strong>Laboratori e formazione:</strong> percorsi di arte scenica, teatro e danza contemporanea nella propria sede operativa</li>",
       "    <li><strong>Spettacoli e performance:</strong> azioni performative, concerti letterari ed eventi teatrali, in rassegne e manifestazioni locali e nazionali</li>",
       "    <li><strong>Progetti socio-teatrali:</strong> collaborazioni con scuole, enti e spazi associativi del territorio per inclusione, pari opportunità, cittadinanza attiva e diritti culturali</li>",
+      "</ul>"
+    ]
+  },
+  {
+    "nome": "Casa a Colori",
+    "tipo": "risorsa_territorio",
+    "sottotipo": "accoglienza_ospitalita",
+    "parrocchia": "SS. Crocefisso in Padova",
+    "zona": "crocefisso",
+    "latitudine": 45.377849297243316,
+    "longitudine": 11.889541326614431,
+    "descrizione": [
+      "<h4>Informazioni</h4>",
+      "<ul>",
+      "    <li><strong>Tipologia:</strong> struttura di ospitalità economica, parte del progetto di housing sociale \"Qui Padova\" (cooperativa Città Solare)</li>",
+      "    <li><strong>Finalità:</strong> accoglienza fondata su etica e solidarietà sociale, legata ad associazioni, iniziative di socializzazione e progetti radicati sul territorio</li>",
+      "    <li><strong>Servizi:</strong> camere con bagno, sala da pranzo e ristorante interno (\"Qui Mangio da Giorgio\"), colazione, Wi-Fi, parcheggio gratuito, giardino; priva di barriere architettoniche</li>",
+      "    <li><strong>Indirizzo:</strong> Via del Commissario 42, 35124 Padova</li>",
+      "    <li><strong>Telefono:</strong> 049 680332</li>",
+      "    <li><strong>Sito:</strong> <a href=\"http://www.casaacoloripadova.org\" target=\"_blank\">casaacoloripadova.org</a></li>",
+      "    <li><strong>Come arrivare:</strong> dalla stazione con il bus 3, fermata in Via Bembo davanti alla chiesa del Crocefisso; Via del Commissario è di fronte e la struttura si trova a circa 300 m</li>",
       "</ul>"
     ]
   }
